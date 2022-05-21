@@ -1,0 +1,40 @@
+\contentsline {chapter}{\numberline {1}Themenkorb 1 - Konzeptionelles Datenbankdesign}{5}{}%
+\contentsline {section}{\numberline {1.1}ER-Modell}{5}{}%
+\contentsline {section}{\numberline {1.2}ER-Diagramm (ERD)}{5}{}%
+\contentsline {subsection}{\numberline {1.2.1}Entity Typen}{5}{}%
+\contentsline {subsection}{\numberline {1.2.2}Beziehungen}{5}{}%
+\contentsline {chapter}{\numberline {2}Themenkorb - Information Retrieval}{7}{}%
+\contentsline {section}{\numberline {2.1}SQL}{7}{}%
+\contentsline {subsection}{\numberline {2.1.1}Reihenfolge der Ausführung}{7}{}%
+\contentsline {subsection}{\numberline {2.1.2}Befehle}{7}{}%
+\contentsline {subsubsection}{\nonumberline GROUP BY}{7}{}%
+\contentsline {subsubsection}{\nonumberline HAVING}{7}{}%
+\contentsline {subsection}{\numberline {2.1.3}Wichtige Funktionen}{7}{}%
+\contentsline {subsubsection}{\nonumberline Case / Character}{7}{}%
+\contentsline {subsubsection}{\nonumberline Number}{8}{}%
+\contentsline {subsubsection}{\nonumberline Date}{8}{}%
+\contentsline {subsubsection}{\nonumberline Conversion}{8}{}%
+\contentsline {subsubsection}{\nonumberline Multi row}{9}{}%
+\contentsline {subsection}{\numberline {2.1.4}Joins}{9}{}%
+\contentsline {subsubsection}{\nonumberline INNER JOIN}{9}{}%
+\contentsline {subsubsection}{\nonumberline RIGHT OUTER JOIN}{10}{}%
+\contentsline {subsubsection}{\nonumberline LEFT OUTER JOIN}{10}{}%
+\contentsline {subsubsection}{\nonumberline FULL OUTER JOIN}{11}{}%
+\contentsline {subsubsection}{\nonumberline CROSS JOIN}{11}{}%
+\contentsline {subsubsection}{\nonumberline SELF JOIN}{12}{}%
+\contentsline {subsubsection}{\nonumberline NATURAL JOIN}{12}{}%
+\contentsline {subsubsection}{\nonumberline EQUI / NON-EQUI Joins}{12}{}%
+\contentsline {subsection}{\numberline {2.1.5}Subselects}{12}{}%
+\contentsline {subsubsection}{\nonumberline Multiple-Row Subselects}{12}{}%
+\contentsline {subsection}{\numberline {2.1.6}Andere, wichtige Keywords}{13}{}%
+\contentsline {subsubsection}{\nonumberline UNION}{13}{}%
+\contentsline {subsubsection}{\nonumberline INTERSECT}{13}{}%
+\contentsline {subsubsection}{\nonumberline MINUS}{13}{}%
+\contentsline {subsection}{\numberline {2.1.7}Indizes}{14}{}%
+\contentsline {subsubsection}{\nonumberline Wann?}{14}{}%
+\contentsline {subsubsection}{\nonumberline Wann nicht?}{14}{}%
+\contentsline {subsubsection}{\nonumberline Function based}{14}{}%
+\contentsline {subsubsection}{\nonumberline Erstellen \& Löschen}{14}{}%
+\contentsline {subsection}{\numberline {2.1.8}Hierarchisches SQL}{15}{}%
+\contentsline {subsubsection}{\nonumberline Abfragen}{15}{}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
