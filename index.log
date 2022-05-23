@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.3.20)  21 MAY 2022 17:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.3.20)  23 MAY 2022 21:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -445,19 +445,108 @@ File: res/themekorb_2/hierarchical.png Graphic file (type png)
 <use res/themekorb_2/hierarchical.png>
 Package pdftex.def Info: res/themekorb_2/hierarchical.png  used on input line 341.
 (pdftex.def)             Requested size: 383.63622pt x 112.01936pt.
-)) [15 <./res/themekorb_2/hierarchical.png>] (index.aux) ) 
+)) (topics/themenkorb_3/index.tex [15 <./res/themekorb_2/hierarchical.png>] [16
+
+
+]
+chapter 3.
+<res/themenkorb_3/pk.png, id=102, 1057.9525pt x 373.395pt>
+File: res/themenkorb_3/pk.png Graphic file (type png)
+<use res/themenkorb_3/pk.png>
+Package pdftex.def Info: res/themenkorb_3/pk.png  used on input line 27.
+(pdftex.def)             Requested size: 317.3882pt x 112.01936pt.
+<res/themenkorb_3/fk.png, id=103, 786.94pt x 409.53pt>
+File: res/themenkorb_3/fk.png Graphic file (type png)
+<use res/themenkorb_3/fk.png>
+Package pdftex.def Info: res/themenkorb_3/fk.png  used on input line 35.
+(pdftex.def)             Requested size: 236.08382pt x 122.85994pt.
+<res/themenkorb_3/check.png, id=104, 905.3825pt x 373.395pt>
+File: res/themenkorb_3/check.png Graphic file (type png)
+<use res/themenkorb_3/check.png>
+Package pdftex.def Info: res/themenkorb_3/check.png  used on input line 41.
+(pdftex.def)             Requested size: 271.61684pt x 112.01936pt.
+[17 <./res/themenkorb_3/pk.png> <./res/themenkorb_3/fk.png>]
+<res/themenkorb_3/alter_constraint.png, id=110, 839.135pt x 260.975pt>
+File: res/themenkorb_3/alter_constraint.png Graphic file (type png)
+<use res/themenkorb_3/alter_constraint.png>
+Package pdftex.def Info: res/themenkorb_3/alter_constraint.png  used on input line 54.
+(pdftex.def)             Requested size: 251.74243pt x 78.29309pt.
+<res/themenkorb_3/add_col.png, id=111, 499.8675pt x 222.8325pt>
+File: res/themenkorb_3/add_col.png Graphic file (type png)
+<use res/themenkorb_3/add_col.png>
+Package pdftex.def Info: res/themenkorb_3/add_col.png  used on input line 59.
+(pdftex.def)             Requested size: 149.9614pt x 66.85027pt.
+<res/themenkorb_3/rename_col.png, id=112, 839.135pt x 222.8325pt>
+File: res/themenkorb_3/rename_col.png Graphic file (type png)
+<use res/themenkorb_3/rename_col.png>
+Package pdftex.def Info: res/themenkorb_3/rename_col.png  used on input line 63.
+(pdftex.def)             Requested size: 251.74243pt x 66.85027pt.
+<res/themenkorb_3/update_data_type.png, id=113, 634.37pt x 222.8325pt>
+File: res/themenkorb_3/update_data_type.png Graphic file (type png)
+<use res/themenkorb_3/update_data_type.png>
+Package pdftex.def Info: res/themenkorb_3/update_data_type.png  used on input line 67.
+(pdftex.def)             Requested size: 190.31245pt x 66.85027pt.
+ [18 <./res/themenkorb_3/check.png> <./res/themenkorb_3/alter_constraint.png> <./res/themenkorb_3/add_col.png> <./res/themenkorb_3/rename_col.png> <./res/themenkorb_3/update_data_type.png>]
+<res/themenkorb_3/create_sequence.png, id=122, 449.68pt x 335.2525pt>
+File: res/themenkorb_3/create_sequence.png Graphic file (type png)
+<use res/themenkorb_3/create_sequence.png>
+Package pdftex.def Info: res/themenkorb_3/create_sequence.png  used on input line 88.
+(pdftex.def)             Requested size: 134.90503pt x 100.57652pt.
+<res/themenkorb_3/normalization_pic1.png, id=123, 376.40625pt x 97.86563pt>
+File: res/themenkorb_3/normalization_pic1.png Graphic file (type png)
+<use res/themenkorb_3/normalization_pic1.png>
+Package pdftex.def Info: res/themenkorb_3/normalization_pic1.png  used on input line 106.
+(pdftex.def)             Requested size: 483.69684pt x 125.7708pt.
+<res/themenkorb_3/normalization_pic2.png, id=124, 376.40625pt x 106.89937pt>
+File: res/themenkorb_3/normalization_pic2.png Graphic file (type png)
+<use res/themenkorb_3/normalization_pic2.png>
+Package pdftex.def Info: res/themenkorb_3/normalization_pic2.png  used on input line 115.
+(pdftex.def)             Requested size: 483.69684pt x 137.3804pt.
+ [19 <./res/themenkorb_3/create_sequence.png> <./res/themenkorb_3/normalization_pic1.png>]
+<res/themenkorb_3/normalization_pic3.png, id=131, 376.40625pt x 137.01187pt>
+File: res/themenkorb_3/normalization_pic3.png Graphic file (type png)
+<use res/themenkorb_3/normalization_pic3.png>
+Package pdftex.def Info: res/themenkorb_3/normalization_pic3.png  used on input line 127.
+(pdftex.def)             Requested size: 483.69684pt x 176.07913pt.
+<res/themenkorb_3/normalization_pic6.png, id=132, 376.40625pt x 117.43875pt>
+File: res/themenkorb_3/normalization_pic6.png Graphic file (type png)
+<use res/themenkorb_3/normalization_pic6.png>
+Package pdftex.def Info: res/themenkorb_3/normalization_pic6.png  used on input line 135.
+(pdftex.def)             Requested size: 483.69684pt x 150.92496pt.
+ [20 <./res/themenkorb_3/normalization_pic2.png> <./res/themenkorb_3/normalization_pic3.png> <./res/themenkorb_3/normalization_pic6.png>]
+<res/themenkorb_3/zirkelbezug_1.jpg, id=139, 376.40625pt x 212.29312pt>
+File: res/themenkorb_3/zirkelbezug_1.jpg Graphic file (type jpg)
+<use res/themenkorb_3/zirkelbezug_1.jpg>
+Package pdftex.def Info: res/themenkorb_3/zirkelbezug_1.jpg  used on input line 145.
+(pdftex.def)             Requested size: 301.1254pt x 169.83472pt.
+<res/themenkorb_3/zirkelbezug_2.jpg, id=140, 376.40625pt x 32.37094pt>
+File: res/themenkorb_3/zirkelbezug_2.jpg Graphic file (type jpg)
+<use res/themenkorb_3/zirkelbezug_2.jpg>
+Package pdftex.def Info: res/themenkorb_3/zirkelbezug_2.jpg  used on input line 152.
+(pdftex.def)             Requested size: 301.1254pt x 25.89677pt.
+<res/themenkorb_3/normalization_pic4.png, id=141, 376.40625pt x 109.1578pt>
+File: res/themenkorb_3/normalization_pic4.png Graphic file (type png)
+<use res/themenkorb_3/normalization_pic4.png>
+Package pdftex.def Info: res/themenkorb_3/normalization_pic4.png  used on input line 160.
+(pdftex.def)             Requested size: 483.69684pt x 140.2828pt.
+<res/themenkorb_3/normalization_pic7.png, id=142, 582.67688pt x 139.27031pt>
+File: res/themenkorb_3/normalization_pic7.png Graphic file (type png)
+<use res/themenkorb_3/normalization_pic7.png>
+Package pdftex.def Info: res/themenkorb_3/normalization_pic7.png  used on input line 165.
+(pdftex.def)             Requested size: 483.69684pt x 115.61557pt.
+) [21 <./res/themenkorb_3/zirkelbezug_1.jpg> <./res/themenkorb_3/zirkelbezug_2.jpg> <./res/themenkorb_3/normalization_pic4.png> <./res/themenkorb_3/normalization_pic7.png>] (index.aux) ) 
 Here is how much of TeX's memory you used:
- 5934 strings out of 478582
- 123986 string characters out of 2844344
- 546064 words of memory out of 3000000
- 24046 multiletter control sequences out of 15000+600000
+ 6053 strings out of 478582
+ 128315 string characters out of 2844344
+ 547064 words of memory out of 3000000
+ 24144 multiletter control sequences out of 15000+600000
  479335 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,8n,106p,10681b,361s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 108i,8n,106p,10681b,363s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\marti\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on index.pdf (15 pages, 347900 bytes).
+Output written on index.pdf (21 pages, 740341 bytes).
 PDF statistics:
- 138 PDF objects out of 1000 (max. 8388607)
+ 187 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 101 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 181 words of extra memory for PDF output out of 10000 (max. 10000000)
 
