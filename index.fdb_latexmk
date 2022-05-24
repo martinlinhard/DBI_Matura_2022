@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1653333807 "c:/Users/marti/Documents/School/2021_22/DBI/DBI_Matura_2022/index.tex" "index.pdf" "index" 1653333810
+["pdflatex"] 1653395385 "c:/Users/marti/Documents/School/2021_22/DBI/DBI_Matura_2022/index.tex" "index.pdf" "index" 1653395387
   "C:/Users/marti/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1647774250 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/marti/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1095.pk" 1647773737 12668 cc4111b82fa7989564709a5acc5979c7 ""
   "C:/Users/marti/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1647771879 10246961 d80c75e7d3349793cdc9cd4090caae15 ""
@@ -68,10 +68,10 @@
   "C:/Users/marti/AppData/Local/Programs/MiKTeX/tex/latex/koma-script/tocbasic.sty" 1636831314 107099 32be8c26e58788fe2c40d02a36b4486c ""
   "C:/Users/marti/AppData/Local/Programs/MiKTeX/tex/latex/koma-script/typearea.sty" 1636831314 56073 759db929335307786c6fae3cee68c3f8 ""
   "C:/Users/marti/AppData/Local/Programs/MiKTeX/tex/latex/l3backend/l3backend-pdftex.def" 1644218660 29921 d0acc05a38bd4aa3af2017f0b7c137ce ""
-  "c:/Users/marti/Documents/School/2021_22/DBI/DBI_Matura_2022/index.tex" 1653328063 439 f52c85c944d4813ea44813150945d103 ""
-  "index.aux" 1653333810 6816 829885f43e060000d909143f2c2c906a "pdflatex"
-  "index.tex" 1653328063 439 f52c85c944d4813ea44813150945d103 ""
-  "index.toc" 1653333810 3938 59b69ffec6edf1a4bc6c3983ed08e3eb "pdflatex"
+  "c:/Users/marti/Documents/School/2021_22/DBI/DBI_Matura_2022/index.tex" 1653383987 478 775901dedb3bc7d1ecbe4137719dbc57 ""
+  "index.aux" 1653395387 9163 d004047d9d605c7d0e9c4bb637c60f80 "pdflatex"
+  "index.tex" 1653383987 478 775901dedb3bc7d1ecbe4137719dbc57 ""
+  "index.toc" 1653395387 5389 9e4f25b0747d3ce08c5a35eaad3473fe "pdflatex"
   "res/themekorb_2/create_index.png" 1653146335 14876 696477a459ac32d17299991093103ea4 ""
   "res/themekorb_2/cross_join.png" 1653143336 23256 94f2a4cfab39379b2d9c02f761d0a02b ""
   "res/themekorb_2/drop_index.png" 1653146343 10972 a55b5412b048619a7dee368e17ae8b0b ""
@@ -108,10 +108,16 @@
   "res/themenkorb_3/update_data_type.png" 1653331095 14483 479847f9a24f9e3c5e87967a2f00f8d9 ""
   "res/themenkorb_3/zirkelbezug_1.jpg" 1653333617 45922 2d7a76309dfa31d2ac3e6eb876d47199 ""
   "res/themenkorb_3/zirkelbezug_2.jpg" 1653333680 10852 5c14d6e776432d618be3f203ca44a00d ""
+  "res/themenkorb_4/hierarchie_variante_2.jpg" 1653393123 3794 cfc33267d48e3a3f4637c488ee5c7bcc ""
+  "res/themenkorb_4/hierarchie_variante_4.jpg" 1653393518 12043 ad2d1317c91a4dd486190cc9b307b6f7 ""
+  "res/themenkorb_4/history_1_n.png" 1653386373 70464 ef7013bb6cfd092c349bb997fecad40e ""
+  "res/themenkorb_4/history_attribute.png" 1653385277 50169 6acbbd3e3d3f74bbbd10d4750ab5ffb0 ""
+  "res/themenkorb_4/history_n_m.png" 1653392355 73321 20bc92dc7494ddb3721b67fa7eee6456 ""
   "topics/themenkorb_1.tex" 1653137778 600 fb20c1c9307215efac43ae393c231f84 ""
   "topics/themenkorb_2/index.tex" 1653137938 81 e0f1b9493dedd963a939d2ce9386fe99 ""
   "topics/themenkorb_2/sql.tex" 1653148302 12881 9e326ec11fb2f6979cab0897d90d9891 ""
   "topics/themenkorb_3/index.tex" 1653333806 6530 37b399d05b65be2948044a9d021478b4 ""
+  "topics/themenkorb_4/index.tex" 1653395384 6210 580abeb7c5369ca494566afdc3163379 ""
   (generated)
   "index.aux"
   "index.log"

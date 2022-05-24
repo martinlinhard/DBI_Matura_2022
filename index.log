@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.3.20)  23 MAY 2022 21:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.3.20)  24 MAY 2022 14:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -534,19 +534,51 @@ File: res/themenkorb_3/normalization_pic7.png Graphic file (type png)
 <use res/themenkorb_3/normalization_pic7.png>
 Package pdftex.def Info: res/themenkorb_3/normalization_pic7.png  used on input line 165.
 (pdftex.def)             Requested size: 483.69684pt x 115.61557pt.
-) [21 <./res/themenkorb_3/zirkelbezug_1.jpg> <./res/themenkorb_3/zirkelbezug_2.jpg> <./res/themenkorb_3/normalization_pic4.png> <./res/themenkorb_3/normalization_pic7.png>] (index.aux) ) 
+) (topics/themenkorb_4/index.tex [21 <./res/themenkorb_3/zirkelbezug_1.jpg> <./res/themenkorb_3/zirkelbezug_2.jpg> <./res/themenkorb_3/normalization_pic4.png> <./res/themenkorb_3/normalization_pic7.png>] [22
+
+
+]
+chapter 4.
+<res/themenkorb_4/history_attribute.png, id=151, 1194.4625pt x 485.815pt>
+File: res/themenkorb_4/history_attribute.png Graphic file (type png)
+<use res/themenkorb_4/history_attribute.png>
+Package pdftex.def Info: res/themenkorb_4/history_attribute.png  used on input line 31.
+(pdftex.def)             Requested size: 483.69684pt x 196.73175pt.
+[23 <./res/themenkorb_4/history_attribute.png>]
+<res/themenkorb_4/history_1_n.png, id=156, 1397.22pt x 447.6725pt>
+File: res/themenkorb_4/history_1_n.png Graphic file (type png)
+<use res/themenkorb_4/history_1_n.png>
+Package pdftex.def Info: res/themenkorb_4/history_1_n.png  used on input line 52.
+(pdftex.def)             Requested size: 483.69684pt x 154.97998pt.
+<res/themenkorb_4/history_n_m.png, id=157, 1328.965pt x 485.815pt>
+File: res/themenkorb_4/history_n_m.png Graphic file (type png)
+<use res/themenkorb_4/history_n_m.png>
+Package pdftex.def Info: res/themenkorb_4/history_n_m.png  used on input line 69.
+(pdftex.def)             Requested size: 483.69684pt x 176.82062pt.
+ [24 <./res/themenkorb_4/history_1_n.png> <./res/themenkorb_4/history_n_m.png>]
+<res/themenkorb_4/hierarchie_variante_2.jpg, id=163, 150.5625pt x 93.34875pt>
+File: res/themenkorb_4/hierarchie_variante_2.jpg Graphic file (type jpg)
+<use res/themenkorb_4/hierarchie_variante_2.jpg>
+Package pdftex.def Info: res/themenkorb_4/hierarchie_variante_2.jpg  used on input line 101.
+(pdftex.def)             Requested size: 150.56212pt x 93.34851pt.
+<res/themenkorb_4/hierarchie_variante_4.jpg, id=164, 263.48438pt x 196.48407pt>
+File: res/themenkorb_4/hierarchie_variante_4.jpg Graphic file (type jpg)
+<use res/themenkorb_4/hierarchie_variante_4.jpg>
+Package pdftex.def Info: res/themenkorb_4/hierarchie_variante_4.jpg  used on input line 115.
+(pdftex.def)             Requested size: 210.78777pt x 157.18745pt.
+ [25 <./res/themenkorb_4/hierarchie_variante_2.jpg>]) [26 <./res/themenkorb_4/hierarchie_variante_4.jpg>] (index.aux) ) 
 Here is how much of TeX's memory you used:
- 6053 strings out of 478582
- 128315 string characters out of 2844344
- 547064 words of memory out of 3000000
- 24144 multiletter control sequences out of 15000+600000
+ 6105 strings out of 478582
+ 130384 string characters out of 2844344
+ 551064 words of memory out of 3000000
+ 24186 multiletter control sequences out of 15000+600000
  479335 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,8n,106p,10681b,363s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\marti\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on index.pdf (21 pages, 740341 bytes).
+Output written on index.pdf (26 pages, 870646 bytes).
 PDF statistics:
- 187 PDF objects out of 1000 (max. 8388607)
+ 211 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 181 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 206 words of extra memory for PDF output out of 10000 (max. 10000000)
 

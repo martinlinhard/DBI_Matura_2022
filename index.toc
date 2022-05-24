@@ -56,4 +56,24 @@
 \contentsline {subsection}{\numberline {3.3.3}Abhängigkeitsdiagramm - Beispiele}{21}{}%
 \contentsline {subsubsection}{\nonumberline 2. Normalform}{21}{}%
 \contentsline {subsubsection}{\nonumberline 3. Normalform}{21}{}%
+\contentsline {chapter}{\numberline {4}Themenkorb - Entwurfsmuster in der Datenmodellierung}{23}{}%
+\contentsline {section}{\numberline {4.1}History}{23}{}%
+\contentsline {subsection}{\numberline {4.1.1}History eines Attributs}{23}{}%
+\contentsline {subsubsection}{\nonumberline Allgemein}{23}{}%
+\contentsline {subsubsection}{\nonumberline Abfragen}{23}{}%
+\contentsline {paragraph}{\nonumberline Wert zu einem bestimmten Zeitpunkt bzw. aktueller Wert}{23}{}%
+\contentsline {subsection}{\numberline {4.1.2}History einer 1:n Beziehung}{24}{}%
+\contentsline {subsubsection}{\nonumberline Allgemein}{24}{}%
+\contentsline {subsubsection}{\nonumberline Abfragen}{24}{}%
+\contentsline {paragraph}{\nonumberline Wert zu einem bestimmten Zeitpunkt bzw. aktueller Wert}{24}{}%
+\contentsline {subsection}{\numberline {4.1.3}History einer n:m Beziehung}{24}{}%
+\contentsline {subsubsection}{\nonumberline Abfragen}{24}{}%
+\contentsline {section}{\numberline {4.2}Supertyp/Subtyp}{25}{}%
+\contentsline {subsection}{\numberline {4.2.1}Wann?}{25}{}%
+\contentsline {section}{\numberline {4.3}Reflexive Beziehungen}{25}{}%
+\contentsline {subsection}{\numberline {4.3.1}Hierarchie}{25}{}%
+\contentsline {subsubsection}{\nonumberline Varianten}{25}{}%
+\contentsline {subsection}{\numberline {4.3.2}Liste}{26}{}%
+\contentsline {subsection}{\numberline {4.3.3}Gerichteter Graph (Netzplan)}{26}{}%
+\contentsline {section}{\numberline {4.4}Mehrwertige Beziehungen}{26}{}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
