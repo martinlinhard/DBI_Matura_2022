@@ -76,4 +76,22 @@
 \contentsline {subsection}{\numberline {4.3.2}Liste}{26}{}%
 \contentsline {subsection}{\numberline {4.3.3}Gerichteter Graph (Netzplan)}{26}{}%
 \contentsline {section}{\numberline {4.4}Mehrwertige Beziehungen}{26}{}%
+\contentsline {chapter}{\numberline {5}Themenkorb - Transaktionen und Concurrency}{27}{}%
+\contentsline {section}{\numberline {5.1}Transaktionen}{27}{}%
+\contentsline {subsection}{\numberline {5.1.1}Allgemeines}{27}{}%
+\contentsline {subsubsection}{\nonumberline ACID Prinzip}{27}{}%
+\contentsline {subsubsection}{\nonumberline Commit und Rollback}{27}{}%
+\contentsline {subsubsection}{\nonumberline DDL Statements - Implicit Commit}{27}{}%
+\contentsline {subsubsection}{\nonumberline Länge von Transaktionen}{27}{}%
+\contentsline {section}{\numberline {5.2}Anomalien im Einbenutzerbetrieb}{28}{}%
+\contentsline {section}{\numberline {5.3}Concurrency}{28}{}%
+\contentsline {subsubsection}{\nonumberline Lost Update}{28}{}%
+\contentsline {subsubsection}{\nonumberline Dirty Read}{28}{}%
+\contentsline {subsubsection}{\nonumberline Non-Repeatable Read}{28}{}%
+\contentsline {subsubsection}{\nonumberline Phantom}{29}{}%
+\contentsline {subsection}{\numberline {5.3.1}Serialisierbarkeit}{29}{}%
+\contentsline {subsection}{\numberline {5.3.2}Lösungsmöglichkeiten}{29}{}%
+\contentsline {subsubsection}{\nonumberline Sperrverfahren}{29}{}%
+\contentsline {subsubsection}{\nonumberline Sperrebenen}{30}{}%
+\contentsline {subsubsection}{\nonumberline Arten von Sperren}{30}{}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

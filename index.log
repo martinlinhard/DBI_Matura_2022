@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.3.20)  24 MAY 2022 14:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.3.20)  24 MAY 2022 22:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -200,7 +200,27 @@ Package: iftex 2022/02/03 v1.0f TeX engine tests
 \Gm@layouthoffset=\dimen154
 \Gm@layoutvoffset=\dimen155
 \Gm@dimlist=\toks25
- (C:\Users\marti\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg)) (C:\Users\marti\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+ (C:\Users\marti\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg)) (C:\Users\marti\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.sty
+Package: csquotes 2021-02-22 v5.2l context-sensitive quotations (JAW)
+ (C:\Users\marti\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count277
+)
+\csq@reset=\count278
+\csq@gtype=\count279
+\csq@glevel=\count280
+\csq@qlevel=\count281
+\csq@maxlvl=\count282
+\csq@tshold=\count283
+\csq@ltx@everypar=\toks26
+ (C:\Users\marti\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.def
+File: csquotes.def 2021-02-22 v5.2l csquotes generic definitions (JAW)
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+ (C:\Users\marti\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.cfg
+File: csquotes.cfg 
+)) (C:\Users\marti\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
  (C:\Users\marti\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
 Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
@@ -215,30 +235,33 @@ File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen156
 \Gin@req@width=\dimen157
-) (C:\Users\marti\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
+)
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... none found.
+ (C:\Users\marti\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count277
+\l__color_backend_stack_int=\count284
 \l__pdf_internal_box=\box56
 ) (index.aux)
 \openout1 = `index.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-Package scrbase Info: activating english \contentsname on input line 13.
-Package scrbase Info: activating english \listfigurename on input line 13.
-Package scrbase Info: activating english \listtablename on input line 13.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+Package scrbase Info: activating english \contentsname on input line 14.
+Package scrbase Info: activating english \listfigurename on input line 14.
+Package scrbase Info: activating english \listtablename on input line 14.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -276,28 +299,28 @@ Package scrbase Info: activating english \listtablename on input line 13.
 
 (C:\Users\marti\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count278
+\scratchcounter=\count285
 \scratchdimen=\dimen158
 \scratchbox=\box57
-\nofMPsegments=\count279
-\nofMParguments=\count280
-\everyMPshowfont=\toks26
-\MPscratchCnt=\count281
+\nofMPsegments=\count286
+\nofMParguments=\count287
+\everyMPshowfont=\toks27
+\MPscratchCnt=\count288
 \MPscratchDim=\dimen159
-\MPnumerator=\count282
-\makeMPintoPDFobject=\count283
-\everyMPtoPDFconversion=\toks27
+\MPnumerator=\count289
+\makeMPintoPDFobject=\count290
+\everyMPtoPDFconversion=\toks28
 ) (C:\Users\marti\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (C:\Users\marti\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 17.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 18.
  (C:\Users\marti\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 17.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 18.
  (C:\Users\marti\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
@@ -307,14 +330,11 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 {C:/Users/marti/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2
 
 
-] (index.toc)
+] (index.toc [3])
 \tf@toc=\write3
 \openout3 = `index.toc'.
 
- (topics/themenkorb_1.tex [3] [4
-
-
-]
+ (topics/themenkorb_1.tex [4]
 chapter 1.
 
 Class scrbook Warning: \float@addtolists detected!
@@ -331,24 +351,27 @@ Class scrbook Warning: \float@addtolists detected!
 (scrbook)              a package that still implements the
 (scrbook)              deprecated \float@addtolist interface.
 
-) (topics/themenkorb_2/index.tex [5] [6
+) (topics/themenkorb_2/index.tex [5
+
+
+] [6
 
 
 ]
 chapter 2.
 (topics/themenkorb_2/sql.tex
-<res/themekorb_2/group_by.png, id=25, 264.23718pt x 45.16875pt>
+<res/themekorb_2/group_by.png, id=26, 264.23718pt x 45.16875pt>
 File: res/themekorb_2/group_by.png Graphic file (type png)
 <use res/themekorb_2/group_by.png>
 Package pdftex.def Info: res/themekorb_2/group_by.png  used on input line 27.
 (pdftex.def)             Requested size: 264.23653pt x 45.16862pt.
-<res/themekorb_2/having.png, id=27, 258.9675pt x 59.47218pt>
+<res/themekorb_2/having.png, id=28, 258.9675pt x 59.47218pt>
 File: res/themekorb_2/having.png Graphic file (type png)
 <use res/themekorb_2/having.png>
 Package pdftex.def Info: res/themekorb_2/having.png  used on input line 39.
 (pdftex.def)             Requested size: 258.96684pt x 59.47203pt.
  [7 <./res/themekorb_2/group_by.png> <./res/themekorb_2/having.png>]
-<res/themekorb_2/format.png, id=36, 270.25969pt x 339.51843pt>
+<res/themekorb_2/format.png, id=37, 270.25969pt x 339.51843pt>
 File: res/themekorb_2/format.png Graphic file (type png)
 <use res/themekorb_2/format.png>
 Package pdftex.def Info: res/themekorb_2/format.png  used on input line 97.
@@ -566,19 +589,46 @@ File: res/themenkorb_4/hierarchie_variante_4.jpg Graphic file (type jpg)
 <use res/themenkorb_4/hierarchie_variante_4.jpg>
 Package pdftex.def Info: res/themenkorb_4/hierarchie_variante_4.jpg  used on input line 115.
 (pdftex.def)             Requested size: 210.78777pt x 157.18745pt.
- [25 <./res/themenkorb_4/hierarchie_variante_2.jpg>]) [26 <./res/themenkorb_4/hierarchie_variante_4.jpg>] (index.aux) ) 
+ [25 <./res/themenkorb_4/hierarchie_variante_2.jpg>]) (topics/themenkorb_5/index.tex [26 <./res/themenkorb_4/hierarchie_variante_4.jpg>]
+chapter 5.
+(topics/themenkorb_5/transaktionen.tex [27
+
+
+]
+<res/themenkorb_5/lostupdate.png, id=175, 435.12563pt x 140.77594pt>
+File: res/themenkorb_5/lostupdate.png Graphic file (type png)
+<use res/themenkorb_5/lostupdate.png>
+Package pdftex.def Info: res/themenkorb_5/lostupdate.png  used on input line 57.
+(pdftex.def)             Requested size: 435.12456pt x 140.77557pt.
+<res/themenkorb_5/dirtyread.png, id=176, 435.87843pt x 140.77594pt>
+File: res/themenkorb_5/dirtyread.png Graphic file (type png)
+<use res/themenkorb_5/dirtyread.png>
+Package pdftex.def Info: res/themenkorb_5/dirtyread.png  used on input line 66.
+(pdftex.def)             Requested size: 435.87737pt x 140.77557pt.
+<res/themenkorb_5/nonrepeatableread.png, id=177, 438.8897pt x 192.72pt>
+File: res/themenkorb_5/nonrepeatableread.png Graphic file (type png)
+<use res/themenkorb_5/nonrepeatableread.png>
+Package pdftex.def Info: res/themenkorb_5/nonrepeatableread.png  used on input line 75.
+(pdftex.def)             Requested size: 438.88863pt x 192.71951pt.
+ [28 <./res/themenkorb_5/lostupdate.png> <./res/themenkorb_5/dirtyread.png>]
+<res/themenkorb_5/phantom.png, id=183, 447.92343pt x 137.7647pt>
+File: res/themenkorb_5/phantom.png Graphic file (type png)
+<use res/themenkorb_5/phantom.png>
+Package pdftex.def Info: res/themenkorb_5/phantom.png  used on input line 83.
+(pdftex.def)             Requested size: 447.92233pt x 137.76434pt.
+ [29 <./res/themenkorb_5/nonrepeatableread.png> <./res/themenkorb_5/phantom.png>])) [30] (index.aux) ) 
 Here is how much of TeX's memory you used:
- 6105 strings out of 478582
- 130384 string characters out of 2844344
- 551064 words of memory out of 3000000
- 24186 multiletter control sequences out of 15000+600000
+ 7055 strings out of 478582
+ 145969 string characters out of 2844344
+ 577405 words of memory out of 3000000
+ 25113 multiletter control sequences out of 15000+600000
  479335 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,8n,106p,10681b,363s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 108i,8n,106p,10681b,366s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\marti\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on index.pdf (26 pages, 870646 bytes).
+Output written on index.pdf (30 pages, 909016 bytes).
 PDF statistics:
- 211 PDF objects out of 1000 (max. 8388607)
+ 231 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 206 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 226 words of extra memory for PDF output out of 10000 (max. 10000000)
 
