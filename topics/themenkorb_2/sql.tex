@@ -12,6 +12,11 @@
 \end{enumerate}
 
 \subsection{Befehle}
+\subsubsection{ORDER BY}
+\begin{itemize}
+    \item Nicht angegeben $\implies$ Reihenfolge ist nicht garantiert!
+\end{itemize}
+
 \subsubsection{GROUP BY}
 \begin{itemize}
     \item Wenn eine "normale" Spalte neben einer Gruppenfunktion im SELECT steht, muss diese "normale" Spalte im Group By enthalten sein!
@@ -24,7 +29,7 @@
 \end{itemize}
 \begin{figure}[ht!]
     \centering 
-    \includegraphics[]{res/themekorb_2/group_by.png}
+    \includegraphics[]{res/themenkorb_2/group_by.png}
 \end{figure}
 
 \subsubsection{HAVING}
@@ -36,7 +41,7 @@
 \end{itemize}
 \begin{figure}[ht!]
     \centering 
-    \includegraphics[]{res/themekorb_2/having.png}
+    \includegraphics[]{res/themenkorb_2/having.png}
 \end{figure}
 
 \subsection{Wichtige Funktionen}
@@ -94,7 +99,7 @@
 \end{itemize}
 \begin{figure}[H]
     \centering 
-    \includegraphics[]{res/themekorb_2/format.png}
+    \includegraphics[]{res/themenkorb_2/format.png}
 \end{figure}
 \subsubsection{Multi row}
 \begin{itemize}
@@ -120,7 +125,7 @@
 \end{itemize}
 \begin{figure}[H]
     \centering
-    \includegraphics{res/themekorb_2/joins_inner_join.png} 
+    \includegraphics{res/themenkorb_2/joins_inner_join.png} 
 \end{figure}
 
 \subsubsection{RIGHT OUTER JOIN}
@@ -128,13 +133,13 @@
     \item Inkludiert alle Zeilen der rechten Tabelle (= die Tabelle, auf die gejoint wird) und Werte, die in beiden Tabellen gleich sind
     \begin{figure}[H]
         \centering
-        \includegraphics{res/themekorb_2/joins_right_outer_join.png} 
+        \includegraphics{res/themenkorb_2/joins_right_outer_join.png} 
     \end{figure}
     \begin{itemize}
         \item Beispiel: Gib jene Abteilungen aus, die keine Mitarbeiter haben:
         \begin{figure}[H]
             \centering 
-            \includegraphics[scale=.45]{res/themekorb_2/joins_right_outer_join_example.png}
+            \includegraphics[scale=.45]{res/themenkorb_2/joins_right_outer_join_example.png}
         \end{figure}
     \end{itemize}
 \end{itemize}
@@ -144,13 +149,13 @@
     \item Inkludiert alle Zeilen der linken Tabelle (= die Tabelle, von der weg gejoint wird) und Werte, die in beiden Tabellen gleich sind
     \begin{figure}[H]
         \centering
-        \includegraphics{res/themekorb_2/joins_left_outer_join.png} 
+        \includegraphics{res/themenkorb_2/joins_left_outer_join.png} 
     \end{figure}
     \begin{itemize}
         \item Beispiel: Gib jene Abteilungen aus, die keine Mitarbeiter haben:
         \begin{figure}[H]
             \centering 
-            \includegraphics[scale=.45]{res/themekorb_2/joins_left_outer_join_example.png}
+            \includegraphics[scale=.45]{res/themenkorb_2/joins_left_outer_join_example.png}
         \end{figure}
     \end{itemize}
 \end{itemize}
@@ -160,13 +165,13 @@
     \item Inkludiert alle Zeilen der linken Tabelle (= die Tabelle, von der weg gejoint wird) und alle Werte aus der rechten Tabelle
     \begin{figure}[H]
         \centering
-        \includegraphics{res/themekorb_2/joins_full_outer_join.png} 
+        \includegraphics{res/themenkorb_2/joins_full_outer_join.png} 
     \end{figure}
     \begin{itemize}
         \item Beispiel: Gib alle Mitarbeiter und Abteilungen aus
         \begin{figure}[H]
             \centering 
-            \includegraphics[scale=.45]{res/themekorb_2/joins_full_outer_join_example.png}
+            \includegraphics[scale=.45]{res/themenkorb_2/joins_full_outer_join_example.png}
         \end{figure}
     \end{itemize}
 \end{itemize}
@@ -177,7 +182,7 @@
     \item Problem: Auch jede Zeile mit sich selbst!
     \begin{figure}[H]
         \centering
-        \includegraphics[scale=.4]{res/themekorb_2/cross_join.png} 
+        \includegraphics[scale=.4]{res/themenkorb_2/cross_join.png} 
     \end{figure}
 \end{itemize}
 
@@ -196,14 +201,14 @@
     \end{itemize}
     \begin{figure}[H]
         \centering
-        \includegraphics[scale=.4]{res/themekorb_2/natural_join.png} 
+        \includegraphics[scale=.4]{res/themenkorb_2/natural_join.png} 
     \end{figure}
 \end{itemize}
 
 \subsubsection{EQUI / NON-EQUI Joins}
 \begin{itemize}
     \item EQUI $\implies$ =
-    \item NON-EQUI $\implies$ Alles andere (Größer / Kleiner, Between and\dots)
+    \item NON-EQUI (THETA) $\implies$ Alles andere (Größer / Kleiner, Between and\dots)
 \end{itemize}
 
 \subsection{Subselects}
@@ -217,7 +222,7 @@
     \item Wenn mehrere Werte aus dem Subselect zurückgegeben werden $\implies$ IN muss verwendet werden:
     \begin{figure}[H]
         \centering
-        \includegraphics[scale=.4]{res/themekorb_2/subselect_multiple.png} 
+        \includegraphics[scale=.4]{res/themenkorb_2/subselect_multiple.png} 
     \end{figure}
 \end{itemize}
 
@@ -240,7 +245,7 @@
     \item Wichtig: Anzahl der Spalte + Datentypen müssen gleich sein, doppelte Werte werden ignoriert!
     \begin{figure}[H]
         \centering
-        \includegraphics[scale=.4]{res/themekorb_2/union.png} 
+        \includegraphics[scale=.4]{res/themenkorb_2/union.png} 
     \end{figure}
 \end{itemize}
 
@@ -249,7 +254,7 @@
     \item Gibt nur Werte aus, die in beiden Statements vorhanden sind!
     \begin{figure}[H]
         \centering
-        \includegraphics[scale=.4]{res/themekorb_2/intersect.png} 
+        \includegraphics[scale=.4]{res/themenkorb_2/intersect.png} 
     \end{figure}
 \end{itemize}
 
@@ -258,7 +263,7 @@
     \item Gibt nur Werte aus, die in dem ersten Statement, nicht aber in dem 2. vorkommen!
     \begin{figure}[H]
         \centering
-        \includegraphics[scale=.4]{res/themekorb_2/minus.png} 
+        \includegraphics[scale=.4]{res/themenkorb_2/minus.png} 
     \end{figure}
 \end{itemize}
 
@@ -286,7 +291,7 @@
     \item Die Werte im Index werden durch Funktionen berechnet:
     \begin{figure}[H]
         \centering
-        \includegraphics[scale=.4]{res/themekorb_2/function_based.png} 
+        \includegraphics[scale=.4]{res/themenkorb_2/function_based.png} 
     \end{figure}
     \item Es können auch selbst geschriebene Funktionen verwendet werden, diese müssen allerdings als "deterministic" markiert werden
 \end{itemize}
@@ -296,12 +301,12 @@
     \item Erstellen
     \begin{figure}[H]
         \centering
-        \includegraphics[scale=.4]{res/themekorb_2/create_index.png} 
+        \includegraphics[scale=.4]{res/themenkorb_2/create_index.png} 
     \end{figure}
     \item Löschen
     \begin{figure}[H]
         \centering
-        \includegraphics[scale=.4]{res/themekorb_2/drop_index.png} 
+        \includegraphics[scale=.4]{res/themenkorb_2/drop_index.png} 
     \end{figure}
 \end{itemize}
 
@@ -338,6 +343,6 @@
     \end{itemize}
     \begin{figure}[H]
         \centering
-        \includegraphics[scale=.3]{res/themekorb_2/hierarchical.png} 
+        \includegraphics[scale=.3]{res/themenkorb_2/hierarchical.png} 
     \end{figure}
 \end{itemize}

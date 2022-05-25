@@ -1,0 +1,142 @@
+\section{Backup \& Recovery}
+
+\begin{itemize}
+    \item Backup $\implies$ Kopie der Daten in einer Datenbank, um sie später wiederherzustellen
+    \item Recovery $\implies$ Das Wiederherstellen der Daten selbst (im Fehlerfall)
+\end{itemize}
+
+\subsection{Backup}
+
+\subsubsection{Arten von Backups}
+Die Einteilung kann nach Menge der Daten / Häufigkeit der Backups und nach dem Zustand des Systems zum Backupzeitpunkt eingeteilt werden.
+\paragraph{Menge der Daten, Häufigkeit der Backups}
+\begin{itemize}
+    \item Full Backup $\implies$ Es werden die gesamten Daten gesichert
+    \begin{itemize}
+        \item \textbf{Vorteil}: Restore-Zeit ist gering, hohe Redundanz $\implies$ sehr sicher
+        \item \textbf{Nachteil}: Viel Speicherplatz wird benötigt, Anfertigung des Backups braucht viel Zeit
+    \end{itemize}
+    \item Partial Backup $\implies$ Es werden nur die Daten gesichert, die sich geändert haben
+    \begin{itemize}
+        \item \textbf{Vorteil}: Weniger Speicherplatz wird benötigt, Anfertigung des Backups braucht nicht so viel Zeit
+        \item \textbf{Nachteil}: Hohe Restore-Zeit, Daten sind nur bedingt redundant $\implies$ geringere Sicherheit
+        \item Unterarten
+        \begin{itemize}
+            \item Differential Backup $\implies$ Es werden nur Daten gespeichert, die sich seit dem letzten \textbf{Full Backup} geändert haben
+            \begin{itemize}
+                \item \textbf{Vorteil}: Restore-Zeit ist gering, sicherer da eine gewisse Rendundanz gegeben ist
+                \item \textbf{Nachteil}: Viel Speicherplatz wird benötigt, Anfertigung des Backups braucht viel Zeit
+            \end{itemize}
+            \item Incremental Backup $\implies$ Es werden nur Daten gespeichert, die sich seit dem letzten \textbf{Partial Backup} geändert haben
+            \begin{itemize}
+                \item \textbf{Vorteil}: Weniger Speicherplatz wird benötigt, Anfertigung des Backups braucht nicht so viel Zeit
+                \item \textbf{Nachteil}: Restore dauert länger, es gibt wenige Redundanzen $\implies$ Nicht sehr sicher
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\paragraph{Zustand des Systems zum Backupzeitpunkt}
+\begin{itemize}
+    \item Online (Hot) Backup
+    \begin{itemize}
+        \item Wird während dem laufenden Betrieb ausgeführt
+        \item Achtung: Während der Erstellung des Backups können Änderungen geschehen $\implies$ Es müssen vor Beginn des Backups die Änderungen mitprotokolliert werden
+        \begin{itemize}
+            \item Um konsistenten Zustand einzuspielen $\implies$ Redo Logs müssen ausgeführt werden
+        \end{itemize}
+    \end{itemize}
+    \item Offline (Cold) Backup
+    \begin{itemize}
+        \item Wird ausgeführt, wenn die Datenbank offline ist
+    \end{itemize}
+\end{itemize}
+
+\subsection{Recovery}
+\subsubsection{Arten von Fehlersituationen}
+
+\paragraph{Transaktionsfehler (Lokaler Fehler)}
+\begin{itemize}
+    \item Transaktion wurde nicht ordentlich beendet; Daten sind nun in inkosistentem Zustand
+    \item Auslöser
+    \begin{itemize}
+        \item Runtime-Fehler
+        \item Deadlock
+        \item Time-Out
+        \item Manuelles Rollback\dots
+    \end{itemize}
+    \item Maßnahmen
+    \begin{itemize}
+        \item Alle Änderungen bis hin zum Abbruch müssen zurückgenommen werden (Rollback / Transaction Recovery) $\implies$ Backward Recovery 
+    \end{itemize}
+\end{itemize}
+
+\paragraph{Systemfehler (Soft Crash)}
+\begin{itemize}
+    \item Mehrere Transaktionen konnten nicht ordnungsgemäß beendet werden
+    \item Auslöser
+    \begin{itemize}
+        \item Stromausfall
+        \item Fehler im Betriebssystem
+    \end{itemize}
+    \item Maßnahmen
+    \begin{itemize}
+        \item Alle Änderungen der Transaktionen, die beim Absturz in Progress waren, müssen zurückgenommen werden (Crash Recovery) $\implies$ Backward Recovery
+    \end{itemize}
+\end{itemize}
+
+\paragraph{Mediumfehler (Hard Crash)}
+\begin{itemize}
+    \item Daten sind physikalisch zerstört / nicht mehr lesbar
+    \item Auslöser
+    \begin{itemize}
+        \item Irrtümliches Löschen von Daten
+        \item Fehler in der Dateiverwaltung des Betriebssystems
+        \item Fehler im Disk Controller
+    \end{itemize}
+    \item Maßnahmen
+    \begin{itemize}
+        \item Sicherungsstand wird eingespielt, Änderungen seit Sicherung müssen nachvollzogen werden (Media Recovery, Disaster Recovery, Crash Recovery) $\implies$ Forward Recovery
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Techniken für Recovery}
+\paragraph{Backward Recovery}
+\begin{itemize}
+    \item Vor sämtlichen Änderungen innerhalb der Datenbank wird eine Kopie von den alten Werten (= Before Image) erstellt \& in Undo-Log-Dateien gesichert $\implies$ Nicht abgeschlossene Transaktionen können so rückgängig gemacht werden!
+    \item Undo Log enthält unter Anderem:
+    \begin{itemize}
+        \item Identifikation der Transaktion
+        \item Art der Operation (Insert\dots)
+        \item Before Image
+    \end{itemize}
+    \item Logs werden meist zu Recovery-Zwecken fortlaufend geführt
+    \item Transaction Recovery
+    \begin{itemize}
+        \item Der Undo-Log wird bis zum Beginn der Transaktion gelesen
+    \end{itemize}
+    \item Crash Recovery
+    \begin{itemize}
+        \item Der Undo-Log wird bis zum Beginn gelesen, um alle Before-Images von nicht-beendeten Transaktion zu finden
+        \item Undo-Log wird in Checkpoints unterteilt (=zu diesem Zeitpunkt aktive Transaktionen werden gespeichert)
+        \item Undo-Log wird bis zum jüngsten Checkpoint gelesen $\implies$ Alle Transaktion dieses Checkpoints, welche keine Endmarke haben, werden rückgängig gemacht!
+    \end{itemize}
+\end{itemize}
+
+\paragraph{Forward Recovery}
+\begin{itemize}
+    \item 2 Stategien
+    \item Logging
+    \begin{itemize}
+        \item Sämtliche Änderungen werden nach Ende der Transaktion als After Images in Redo-Log Dateien gespeichert
+    \end{itemize}
+    \item Gespiegelte Platten
+    \begin{itemize}
+        \item RAID
+    \end{itemize}
+\end{itemize}
+
+\section{Data Control Language}
+\begin{itemize}
+    \item Wird verwendet, um gewissen Usern bestimmte Berechtigungen zu geben
+\end{itemize}

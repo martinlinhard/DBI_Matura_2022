@@ -7,10 +7,11 @@
 \contentsline {section}{\numberline {2.1}SQL}{7}{}%
 \contentsline {subsection}{\numberline {2.1.1}Reihenfolge der Ausführung}{7}{}%
 \contentsline {subsection}{\numberline {2.1.2}Befehle}{7}{}%
+\contentsline {subsubsection}{\nonumberline ORDER BY}{7}{}%
 \contentsline {subsubsection}{\nonumberline GROUP BY}{7}{}%
 \contentsline {subsubsection}{\nonumberline HAVING}{7}{}%
-\contentsline {subsection}{\numberline {2.1.3}Wichtige Funktionen}{7}{}%
-\contentsline {subsubsection}{\nonumberline Case / Character}{7}{}%
+\contentsline {subsection}{\numberline {2.1.3}Wichtige Funktionen}{8}{}%
+\contentsline {subsubsection}{\nonumberline Case / Character}{8}{}%
 \contentsline {subsubsection}{\nonumberline Number}{8}{}%
 \contentsline {subsubsection}{\nonumberline Date}{8}{}%
 \contentsline {subsubsection}{\nonumberline Conversion}{8}{}%
@@ -94,4 +95,23 @@
 \contentsline {subsubsection}{\nonumberline Sperrverfahren}{29}{}%
 \contentsline {subsubsection}{\nonumberline Sperrebenen}{30}{}%
 \contentsline {subsubsection}{\nonumberline Arten von Sperren}{30}{}%
+\contentsline {subsection}{\numberline {5.3.3}Deadlocks}{30}{}%
+\contentsline {subsubsection}{\nonumberline Behandlung}{30}{}%
+\contentsline {subsection}{\numberline {5.3.4}Re-Read Methode}{30}{}%
+\contentsline {subsection}{\numberline {5.3.5}U-Lock}{31}{}%
+\contentsline {subsection}{\numberline {5.3.6}Isolation-Levels}{31}{}%
+\contentsline {section}{\numberline {5.4}Backup \& Recovery}{31}{}%
+\contentsline {subsection}{\numberline {5.4.1}Backup}{31}{}%
+\contentsline {subsubsection}{\nonumberline Arten von Backups}{31}{}%
+\contentsline {paragraph}{\nonumberline Menge der Daten, Häufigkeit der Backups}{31}{}%
+\contentsline {paragraph}{\nonumberline Zustand des Systems zum Backupzeitpunkt}{32}{}%
+\contentsline {subsection}{\numberline {5.4.2}Recovery}{32}{}%
+\contentsline {subsubsection}{\nonumberline Arten von Fehlersituationen}{32}{}%
+\contentsline {paragraph}{\nonumberline Transaktionsfehler (Lokaler Fehler)}{32}{}%
+\contentsline {paragraph}{\nonumberline Systemfehler (Soft Crash)}{32}{}%
+\contentsline {paragraph}{\nonumberline Mediumfehler (Hard Crash)}{33}{}%
+\contentsline {subsubsection}{\nonumberline Techniken für Recovery}{33}{}%
+\contentsline {paragraph}{\nonumberline Backward Recovery}{33}{}%
+\contentsline {paragraph}{\nonumberline Forward Recovery}{33}{}%
+\contentsline {section}{\numberline {5.5}Data Control Language}{33}{}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

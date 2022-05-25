@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.3.20)  24 MAY 2022 22:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.3.20)  25 MAY 2022 21:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -360,115 +360,115 @@ Class scrbook Warning: \float@addtolists detected!
 ]
 chapter 2.
 (topics/themenkorb_2/sql.tex
-<res/themekorb_2/group_by.png, id=26, 264.23718pt x 45.16875pt>
-File: res/themekorb_2/group_by.png Graphic file (type png)
-<use res/themekorb_2/group_by.png>
-Package pdftex.def Info: res/themekorb_2/group_by.png  used on input line 27.
+<res/themenkorb_2/group_by.png, id=26, 264.23718pt x 45.16875pt>
+File: res/themenkorb_2/group_by.png Graphic file (type png)
+<use res/themenkorb_2/group_by.png>
+Package pdftex.def Info: res/themenkorb_2/group_by.png  used on input line 32.
 (pdftex.def)             Requested size: 264.23653pt x 45.16862pt.
-<res/themekorb_2/having.png, id=28, 258.9675pt x 59.47218pt>
-File: res/themekorb_2/having.png Graphic file (type png)
-<use res/themekorb_2/having.png>
-Package pdftex.def Info: res/themekorb_2/having.png  used on input line 39.
+<res/themenkorb_2/having.png, id=28, 258.9675pt x 59.47218pt>
+File: res/themenkorb_2/having.png Graphic file (type png)
+<use res/themenkorb_2/having.png>
+Package pdftex.def Info: res/themenkorb_2/having.png  used on input line 44.
 (pdftex.def)             Requested size: 258.96684pt x 59.47203pt.
- [7 <./res/themekorb_2/group_by.png> <./res/themekorb_2/having.png>]
-<res/themekorb_2/format.png, id=37, 270.25969pt x 339.51843pt>
-File: res/themekorb_2/format.png Graphic file (type png)
-<use res/themekorb_2/format.png>
-Package pdftex.def Info: res/themekorb_2/format.png  used on input line 97.
+ [7 <./res/themenkorb_2/group_by.png> <./res/themenkorb_2/having.png>]
+<res/themenkorb_2/format.png, id=37, 270.25969pt x 339.51843pt>
+File: res/themenkorb_2/format.png Graphic file (type png)
+<use res/themenkorb_2/format.png>
+Package pdftex.def Info: res/themenkorb_2/format.png  used on input line 102.
 (pdftex.def)             Requested size: 270.25902pt x 339.5176pt.
  [8]
-<res/themekorb_2/joins_inner_join.png, id=42, 199.49532pt x 125.71968pt>
-File: res/themekorb_2/joins_inner_join.png Graphic file (type png)
-<use res/themekorb_2/joins_inner_join.png>
-Package pdftex.def Info: res/themekorb_2/joins_inner_join.png  used on input line 123.
+<res/themenkorb_2/joins_inner_join.png, id=42, 199.49532pt x 125.71968pt>
+File: res/themenkorb_2/joins_inner_join.png Graphic file (type png)
+<use res/themenkorb_2/joins_inner_join.png>
+Package pdftex.def Info: res/themenkorb_2/joins_inner_join.png  used on input line 128.
 (pdftex.def)             Requested size: 199.49481pt x 125.71936pt.
- [9 <./res/themekorb_2/format.png>]
-<res/themekorb_2/joins_right_outer_join.png, id=47, 166.37157pt x 122.70844pt>
-File: res/themekorb_2/joins_right_outer_join.png Graphic file (type png)
-<use res/themekorb_2/joins_right_outer_join.png>
-Package pdftex.def Info: res/themekorb_2/joins_right_outer_join.png  used on input line 131.
+ [9 <./res/themenkorb_2/format.png>]
+<res/themenkorb_2/joins_right_outer_join.png, id=47, 166.37157pt x 122.70844pt>
+File: res/themenkorb_2/joins_right_outer_join.png Graphic file (type png)
+<use res/themenkorb_2/joins_right_outer_join.png>
+Package pdftex.def Info: res/themenkorb_2/joins_right_outer_join.png  used on input line 136.
 (pdftex.def)             Requested size: 166.37114pt x 122.70813pt.
-<res/themekorb_2/joins_right_outer_join_example.png, id=48, 855.195pt x 297.11pt>
-File: res/themekorb_2/joins_right_outer_join_example.png Graphic file (type png)
-<use res/themekorb_2/joins_right_outer_join_example.png>
-Package pdftex.def Info: res/themekorb_2/joins_right_outer_join_example.png  used on input line 137.
+<res/themenkorb_2/joins_right_outer_join_example.png, id=48, 855.195pt x 297.11pt>
+File: res/themenkorb_2/joins_right_outer_join_example.png Graphic file (type png)
+<use res/themenkorb_2/joins_right_outer_join_example.png>
+Package pdftex.def Info: res/themenkorb_2/joins_right_outer_join_example.png  used on input line 142.
 (pdftex.def)             Requested size: 384.8342pt x 133.69826pt.
-<res/themekorb_2/joins_left_outer_join.png, id=49, 173.14688pt x 127.22531pt>
-File: res/themekorb_2/joins_left_outer_join.png Graphic file (type png)
-<use res/themekorb_2/joins_left_outer_join.png>
-Package pdftex.def Info: res/themekorb_2/joins_left_outer_join.png  used on input line 147.
+<res/themenkorb_2/joins_left_outer_join.png, id=49, 173.14688pt x 127.22531pt>
+File: res/themenkorb_2/joins_left_outer_join.png Graphic file (type png)
+<use res/themenkorb_2/joins_left_outer_join.png>
+Package pdftex.def Info: res/themenkorb_2/joins_left_outer_join.png  used on input line 152.
 (pdftex.def)             Requested size: 173.14645pt x 127.22499pt.
-<res/themekorb_2/joins_left_outer_join_example.png, id=50, 821.0675pt x 297.11pt>
-File: res/themekorb_2/joins_left_outer_join_example.png Graphic file (type png)
-<use res/themekorb_2/joins_left_outer_join_example.png>
-Package pdftex.def Info: res/themekorb_2/joins_left_outer_join_example.png  used on input line 153.
+<res/themenkorb_2/joins_left_outer_join_example.png, id=50, 821.0675pt x 297.11pt>
+File: res/themenkorb_2/joins_left_outer_join_example.png Graphic file (type png)
+<use res/themenkorb_2/joins_left_outer_join_example.png>
+Package pdftex.def Info: res/themenkorb_2/joins_left_outer_join_example.png  used on input line 158.
 (pdftex.def)             Requested size: 369.47696pt x 133.69826pt.
- [10 <./res/themekorb_2/joins_inner_join.png> <./res/themekorb_2/joins_right_outer_join.png> <./res/themekorb_2/joins_right_outer_join_example.png> <./res/themekorb_2/joins_left_outer_join.png>]
-<res/themekorb_2/joins_full_outer_join.png, id=58, 169.38281pt x 123.46124pt>
-File: res/themekorb_2/joins_full_outer_join.png Graphic file (type png)
-<use res/themekorb_2/joins_full_outer_join.png>
-Package pdftex.def Info: res/themekorb_2/joins_full_outer_join.png  used on input line 163.
+ [10 <./res/themenkorb_2/joins_inner_join.png> <./res/themenkorb_2/joins_right_outer_join.png> <./res/themenkorb_2/joins_right_outer_join_example.png> <./res/themenkorb_2/joins_left_outer_join.png>]
+<res/themenkorb_2/joins_full_outer_join.png, id=58, 169.38281pt x 123.46124pt>
+File: res/themenkorb_2/joins_full_outer_join.png Graphic file (type png)
+<use res/themenkorb_2/joins_full_outer_join.png>
+Package pdftex.def Info: res/themenkorb_2/joins_full_outer_join.png  used on input line 168.
 (pdftex.def)             Requested size: 169.38239pt x 123.46092pt.
-<res/themekorb_2/joins_full_outer_join_example.png, id=59, 855.195pt x 260.975pt>
-File: res/themekorb_2/joins_full_outer_join_example.png Graphic file (type png)
-<use res/themekorb_2/joins_full_outer_join_example.png>
-Package pdftex.def Info: res/themekorb_2/joins_full_outer_join_example.png  used on input line 169.
+<res/themenkorb_2/joins_full_outer_join_example.png, id=59, 855.195pt x 260.975pt>
+File: res/themenkorb_2/joins_full_outer_join_example.png Graphic file (type png)
+<use res/themenkorb_2/joins_full_outer_join_example.png>
+Package pdftex.def Info: res/themenkorb_2/joins_full_outer_join_example.png  used on input line 174.
 (pdftex.def)             Requested size: 384.8342pt x 117.43767pt.
-<res/themekorb_2/cross_join.png, id=60, 770.88pt x 297.11pt>
-File: res/themekorb_2/cross_join.png Graphic file (type png)
-<use res/themekorb_2/cross_join.png>
-Package pdftex.def Info: res/themekorb_2/cross_join.png  used on input line 180.
+<res/themenkorb_2/cross_join.png, id=60, 770.88pt x 297.11pt>
+File: res/themenkorb_2/cross_join.png Graphic file (type png)
+<use res/themenkorb_2/cross_join.png>
+Package pdftex.def Info: res/themenkorb_2/cross_join.png  used on input line 185.
 (pdftex.def)             Requested size: 308.34654pt x 118.84189pt.
- [11 <./res/themekorb_2/joins_left_outer_join_example.png> <./res/themekorb_2/joins_full_outer_join.png> <./res/themekorb_2/joins_full_outer_join_example.png> <./res/themekorb_2/cross_join.png>]
-<res/themekorb_2/natural_join.png, id=68, 431.6125pt x 260.975pt>
-File: res/themekorb_2/natural_join.png Graphic file (type png)
-<use res/themekorb_2/natural_join.png>
-Package pdftex.def Info: res/themekorb_2/natural_join.png  used on input line 199.
+ [11 <./res/themenkorb_2/joins_left_outer_join_example.png> <./res/themenkorb_2/joins_full_outer_join.png> <./res/themenkorb_2/joins_full_outer_join_example.png> <./res/themenkorb_2/cross_join.png>]
+<res/themenkorb_2/natural_join.png, id=68, 431.6125pt x 260.975pt>
+File: res/themenkorb_2/natural_join.png Graphic file (type png)
+<use res/themenkorb_2/natural_join.png>
+Package pdftex.def Info: res/themenkorb_2/natural_join.png  used on input line 204.
 (pdftex.def)             Requested size: 172.64194pt x 104.38815pt.
-<res/themekorb_2/subselect_multiple.png, id=69, 1007.765pt x 335.2525pt>
-File: res/themekorb_2/subselect_multiple.png Graphic file (type png)
-<use res/themekorb_2/subselect_multiple.png>
-Package pdftex.def Info: res/themekorb_2/subselect_multiple.png  used on input line 220.
+<res/themenkorb_2/subselect_multiple.png, id=69, 1007.765pt x 335.2525pt>
+File: res/themenkorb_2/subselect_multiple.png Graphic file (type png)
+<use res/themenkorb_2/subselect_multiple.png>
+Package pdftex.def Info: res/themenkorb_2/subselect_multiple.png  used on input line 225.
 (pdftex.def)             Requested size: 403.09886pt x 134.09862pt.
- [12 <./res/themekorb_2/natural_join.png> <./res/themekorb_2/subselect_multiple.png>]
-<res/themekorb_2/union.png, id=75, 415.5525pt x 335.2525pt>
-File: res/themekorb_2/union.png Graphic file (type png)
-<use res/themekorb_2/union.png>
-Package pdftex.def Info: res/themekorb_2/union.png  used on input line 243.
+ [12 <./res/themenkorb_2/natural_join.png> <./res/themenkorb_2/subselect_multiple.png>]
+<res/themenkorb_2/union.png, id=75, 415.5525pt x 335.2525pt>
+File: res/themenkorb_2/union.png Graphic file (type png)
+<use res/themenkorb_2/union.png>
+Package pdftex.def Info: res/themenkorb_2/union.png  used on input line 248.
 (pdftex.def)             Requested size: 166.21805pt x 134.09862pt.
-<res/themekorb_2/intersect.png, id=76, 415.5525pt x 335.2525pt>
-File: res/themekorb_2/intersect.png Graphic file (type png)
-<use res/themekorb_2/intersect.png>
-Package pdftex.def Info: res/themekorb_2/intersect.png  used on input line 252.
+<res/themenkorb_2/intersect.png, id=76, 415.5525pt x 335.2525pt>
+File: res/themenkorb_2/intersect.png Graphic file (type png)
+<use res/themenkorb_2/intersect.png>
+Package pdftex.def Info: res/themenkorb_2/intersect.png  used on input line 257.
 (pdftex.def)             Requested size: 166.21805pt x 134.09862pt.
-<res/themekorb_2/minus.png, id=77, 415.5525pt x 335.2525pt>
-File: res/themekorb_2/minus.png Graphic file (type png)
-<use res/themekorb_2/minus.png>
-Package pdftex.def Info: res/themekorb_2/minus.png  used on input line 261.
+<res/themenkorb_2/minus.png, id=77, 415.5525pt x 335.2525pt>
+File: res/themenkorb_2/minus.png Graphic file (type png)
+<use res/themenkorb_2/minus.png>
+Package pdftex.def Info: res/themenkorb_2/minus.png  used on input line 266.
 (pdftex.def)             Requested size: 166.21805pt x 134.09862pt.
- [13 <./res/themekorb_2/union.png> <./res/themekorb_2/intersect.png> <./res/themekorb_2/minus.png>]
-<res/themekorb_2/function_based.png, id=85, 618.31pt x 222.8325pt>
-File: res/themekorb_2/function_based.png Graphic file (type png)
-<use res/themekorb_2/function_based.png>
-Package pdftex.def Info: res/themekorb_2/function_based.png  used on input line 289.
+ [13 <./res/themenkorb_2/union.png> <./res/themenkorb_2/intersect.png> <./res/themenkorb_2/minus.png>]
+<res/themenkorb_2/function_based.png, id=85, 618.31pt x 222.8325pt>
+File: res/themenkorb_2/function_based.png Graphic file (type png)
+<use res/themenkorb_2/function_based.png>
+Package pdftex.def Info: res/themenkorb_2/function_based.png  used on input line 294.
 (pdftex.def)             Requested size: 247.31961pt x 89.13141pt.
-<res/themekorb_2/create_index.png, id=86, 600.2425pt x 222.8325pt>
-File: res/themekorb_2/create_index.png Graphic file (type png)
-<use res/themekorb_2/create_index.png>
-Package pdftex.def Info: res/themekorb_2/create_index.png  used on input line 299.
+<res/themenkorb_2/create_index.png, id=86, 600.2425pt x 222.8325pt>
+File: res/themenkorb_2/create_index.png Graphic file (type png)
+<use res/themenkorb_2/create_index.png>
+Package pdftex.def Info: res/themenkorb_2/create_index.png  used on input line 304.
 (pdftex.def)             Requested size: 240.09274pt x 89.13141pt.
-<res/themekorb_2/drop_index.png, id=87, 600.2425pt x 186.6975pt>
-File: res/themekorb_2/drop_index.png Graphic file (type png)
-<use res/themekorb_2/drop_index.png>
-Package pdftex.def Info: res/themekorb_2/drop_index.png  used on input line 304.
+<res/themenkorb_2/drop_index.png, id=87, 600.2425pt x 186.6975pt>
+File: res/themenkorb_2/drop_index.png Graphic file (type png)
+<use res/themenkorb_2/drop_index.png>
+Package pdftex.def Info: res/themenkorb_2/drop_index.png  used on input line 309.
 (pdftex.def)             Requested size: 240.09274pt x 74.67767pt.
- [14 <./res/themekorb_2/function_based.png> <./res/themekorb_2/create_index.png> <./res/themekorb_2/drop_index.png>]
-<res/themekorb_2/hierarchical.png, id=94, 1278.7775pt x 373.395pt>
-File: res/themekorb_2/hierarchical.png Graphic file (type png)
-<use res/themekorb_2/hierarchical.png>
-Package pdftex.def Info: res/themekorb_2/hierarchical.png  used on input line 341.
+ [14 <./res/themenkorb_2/function_based.png> <./res/themenkorb_2/create_index.png> <./res/themenkorb_2/drop_index.png>]
+<res/themenkorb_2/hierarchical.png, id=94, 1278.7775pt x 373.395pt>
+File: res/themenkorb_2/hierarchical.png Graphic file (type png)
+<use res/themenkorb_2/hierarchical.png>
+Package pdftex.def Info: res/themenkorb_2/hierarchical.png  used on input line 346.
 (pdftex.def)             Requested size: 383.63622pt x 112.01936pt.
-)) (topics/themenkorb_3/index.tex [15 <./res/themekorb_2/hierarchical.png>] [16
+)) (topics/themenkorb_3/index.tex [15 <./res/themenkorb_2/hierarchical.png>] [16
 
 
 ]
@@ -591,44 +591,55 @@ Package pdftex.def Info: res/themenkorb_4/hierarchie_variante_4.jpg  used on inp
 (pdftex.def)             Requested size: 210.78777pt x 157.18745pt.
  [25 <./res/themenkorb_4/hierarchie_variante_2.jpg>]) (topics/themenkorb_5/index.tex [26 <./res/themenkorb_4/hierarchie_variante_4.jpg>]
 chapter 5.
-(topics/themenkorb_5/transaktionen.tex [27
+(topics/themenkorb_5/transaktionen.tex) (topics/themenkorb_5/concurrency.tex [27
 
 
 ]
 <res/themenkorb_5/lostupdate.png, id=175, 435.12563pt x 140.77594pt>
 File: res/themenkorb_5/lostupdate.png Graphic file (type png)
 <use res/themenkorb_5/lostupdate.png>
-Package pdftex.def Info: res/themenkorb_5/lostupdate.png  used on input line 57.
+Package pdftex.def Info: res/themenkorb_5/lostupdate.png  used on input line 9.
 (pdftex.def)             Requested size: 435.12456pt x 140.77557pt.
 <res/themenkorb_5/dirtyread.png, id=176, 435.87843pt x 140.77594pt>
 File: res/themenkorb_5/dirtyread.png Graphic file (type png)
 <use res/themenkorb_5/dirtyread.png>
-Package pdftex.def Info: res/themenkorb_5/dirtyread.png  used on input line 66.
+Package pdftex.def Info: res/themenkorb_5/dirtyread.png  used on input line 18.
 (pdftex.def)             Requested size: 435.87737pt x 140.77557pt.
 <res/themenkorb_5/nonrepeatableread.png, id=177, 438.8897pt x 192.72pt>
 File: res/themenkorb_5/nonrepeatableread.png Graphic file (type png)
 <use res/themenkorb_5/nonrepeatableread.png>
-Package pdftex.def Info: res/themenkorb_5/nonrepeatableread.png  used on input line 75.
+Package pdftex.def Info: res/themenkorb_5/nonrepeatableread.png  used on input line 27.
 (pdftex.def)             Requested size: 438.88863pt x 192.71951pt.
  [28 <./res/themenkorb_5/lostupdate.png> <./res/themenkorb_5/dirtyread.png>]
 <res/themenkorb_5/phantom.png, id=183, 447.92343pt x 137.7647pt>
 File: res/themenkorb_5/phantom.png Graphic file (type png)
 <use res/themenkorb_5/phantom.png>
-Package pdftex.def Info: res/themenkorb_5/phantom.png  used on input line 83.
+Package pdftex.def Info: res/themenkorb_5/phantom.png  used on input line 35.
 (pdftex.def)             Requested size: 447.92233pt x 137.76434pt.
- [29 <./res/themenkorb_5/nonrepeatableread.png> <./res/themenkorb_5/phantom.png>])) [30] (index.aux) ) 
+ [29 <./res/themenkorb_5/nonrepeatableread.png> <./res/themenkorb_5/phantom.png>]
+<res/themenkorb_5/ein_kein_deadlock.png, id=189, 504.38437pt x 87.32625pt>
+File: res/themenkorb_5/ein_kein_deadlock.png Graphic file (type png)
+<use res/themenkorb_5/ein_kein_deadlock.png>
+Package pdftex.def Info: res/themenkorb_5/ein_kein_deadlock.png  used on input line 99.
+(pdftex.def)             Requested size: 483.69684pt x 83.74562pt.
+ [30 <./res/themenkorb_5/ein_kein_deadlock.png>]) (topics/themenkorb_5/backup_recovery.tex [31]
+Overfull \hbox (32.87004pt too wide) in paragraph at lines 84--85
+[]\OT1/cmr/m/n/10.95 Alle []Anderungen der Transak-tio-nen, die beim Ab-sturz in Progress waren, m^^?ussen zur^^?uckgenommen
+ []
+
+[32])) [33] (index.aux) ) 
 Here is how much of TeX's memory you used:
- 7055 strings out of 478582
- 145969 string characters out of 2844344
+ 7073 strings out of 478582
+ 146858 string characters out of 2844344
  577405 words of memory out of 3000000
- 25113 multiletter control sequences out of 15000+600000
+ 25124 multiletter control sequences out of 15000+600000
  479335 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,8n,106p,10681b,366s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 108i,8n,106p,10681b,373s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\marti\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on index.pdf (30 pages, 909016 bytes).
+Output written on index.pdf (33 pages, 927515 bytes).
 PDF statistics:
- 231 PDF objects out of 1000 (max. 8388607)
+ 244 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 226 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 231 words of extra memory for PDF output out of 10000 (max. 10000000)
 
