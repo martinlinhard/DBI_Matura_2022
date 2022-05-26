@@ -1,0 +1,182 @@
+\section{Datenbankarchitektur}
+
+\subsection{Allgemeines}
+\begin{itemize}
+    \item Instanz $\implies$ Der Datenbankprozess + sämtliche Hintergrundprozesse, befindet sich im  Hauptspeicher
+    \item Datenbank $\implies$ Besteht aus den Datenbankdateien
+    \item SGA (System Global Area) $\implies$ Wird von allen Prozessen bzw. von allen Usern geteilt 
+    \item PGA (Program Global Area) $\implies$ Pro Prozess
+\end{itemize}
+
+\subsection{System Global Area}
+\begin{itemize}
+    \item Besteht aus
+    \begin{itemize}
+        \item Database Buffer Cache
+        \item Shared Pool
+        \item Redo Log Buffer
+        \item Data Dictionary Cache
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Database Buffer Cache}
+\begin{itemize}
+    \item Speichert zuletzt verwendete Daten, um einen schnellen Zugriff gewährleisten zu können
+    \item Befindet sich im RAM
+    \item Besteht aus zwei Listen:
+    \begin{itemize}
+        \item Write-List: Enthält Daten, die modifiziert, aber noch nicht geschrieben wurden
+        \item LRU-List: Enthält Adressen von zuvor modifizierten / freien Daten, welche lange nicht benutzt wurden und damit wieder zum Beschreiben verfügbar sind
+    \end{itemize}S
+    \item Drei Arten von Blöcken:
+    \begin{itemize}
+        \item Frei (schwarz)
+        \item Belegt (weiß)
+        \item Undo (für Rollback) (grau)
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Shared Pool}
+\begin{itemize}
+    \item Enthält wichtige Daten von bereits ausgeführten SQL- und PL/SQL Anweisungen + das Data Dictionary
+    \begin{itemize}
+        \item \textbf{Data Dictionary} $\implies$ Metadaten zu Tabellen, Usern\dots
+    \end{itemize}
+    \item Dient dazu, um bei gleichen Anfragen schnell Ergebnisse liefern zu können
+    \item Funktioniert nach dem \textbf{LRU} Prinzip
+\end{itemize}
+
+\subsubsection{Redo-Log Buffer}
+\begin{itemize}
+    \item Protokolliert sämtliche Änderungen im Database Buffer Cache $\implies$ Werden für die Wiederholung von Statements (Forward Recovery) benötigt
+    \item Geschriebene Daten beschränken sich auf die wesentlichsten Informationen: Delete $\implies$ PK + Tabellenname\dots
+    \item Hat eine fixe Größe (Ringbuffer) + ist dreigeteilt: Wenn das erste Drittel voll ist, beginnt der Logwriter (LGWR) das erste Drittel asynchron in die Online Redo-Log Dateien wegzuschreiben
+    \begin{itemize}
+        \item Wenn der Buffer voll ist + das erste Drittel noch nicht vollständig weggeschrieben wurde, muss gewartet werden!
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Data Dictionary Cache}
+\begin{itemize}
+    \item Prüft vor Ausführung von Statements, ob die Spaltennamen existieren
+\end{itemize}
+
+\subsection{Prozesse}
+\subsubsection{Database Writer (DBWR)}
+\begin{itemize}
+    \item Schreibt Daten aus dem Database Buffer Cache in die Daten-Dateien (standardmäßig alle 3 Sekunden, asynchron) (auch Tablespace genannt)
+    \item Wählt die Daten aus, die am längsten nicht mehr verändert wurden (LRU)
+    \item Schreibt, wenn:
+    \begin{itemize}
+        \item Database Buffer Cache erreicht gewisse Größe
+        \item DBWR-Checkpoint wird erreicht
+        \item ein Time-Out auftritt
+        \item kein freier Buffer zur Verfügung steht
+        \item eine Liste zum Abarbeiten vom LGWR kommt
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Log Writer (LGWR)}
+\begin{itemize}
+    \item Schreibt Änderungen vom Redo Log Buffer in Redo Log Dateien $\implies$ Es kommen auch Undo-Informationen in die Redo-Logs!
+    \item Schreibt sequentiell und wahlweise synchron / asynchron. Synchron ist kein Problem, da:
+    \begin{itemize}
+        \item Teile wurden bereits asynchron weggeschrieben
+        \item Daten sind komprimiert
+        \item LGWR schreibt schneller als DBWR
+        \item Zusammenhängender Speicherplatz $\implies$ schreibt sequentiell
+    \end{itemize}
+    \item Commit $\implies$ LGWR schreibt gesamten Redo Log Buffer synchron; Commit ist erst fertig, wenn Redo Log Buffer leer ist
+\end{itemize}
+
+\paragraph{Log File Switch}
+\begin{itemize}
+    \item Eine Redo-Log Datei ist voll $\implies$ LGWR wechselt zu anderer Datei
+    \item Zwei Modi:
+    \begin{itemize}
+        \item \textbf{archivelog} $\implies$ \textbf{ARCH} Prozess kopiert die vollen Online Redo Logs in die Offline Redo Logs
+        \item \textbf{noarchivelog} $\implies$ Alte Dateien werden einfach überschrieben, falls der LGWR in seiner Rotation wieder bei einem vollen Log-File ankommt
+        \item Änderung des Modus $\implies$ DBWR muss Blöcke so wegschreiben, dass die zu überschreibenden Redo-Logs nur Informationen enthalten, die bereits auf die Daten-Dateien übertragen wurden
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Check Point (CKPT)}
+\begin{itemize}
+    \item Am Ende eines Checkpoints wird Header der Data- + Control-Files geupdated $\implies$ Datenbank kann so herausfinden, auf welchem Stand sich die Dateien befinden
+\end{itemize}
+
+\subsubsection{Archiver (ARCH)}
+\begin{itemize}
+    \item Archiviert automatisch die Online Redo-Log- Dateien in die Offline-Redo Logs
+\end{itemize}
+
+\subsubsection{System Monitor (SMON)}
+\begin{itemize}
+    \item Wird automatisch gestartet, wenn neue Datenbank-Instanz gestartet wird
+    \item Schreibt Redo Logs von Änderungen, die noch nicht auf die Festplatte geschrieben wurden, damit bei Absturz die Instanz wiederhergestellt werden kann
+    \item Führt automatischen Rollback aus, wenn Transaktionen nicht committed wurden
+    \item Außerdem $\implies$ Alle 5 Minuten werden Wartungen durchgeführt, die Speicherplatz / temporäre Segmente freigeben
+\end{itemize}
+
+\subsubsection{Process Monitor (PMON)}
+\begin{itemize}
+    \item Zuständig, wenn ein User-Prozess versagt / abgebrochen wird $\implies$ reinigt Cache + gibt vom Prozess benutzte Ressourcen frei
+\end{itemize}
+
+\subsubsection{Recoverer (RECO)}
+\begin{itemize}
+    \item Zuständig, um Fehler, welche in ausgelagerten Transaktionen auftreten, zu beheben
+\end{itemize}
+
+\subsubsection{Lock Prozess (LCKn)}
+\begin{itemize}
+    \item Zuständig für das Sperren von Ressourcen zwischen verschiedener Instanzen in einem Server
+\end{itemize}
+
+\subsubsection{Dedicated Server Prozess}
+\begin{itemize}
+    \item Fertigt genau einen User ab
+    \item Sinnvoll, wenn dieser eine User besonder viel macht
+    \item Bei SELECT werden Daten direkt aus Database Buffer Cache / aus den Daten-Dateien geholt
+\end{itemize}
+
+\subsubsection{Shared Server-Prozess}
+\begin{itemize}
+    \item Kann mehrere User-Prozesse abfertigen
+\end{itemize}
+
+\subsubsection{Dispatcher}
+\begin{itemize}
+    \item Sorgt für Zuteilung zwischen User und Server
+\end{itemize}
+
+\subsubsection{Listener}
+\begin{itemize}
+    \item Verbindet Client zu Datenbank-Server
+\end{itemize}
+
+\subsection{Dateien}
+\subsubsection{Daten-Dateien}
+\begin{itemize}
+    \item Enthalten Benutzer- und Systemdaten der Datenbank
+\end{itemize}
+\subsubsection{Control-Dateien}
+\begin{itemize}
+    \item Enthalten eine Beschreibung der Datenbankstruktur + ermöglichen Überprüfung und Sicherstellung der Integrität
+\end{itemize}
+\subsubsection{Redolog-Dateien}
+\begin{itemize}
+    \item Online / Offline
+    \item Enthalten Befehle, welcher der User eingegeben hat, in einer komprimierten Form
+\end{itemize}
+
+\subsection{Fehlerbehandlung}
+\subsubsection{Lokaler Fehler}
+\begin{itemize}
+    \item Rollback wird mithilfe der Undo-Blöcke im Database Buffer Cache durchgeführt
+\end{itemize}
+
+\subsubsection{Rollback}
+\begin{itemize}
+    \item Stromausfall $\implies$ SMON stellt aus Redo-Log Dateien wieder konsistenten Zustand her
+\end{itemize}

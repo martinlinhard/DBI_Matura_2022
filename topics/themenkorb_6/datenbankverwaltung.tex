@@ -1,0 +1,41 @@
+\section{Datenbankverwaltung}
+\subsection{Allgemeines - Import}
+\begin{itemize}
+    \item \dots wenn Daten aus
+    \begin{itemize}
+        \item .csv
+        \item .txt
+        \item Excel-Files
+        \item einem Datenbankbackup
+    \end{itemize}
+    \item importiert werden
+    \item Herausforderung: Daten sind oft unnormalisiert, enthalte NULL-Werte\dots
+\end{itemize}
+
+\subsection{SQL Loader}
+\begin{itemize}
+    \item Wird dazu verwendet, um Daten in eine Oracle-DB zu importieren
+    \item Verwendet Control-Dateien, die den Aufbau der Ausgangsdateien beschreiben
+    \begin{itemize}
+        \item Können auch vom SQL-Developer erstellt werden!
+    \end{itemize}
+    \item Beim Import werden sowohl erfolgreiche als auch gescheiterte Zeilen geloggt, welche dann später analysiert werden können
+\end{itemize}
+
+\subsubsection{Control-Dateien}
+\begin{itemize}
+    \item Beschreibt den Aufbau der zu importierenden Daten
+    \item Es können Felder + Datentyp definiert werden, das Characterset festgelegt werden\dots
+\end{itemize}
+
+\subsection{Weitere Tools}
+\begin{itemize}
+    \item Oracle Import-Utility
+    \begin{itemize}
+        \item Es können Daten aus einer Exportdatei (dump) importiert werden $\implies$ Müssen zuvor mit der Export-Utility exportiert worden sein
+    \end{itemize}
+    \item Data Pump
+    \begin{itemize}
+        \item Neuer, schneller und flexibler als die Import-Utility; es kann eine PL/SQL API verwendet werden!
+    \end{itemize}
+\end{itemize}
