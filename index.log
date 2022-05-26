@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.3.20)  25 MAY 2022 21:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.3.20)  26 MAY 2022 16:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -627,19 +627,101 @@ Overfull \hbox (32.87004pt too wide) in paragraph at lines 84--85
 []\OT1/cmr/m/n/10.95 Alle []Anderungen der Transak-tio-nen, die beim Ab-sturz in Progress waren, m^^?ussen zur^^?uckgenommen
  []
 
-[32])) [33] (index.aux) ) 
+[32])) (topics/themenkorb_6/index.tex [33] [34
+
+
+]
+chapter 6.
+(topics/themenkorb_6/datenbankarchitektur.tex [35]
+Overfull \hbox (9.41743pt too wide) in paragraph at lines 99--100
+[][]\OT1/cmr/m/n/10.95 Anderung des Modus $ =[]\OMS/cmsy/m/n/10.95 ) $ \OT1/cmr/m/n/10.95 DBWR muss Bl^^?ocke so wegschreiben, dass die zu ^^?uberschreibenden
+ []
+
+[36] [37]) (topics/themenkorb_6/datenbankverwaltung.tex [38])) (topics/themenkorb_8/index.tex [39] [40
+
+
+]
+chapter 8.
+(topics/themenkorb_8/allgemein.tex
+<res/themenkorb_8/cap_theorem.png, id=226, 673.51625pt x 580.1675pt>
+File: res/themenkorb_8/cap_theorem.png Graphic file (type png)
+<use res/themenkorb_8/cap_theorem.png>
+Package pdftex.def Info: res/themenkorb_8/cap_theorem.png  used on input line 10.
+(pdftex.def)             Requested size: 269.40172pt x 232.06288pt.
+ [41 <./res/themenkorb_8/cap_theorem.png>]) (topics/themenkorb_8/redis.tex
+<res/themenkorb_8/redis_cluster_config.png, id=231, 584.1825pt x 335.2525pt>
+File: res/themenkorb_8/redis_cluster_config.png Graphic file (type png)
+<use res/themenkorb_8/redis_cluster_config.png>
+Package pdftex.def Info: res/themenkorb_8/redis_cluster_config.png  used on input line 31.
+(pdftex.def)             Requested size: 175.25609pt x 100.57652pt.
+ [42 <./res/themenkorb_8/redis_cluster_config.png>]
+<res/themenkorb_8/importantcommands_redis.png, id=236, 451.6875pt x 533.74406pt>
+File: res/themenkorb_8/importantcommands_redis.png Graphic file (type png)
+<use res/themenkorb_8/importantcommands_redis.png>
+Package pdftex.def Info: res/themenkorb_8/importantcommands_redis.png  used on input line 61.
+(pdftex.def)             Requested size: 361.35048pt x 426.99582pt.
+<res/themenkorb_8/redis_geo.png, id=237, 2055.68pt x 1158.3275pt>
+File: res/themenkorb_8/redis_geo.png Graphic file (type png)
+<use res/themenkorb_8/redis_geo.png>
+Package pdftex.def Info: res/themenkorb_8/redis_geo.png  used on input line 66.
+(pdftex.def)             Requested size: 483.69684pt x 272.54282pt.
+) (topics/themenkorb_8/mongo.tex [43 <./res/themenkorb_8/importantcommands_redis.png>]
+<res/themenkorb_8/mongo_insert.png, id=243, 905.3825pt x 895.345pt>
+File: res/themenkorb_8/mongo_insert.png Graphic file (type png)
+<use res/themenkorb_8/mongo_insert.png>
+Package pdftex.def Info: res/themenkorb_8/mongo_insert.png  used on input line 15.
+(pdftex.def)             Requested size: 181.07329pt x 179.06583pt.
+<res/themenkorb_8/mongo_update.png, id=244, 1226.5825pt x 335.2525pt>
+File: res/themenkorb_8/mongo_update.png Graphic file (type png)
+<use res/themenkorb_8/mongo_update.png>
+Package pdftex.def Info: res/themenkorb_8/mongo_update.png  used on input line 20.
+(pdftex.def)             Requested size: 367.97758pt x 100.57652pt.
+ [44 <./res/themenkorb_8/redis_geo.png> <./res/themenkorb_8/mongo_insert.png>]
+<res/themenkorb_8/mongo_delete.png, id=250, 871.255pt x 222.8325pt>
+File: res/themenkorb_8/mongo_delete.png Graphic file (type png)
+<use res/themenkorb_8/mongo_delete.png>
+Package pdftex.def Info: res/themenkorb_8/mongo_delete.png  used on input line 25.
+(pdftex.def)             Requested size: 261.37851pt x 66.85027pt.
+<res/themenkorb_8/mongo_find.png, id=251, 889.3225pt x 297.11pt>
+File: res/themenkorb_8/mongo_find.png Graphic file (type png)
+<use res/themenkorb_8/mongo_find.png>
+Package pdftex.def Info: res/themenkorb_8/mongo_find.png  used on input line 30.
+(pdftex.def)             Requested size: 266.7988pt x 89.13368pt.
+) (topics/themenkorb_8/neo4j.tex
+<res/themenkorb_8/cypher_insert.png, id=252, 752.8125pt x 708.6475pt>
+File: res/themenkorb_8/cypher_insert.png Graphic file (type png)
+<use res/themenkorb_8/cypher_insert.png>
+Package pdftex.def Info: res/themenkorb_8/cypher_insert.png  used on input line 11.
+(pdftex.def)             Requested size: 150.55983pt x 141.72699pt.
+<res/themenkorb_8/cypher_update.png, id=253, 702.625pt x 222.8325pt>
+File: res/themenkorb_8/cypher_update.png Graphic file (type png)
+<use res/themenkorb_8/cypher_update.png>
+Package pdftex.def Info: res/themenkorb_8/cypher_update.png  used on input line 16.
+(pdftex.def)             Requested size: 210.78912pt x 66.85027pt.
+ [45 <./res/themenkorb_8/mongo_update.png> <./res/themenkorb_8/mongo_delete.png> <./res/themenkorb_8/mongo_find.png> <./res/themenkorb_8/cypher_insert.png>]
+<res/themenkorb_8/cypher_delete.png, id=261, 702.625pt x 222.8325pt>
+File: res/themenkorb_8/cypher_delete.png Graphic file (type png)
+<use res/themenkorb_8/cypher_delete.png>
+Package pdftex.def Info: res/themenkorb_8/cypher_delete.png  used on input line 21.
+(pdftex.def)             Requested size: 210.78912pt x 66.85027pt.
+<res/themenkorb_8/cypher_view.png, id=262, 2055.68pt x 821.0675pt>
+File: res/themenkorb_8/cypher_view.png Graphic file (type png)
+<use res/themenkorb_8/cypher_view.png>
+Package pdftex.def Info: res/themenkorb_8/cypher_view.png  used on input line 26.
+(pdftex.def)             Requested size: 483.69684pt x 193.18893pt.
+)) [46 <./res/themenkorb_8/cypher_update.png> <./res/themenkorb_8/cypher_delete.png> <./res/themenkorb_8/cypher_view.png>] (index.aux) ) 
 Here is how much of TeX's memory you used:
- 7073 strings out of 478582
- 146858 string characters out of 2844344
+ 7200 strings out of 478582
+ 151819 string characters out of 2844344
  577405 words of memory out of 3000000
- 25124 multiletter control sequences out of 15000+600000
+ 25212 multiletter control sequences out of 15000+600000
  479335 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,8n,106p,10681b,373s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\marti\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/marti/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on index.pdf (33 pages, 927515 bytes).
+Output written on index.pdf (46 pages, 1540502 bytes).
 PDF statistics:
- 244 PDF objects out of 1000 (max. 8388607)
+ 311 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 231 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 291 words of extra memory for PDF output out of 10000 (max. 10000000)
 
