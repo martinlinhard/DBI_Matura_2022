@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html dir="ltr" class="js desktop" lang="de"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Relationales Datenbankmodell [HTBLA Kaindorf Wiki]</title>
+    <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+    <meta name="generator" content="DokuWiki">
+<meta name="theme-color" content="#008800">
+<meta name="robots" content="index,follow">
+<meta name="keywords" content="dbi_rp2019,relationales_datenbankmodell,start">
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.htl-kaindorf.at/lib/exe/opensearch.php" title="HTBLA Kaindorf Wiki">
+<link rel="start" href="https://wiki.htl-kaindorf.at/">
+<link rel="contents" href="https://wiki.htl-kaindorf.at/doku.php?id=dbi_rp2019:relationales_datenbankmodell:start&amp;do=index" title="Übersicht">
+<link rel="manifest" href="https://wiki.htl-kaindorf.at/lib/exe/manifest.php">
+<link rel="alternate" type="application/rss+xml" title="Letzte Änderungen" href="https://wiki.htl-kaindorf.at/feed.php">
+<link rel="alternate" type="application/rss+xml" title="Aktueller Namensraum" href="https://wiki.htl-kaindorf.at/feed.php?mode=list&amp;ns=dbi_rp2019:relationales_datenbankmodell">
+<link rel="alternate" type="text/html" title="HTML Klartext" href="https://wiki.htl-kaindorf.at/doku.php?do=export_xhtml&amp;id=dbi_rp2019:relationales_datenbankmodell:start">
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="https://wiki.htl-kaindorf.at/doku.php?do=export_raw&amp;id=dbi_rp2019:relationales_datenbankmodell:start">
+<link rel="canonical" href="https://wiki.htl-kaindorf.at/doku.php?id=dbi_rp2019:relationales_datenbankmodell:start">
+<link rel="stylesheet" type="text/css" href="Relationales%20Datenbankmodell%20[HTBLA%20Kaindorf%20Wiki]_files/css.css">
+<link rel="stylesheet" type="text/css" href="Relationales%20Datenbankmodell%20[HTBLA%20Kaindorf%20Wiki]_files/prettify.css">
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='dbi_rp2019:relationales_datenbankmodell';var SIG=' --- //[[linmad17@htl-kaindorf.at|Martin LINHARD]] 2022/05/30 14:12//';var JSINFO = {"plugins":{"edittable":{"default columnwidth":""}},"fastwiki":{"secedit":1,"preview":1,"fastpages":1,"save":0,"fastshow":0,"fastshow_same_ns":1,"fastshow_include":"","fastshow_exclude":"","preload":0,"preload_head":"====47hsjwycv782nwncv8b920m8bv72jmdm3929bno3b3====","preload_batchsize":10,"preload_per_page":100,"locktime":840,"usedraft":1,"text_btn_show":"Seite anzeigen","templatename":"dokuwiki"},"isadmin":0,"isauth":1,"move_renameokay":false,"id":"dbi_rp2019:relationales_datenbankmodell:start","namespace":"dbi_rp2019:relationales_datenbankmodell","ACT":"show","useHeadingNavigation":1,"useHeadingContent":1};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="Relationales%20Datenbankmodell%20[HTBLA%20Kaindorf%20Wiki]_files/jquery.php"></script>
+<script type="text/javascript" charset="utf-8" src="Relationales%20Datenbankmodell%20[HTBLA%20Kaindorf%20Wiki]_files/js.php"></script><style id="iris-css">.iris-picker{display:block;position:relative}.iris-picker,.iris-picker *{-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input+.iris-picker{margin-top:4px}.iris-error{background-color:#ffafaf}.iris-border{border-radius:3px;border:1px solid #aaa;width:200px;background-color:#fff}.iris-picker-inner{position:absolute;top:0;right:0;left:0;bottom:0}.iris-border .iris-picker-inner{top:10px;right:10px;left:10px;bottom:10px}.iris-picker .iris-square-inner{position:absolute;left:0;right:0;top:0;bottom:0}.iris-picker .iris-square,.iris-picker .iris-slider,.iris-picker .iris-square-inner,.iris-picker .iris-palette{border-radius:3px;box-shadow:inset 0 0 5px rgba(0,0,0,.4);height:100%;width:12.5%;float:left;margin-right:5%}.iris-picker .iris-square{width:76%;margin-right:10%;position:relative}.iris-picker .iris-square-inner{width:auto;margin:0}.iris-ie-9 .iris-square,.iris-ie-9 .iris-slider,.iris-ie-9 .iris-square-inner,.iris-ie-9 .iris-palette{box-shadow:none;border-radius:0}.iris-ie-9 .iris-square,.iris-ie-9 .iris-slider,.iris-ie-9 .iris-palette{outline:1px solid rgba(0,0,0,.1)}.iris-ie-lt9 .iris-square,.iris-ie-lt9 .iris-slider,.iris-ie-lt9 .iris-square-inner,.iris-ie-lt9 .iris-palette{outline:1px solid #aaa}.iris-ie-lt9 .iris-square .ui-slider-handle{outline:1px solid #aaa;background-color:#fff;-ms-filter:"alpha(Opacity=30)"}.iris-ie-lt9 .iris-square .iris-square-handle{background:0;border:3px solid #fff;-ms-filter:"alpha(Opacity=50)"}.iris-picker .iris-strip{margin-right:0;position:relative}.iris-picker .iris-strip .ui-slider-handle{position:absolute;background:0;margin:0;right:-3px;left:-3px;border:4px solid #aaa;border-width:4px 3px;width:auto;height:6px;border-radius:4px;box-shadow:0 1px 2px rgba(0,0,0,.2);opacity:.9;z-index:5;cursor:ns-resize}.iris-strip .ui-slider-handle:before{content:" ";position:absolute;left:-2px;right:-2px;top:-3px;bottom:-3px;border:2px solid #fff;border-radius:3px}.iris-picker .iris-slider-offset{position:absolute;top:11px;left:0;right:0;bottom:-3px;width:auto;height:auto;background:transparent;border:0;border-radius:0}.iris-picker .iris-square-handle{background:transparent;border:5px solid #aaa;border-radius:50%;border-color:rgba(128,128,128,.5);box-shadow:none;width:12px;height:12px;position:absolute;left:-10px;top:-10px;cursor:move;opacity:1;z-index:10}.iris-picker .ui-state-focus .iris-square-handle{opacity:.8}.iris-picker .iris-square-handle:hover{border-color:#999}.iris-picker .iris-square-value:focus .iris-square-handle{box-shadow:0 0 2px rgba(0,0,0,.75);opacity:.8}.iris-picker .iris-square-handle:hover::after{border-color:#fff}.iris-picker .iris-square-handle::after{position:absolute;bottom:-4px;right:-4px;left:-4px;top:-4px;border:3px solid #f9f9f9;border-color:rgba(255,255,255,.8);border-radius:50%;content:" "}.iris-picker .iris-square-value{width:8px;height:8px;position:absolute}.iris-ie-lt9 .iris-square-value,.iris-mozilla .iris-square-value{width:1px;height:1px}.iris-palette-container{position:absolute;bottom:0;left:0;margin:0;padding:0}.iris-border .iris-palette-container{left:10px;bottom:10px}.iris-picker .iris-palette{margin:0;cursor:pointer}.iris-square-handle,.ui-slider-handle{border:0;outline:0}</style>
+<script type="text/x-mathjax-config;executed=true">/*<![CDATA[*/MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+        displayMath: [ ["$$","$$"], ["\\[","\\]"] ],
+        processEscapes: true
+    }
+});
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="Relationales%20Datenbankmodell%20[HTBLA%20Kaindorf%20Wiki]_files/MathJax.js"></script>
+<script type="text/javascript" charset="utf-8" src="Relationales%20Datenbankmodell%20[HTBLA%20Kaindorf%20Wiki]_files/prettify.js"></script>
+<script type="text/javascript" charset="utf-8" src="Relationales%20Datenbankmodell%20[HTBLA%20Kaindorf%20Wiki]_files/lang-css.js"></script>
+<script type="text/javascript" charset="utf-8" src="Relationales%20Datenbankmodell%20[HTBLA%20Kaindorf%20Wiki]_files/lang-sql.js"></script>
+<script type="text/javascript" charset="utf-8" src="Relationales%20Datenbankmodell%20[HTBLA%20Kaindorf%20Wiki]_files/lang-oracle11.htm"></script><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1px; bottom: 2px; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style>
+<script type="text/javascript" charset="utf-8" src="Relationales%20Datenbankmodell%20[HTBLA%20Kaindorf%20Wiki]_files/lang-plsql.js"></script>
+<script type="text/javascript" charset="utf-8" src="Relationales%20Datenbankmodell%20[HTBLA%20Kaindorf%20Wiki]_files/lang-none.js"></script>
+<!--<![endif]-->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="shortcut icon" href="https://wiki.htl-kaindorf.at/lib/tpl/dokuwiki/images/favicon.ico">
+<link rel="apple-touch-icon" href="https://wiki.htl-kaindorf.at/lib/tpl/dokuwiki/images/apple-touch-icon.png">
+    <style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover, .MJXp-munder {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > *, .MJXp-munder > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+
+<body>
+    <div id="dokuwiki__site"><div id="dokuwiki__top" class="site dokuwiki mode_show tpl_dokuwiki loggedIn    ">
+
+        
+<!-- <strong></strong><strong></strong><strong> HEADER </strong><strong></strong><strong></strong> -->
+<div id="dokuwiki__header"><div class="pad group">
+
+    
+    <div class="headings group">
+        <ul class="a11y skip">
+            <li><a href="#dokuwiki__content">zum Inhalt springen</a></li>
+        </ul>
+
+        <h1><a href="https://wiki.htl-kaindorf.at/doku.php?id=start" accesskey="h" title="[H]"><img src="Relationales%20Datenbankmodell%20[HTBLA%20Kaindorf%20Wiki]_files/logo.png" alt="" width="64" height="64"> <span>HTBLA Kaindorf Wiki</span></a></h1>
+            </div>
+
+    <div class="tools group">
+        <!-- USER TOOLS -->
+                    <div id="dokuwiki__usertools">
+                <h3 class="a11y">Benutzer-Werkzeuge</h3>
+                <ul>
+                    <li class="user">Angemeldet als: <bdi>Martin LINHARD</bdi> (<bdi>linmad17</bdi>)</li><li class="action logout"><a href="https://wiki.htl-kaindorf.at/doku.php?id=dbi_rp2019:relationales_datenbankmodell:start&amp;do=logout&amp;sectok=c813d5870a0c15faeb08ae9b046626a8" title="Abmelden" rel="nofollow"><span>Abmelden</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M17 17.25V14h-7v-4h7V6.75L22.25 12 17 17.25M13 2a2 2 0 0 1 2 2v4h-2V4H4v16h9v-4h2v4a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9z"></path></svg></a></li>                </ul>
+            </div>
+        
+        <!-- SITE TOOLS -->
+        <div id="dokuwiki__sitetools">
+            <h3 class="a11y">Webseiten-Werkzeuge</h3>
+            <form action="/doku.php?id=start" method="get" role="search" class="search doku_form" id="dw__search" accept-charset="utf-8"><input type="hidden" name="do" value="search"><input type="hidden" name="id" value="dbi_rp2019:relationales_datenbankmodell:start"><div class="no"><input name="q" type="text" class="edit" title="[F]" accesskey="f" placeholder="Suche" autocomplete="on" id="qsearch__in"><button value="1" type="submit" title="Suche">Suche</button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>            <div class="mobileTools">
+                <form action="/doku.php" method="get" accept-charset="utf-8"><div class="no"><input type="hidden" name="id" value="dbi_rp2019:relationales_datenbankmodell:start"><input type="hidden" name="sectok" value="c813d5870a0c15faeb08ae9b046626a8"><select name="do" class="edit quickselect" title="Werkzeuge"><option value="" selected="selected">Werkzeuge</option><optgroup label="Seiten-Werkzeuge"><option value="edit">Zeige Quelltext</option><option value="revisions">Ältere Versionen</option><option value="siteexport_addpage">Seite als HTML/PDF exportieren</option><option value="backlink">Links hierher</option></optgroup><optgroup label="Webseiten-Werkzeuge"><option value="recent">Letzte Änderungen</option><option value="media">Medien-Manager</option><option value="index">Übersicht</option></optgroup><optgroup label="Benutzer-Werkzeuge"><option value="logout">Abmelden</option></optgroup></select><button type="submit" style="display: none;">&gt;</button></div></form>            </div>
+            <ul>
+                <li class="action recent"><a href="https://wiki.htl-kaindorf.at/doku.php?id=dbi_rp2019:relationales_datenbankmodell:start&amp;do=recent" title="Letzte Änderungen [r]" rel="nofollow" accesskey="r">Letzte Änderungen</a></li><li class="action media"><a href="https://wiki.htl-kaindorf.at/doku.php?id=dbi_rp2019:relationales_datenbankmodell:start&amp;do=media&amp;ns=dbi_rp2019%3Arelationales_datenbankmodell" title="Medien-Manager" rel="nofollow">Medien-Manager</a></li><li class="action index"><a href="https://wiki.htl-kaindorf.at/doku.php?id=dbi_rp2019:relationales_datenbankmodell:start&amp;do=index" title="Übersicht [x]" rel="nofollow" accesskey="x">Übersicht</a></li>            </ul>
+        </div>
+
+    </div>
+
+    <!-- BREADCRUMBS -->
+            <div class="breadcrumbs">
+                                        <div class="trace"><span class="bchead">Zuletzt angesehen:</span> <span class="bcsep">•</span> <bdi><a href="https://wiki.htl-kaindorf.at/doku.php?id=dbi_rp2016:information_retrieval:02_basics_deutsch" class="breadcrumbs" title="dbi_rp2016:information_retrieval:02_basics_deutsch">02 BASICS</a></bdi> <span class="bcsep">•</span> <bdi><a href="https://wiki.htl-kaindorf.at/doku.php?id=dbi_rp2016:information_retrieval:03_row_functions_deutsch" class="breadcrumbs" title="dbi_rp2016:information_retrieval:03_row_functions_deutsch">03 ROW FUNCTIONS</a></bdi> <span class="bcsep">•</span> <bdi><a href="https://wiki.htl-kaindorf.at/doku.php?id=dbi_rp2016:information_retrieval:04_joins_deutsch" class="breadcrumbs" title="dbi_rp2016:information_retrieval:04_joins_deutsch">04 JOINS</a></bdi> <span class="bcsep">•</span> <bdi><a href="https://wiki.htl-kaindorf.at/doku.php?id=dbi_rp2016:information_retrieval:05_subselect_deutsch" class="breadcrumbs" title="dbi_rp2016:information_retrieval:05_subselect_deutsch">05 SUBSELECTS</a></bdi> <span class="bcsep">•</span> <bdi><a href="https://wiki.htl-kaindorf.at/doku.php?id=dbi_rp2016:information_retrieval:06_other_important_keywords_deutsch" class="breadcrumbs" title="dbi_rp2016:information_retrieval:06_other_important_keywords_deutsch">06 OTHER IMPORTANT KEYWORDS</a></bdi> <span class="bcsep">•</span> <bdi><a href="https://wiki.htl-kaindorf.at/doku.php?id=dbi_rp2016:information_retrieval:07_indices_deutsch" class="breadcrumbs" title="dbi_rp2016:information_retrieval:07_indices_deutsch">07 INDICES</a></bdi> <span class="bcsep">•</span> <bdi><a href="https://wiki.htl-kaindorf.at/doku.php?id=dbi_rp2016:information_retrieval:08_hierarchical_sql_deutsch" class="breadcrumbs" title="dbi_rp2016:information_retrieval:08_hierarchical_sql_deutsch">08 HIERARCHICAL SQL</a></bdi> <span class="bcsep">•</span> <bdi><a href="https://wiki.htl-kaindorf.at/doku.php?id=dbi_rp2016:information_retrieval:10_examples" class="breadcrumbs" title="dbi_rp2016:information_retrieval:10_examples">09 EXAMPLES</a></bdi> <span class="bcsep">•</span> <bdi><a href="https://wiki.htl-kaindorf.at/doku.php?id=dbi_rp2016:konzeptionelles_datenbankdesign:start" class="breadcrumbs" title="dbi_rp2016:konzeptionelles_datenbankdesign:start">Konzeptionelles Datenbankdesign</a></bdi> <span class="bcsep">•</span> <span class="curid"><bdi><a href="https://wiki.htl-kaindorf.at/doku.php?id=dbi_rp2019:relationales_datenbankmodell:start" class="breadcrumbs" title="dbi_rp2019:relationales_datenbankmodell:start">Relationales Datenbankmodell</a></bdi></span></div>
+                    </div>
+    
+
+
+    <hr class="a11y">
+</div></div><!-- /header -->
+
+        <div class="wrapper group">
+
+            
+            <!-- <strong></strong><strong></strong><strong> CONTENT </strong><strong></strong><strong></strong> -->
+            <div id="dokuwiki__content"><div class="pad group">
+                
+                <div class="pageId"><span>dbi_rp2019:relationales_datenbankmodell:start</span></div>
+
+                <div class="page group content_initial">
+                                                            <!-- wikipage start -->
+                    <div class="plugin_loadskin"><form id="tpl__switcher" title="Templäte wechseln" action="/doku.php?id=dbi_rp2019:relationales_datenbankmodell:start" method="post" accept-charset="utf-8"><div class="no">
+<input type="hidden" name="sectok" value="c813d5870a0c15faeb08ae9b046626a8"><input type="hidden" name="act" value="select"><label><span>Template</span> <select name="tpl" class="quickselect">
+<option value="dokubook">dokubook</option><option value="dokuwiki" selected="selected">dokuwiki</option>
+</select></label>
+<button type="submit" name="switch" style="display: none;">Wechseln</button>
+</div></form>
+</div><div class="plugin_fastwiki_marker" style="display:none"></div><!-- TOC START -->
+<div id="dw__toc" class="dw__toc">
+<h3 class="toggle open" style="cursor: pointer;"><strong><span>−</span></strong>Inhaltsverzeichnis</h3>
+<div style="" aria-expanded="true">
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#relationales_datenbankmodell">Relationales Datenbankmodell</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#ddl">DDL</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#creating_tables">Creating tables</a></div></li>
+<li class="level3"><div class="li"><a href="#constraints">Constraints</a></div></li>
+<li class="level3"><div class="li"><a href="#altering_tables">Altering Tables</a></div></li>
+<li class="level3"><div class="li"><a href="#dropping_tables">Dropping Tables</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#dml">DML</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#inserting_values">Inserting Values</a></div></li>
+<li class="level3"><div class="li"><a href="#updating_values">Updating Values</a></div></li>
+<li class="level3"><div class="li"><a href="#deleting_values">Deleting Values</a></div></li>
+<li class="level3"><div class="li"><a href="#views">Views</a></div></li>
+<li class="level3"><div class="li"><a href="#sequences">Sequences</a></div></li>
+<li class="level3"><div class="li"><a href="#merge">MERGE</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#database_nomalization">Database nomalization</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#first_normal_form">First normal form</a></div></li>
+<li class="level3"><div class="li"><a href="#second_normal_form">Second normal form</a></div></li>
+<li class="level3"><div class="li"><a href="#third_normal_form">Third normal form</a></div></li>
+<li class="level3"><div class="li"><a href="#circular_reference">Circular reference</a></div></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<h1 class="sectionedit1" id="relationales_datenbankmodell">Relationales Datenbankmodell</h1>
+<div class="level1">
+
+</div>
+
+<h2 class="sectionedit2" id="ddl">DDL</h2>
+<div class="level2">
+
+<p>
+DDL is an acronym for <em>Data Definition Language</em>. With DDL you can create, alter or drop database structures, like for example tables.
+</p>
+
+</div>
+
+<h3 class="sectionedit3" id="creating_tables">Creating tables</h3>
+<div class="level3">
+<pre class="prettyprint  lang-sql prettyprinted" style=""><span class="kwd">CREATE</span><span class="pln"> </span><span class="kwd">TABLE</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln">table_name</span><span class="pun">&gt;</span><span class="pln">
+</span><span class="pun">(</span><span class="pln">
+  column_name dataType </span><span class="pun">[</span><span class="kwd">CONSTRAINT</span><span class="pun">]</span><span class="pln">
+</span><span class="pun">);</span></pre>
+<p>
+The syntax above is used to create a table. Here is an example, how this could look like:
+</p>
+<pre class="prettyprint  lang-sql prettyprinted" style=""><span class="kwd">CREATE</span><span class="pln"> </span><span class="kwd">TABLE</span><span class="pln"> car
+</span><span class="pun">(</span><span class="pln">
+  id INTEGER </span><span class="kwd">PRIMARY</span><span class="pln"> </span><span class="kwd">KEY</span><span class="pun">,</span><span class="pln">
+  licensePlate VARCHAR</span><span class="pun">(</span><span class="lit">20</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">NOT</span><span class="pln"> </span><span class="kwd">NULL</span><span class="pun">,</span><span class="pln">
+  colour VARCHAR</span><span class="pun">(</span><span class="lit">20</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">NOT</span><span class="pln"> </span><span class="kwd">NULL</span><span class="pun">,</span><span class="pln">
+  carType VARCHAR</span><span class="pun">(</span><span class="lit">20</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">NOT</span><span class="pln"> </span><span class="kwd">NULL</span><span class="pln">
+</span><span class="pun">);</span></pre>
+</div>
+
+<h4 id="datatypes">Datatypes</h4>
+<div class="level4">
+
+<p>
+When you want to create a column, you need to define a datatype for the 
+column. The most common datatypes in SQL are listed below.
+</p>
+<div class="table sectionedit4"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0"><em class="u">Datatype</em> </th><th class="col1 leftalign"><em class="u">Description</em>   </th>
+	</tr>
+	</thead>
+	<tbody><tr class="row1">
+		<td class="col0 leftalign">CHAR(n)  </td><td class="col1 leftalign">Character string. Fixed-length n  </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 leftalign">VARCHAR(n)  </td><td class="col1 leftalign">Character string. Variable length. Maximum length n  </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 leftalign">NUMBER(p,s)  </td><td class="col1">Stores 
+fixed and floating-point numbers, virtually any magnitude can be stored,
+ portable among different systems, p (precision = total number of 
+digits), s (scale = the number of digits after decimal)</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 leftalign">INTEGER(p)  </td><td class="col1 leftalign">Integer numerical (no decimal). Precision p  </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0 leftalign">NUMERIC(p,s)  </td><td class="col1 leftalign">Decimal number, p is the precision (total number of digits) and s the scale - the number of digits after decimal  </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0 leftalign">DATE  </td><td class="col1 leftalign">Stores date values  </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0 leftalign">TIMESTAMP  </td><td class="col1 leftalign">Stores year, month, day, hour, minute, and second values  </td>
+	</tr>
+</tbody></table></div>
+
+<p>
+When do you use NUMBER/CHAR/VARCHAR2?
+</p>
+<ul>
+<li class="level1"><div class="li">
+ NUMBER: to calculate and IDs
+</div></li>
+<li class="level1"><div class="li">
+ CHAR: fixed size (PLZ), storage consumed permanently (even if it's smaller)
+</div></li>
+<li class="level1"><div class="li">
+ VARCHAR2: variable length, size of storage is stored
+</div></li>
+</ul>
+
+
+</div>
+
+<h3 class="sectionedit5" id="constraints">Constraints</h3>
+<div class="level3">
+
+<p>
+Basically constraints are the rules enforced on data columns on a table. In SQL, there are 6 types of constraints:
+</p>
+<ul>
+<li class="level1"><div class="li">
+ NOT NULL, the column cannot store a null-value 
+</div></li>
+<li class="level1"><div class="li">
+ UNIQUE, makes sure that each row of a column has an unique value 
+</div></li>
+<li class="level1"><div class="li">
+ PRIMARY KEY, sets this column as a primary key 
+</div></li>
+<li class="level1"><div class="li">
+ FOREIGN KEY, sets this column as a foreign key 
+</div></li>
+<li class="level1"><div class="li">
+ CHECK, ensures that a value in a column meets a specific condition 
+</div></li>
+<li class="level1"><div class="li">
+ DEFAULT, specifies a default value for a column
+</div></li>
+</ul>
+
+
+<p>
+Columnconstraints: affects only one column (NOT NULL) 
+</p>
+
+<p>
+Tableconstaints: affects multiple columns (PK of two or more attributes)
+</p>
+
+</div>
+
+<h4 id="primary_foreign_keys">Primary/Foreign Keys</h4>
+<div class="level4">
+
+<p>
+* A primary key uniquely identifies each record (row) in a database 
+table * The foreign key points/references to a primary key in another 
+table
+</p>
+
+<p>
+<a href="https://wiki.htl-kaindorf.at/lib/exe/detail.php?id=dbi_rp2019%3Arelationales_datenbankmodell%3Astart&amp;media=dbi_rp2016:relationales_datenbankmodell:pk_fk.png" class="media" title="dbi_rp2016:relationales_datenbankmodell:pk_fk.png"><img src="Relationales%20Datenbankmodell%20[HTBLA%20Kaindorf%20Wiki]_files/fetch_008.png" class="media" alt="" width="500"></a>
+</p>
+
+<p>
+In this example the columns “Client” and “Emp” in in the table “Orders” 
+have a foreign key which references to the primary key of the tables 
+“Customers” and “Employee”.
+</p>
+
+<p>
+The <strong>primary key</strong> can be created by writing it next to the datatype definition in a CREATE TABLE-statement.
+</p>
+<pre class="prettyprint  lang-sql prettyprinted" style=""><span class="kwd">CREATE</span><span class="pln"> </span><span class="kwd">TABLE</span><span class="pln"> Person
+</span><span class="pun">(</span><span class="pln">
+ P_Id INTEGER </span><span class="kwd">PRIMARY</span><span class="pln"> </span><span class="kwd">KEY</span><span class="pun">,</span><span class="pln">
+ LastName VARCHAR</span><span class="pun">(</span><span class="lit">255</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">NOT</span><span class="pln"> </span><span class="kwd">NULL</span><span class="pun">,</span><span class="pln">
+ FirstName VARCHAR</span><span class="pun">(</span><span class="lit">255</span><span class="pun">)</span><span class="pln">
+</span><span class="pun">);</span></pre>
+<p>
+It’s also possible to add the primary after the definition of the 
+columns. When the primary key consists of more than just one column, 
+it’s necessary to do it like this!
+</p>
+<pre class="prettyprint  lang-sql prettyprinted" style=""><span class="kwd">CREATE</span><span class="pln"> </span><span class="kwd">TABLE</span><span class="pln"> bookLending
+</span><span class="pun">(</span><span class="pln">
+ isbn INTEGER</span><span class="pun">,</span><span class="pln">
+ lendingDate DATE</span><span class="pun">,</span><span class="pln">
+ </span><span class="kwd">CONSTRAINT</span><span class="pln"> pk_bookLending </span><span class="kwd">PRIMARY</span><span class="pln"> </span><span class="kwd">KEY</span><span class="pln"> </span><span class="pun">(</span><span class="pln">isbn</span><span class="pun">,</span><span class="pln"> lendingDate</span><span class="pun">)</span><span class="pln">
+</span><span class="pun">);</span></pre>
+<p>
+When you want to add a <strong>foreign key</strong> constraint, it’s necessary to do it after the column definitions
+</p>
+<pre class="prettyprint  lang-sql prettyprinted" style=""><span class="kwd">CREATE</span><span class="pln"> </span><span class="kwd">TABLE</span><span class="pln"> Orders
+</span><span class="pun">(</span><span class="pln">
+ O_Id INTEGER </span><span class="kwd">PRIMARY</span><span class="pln"> </span><span class="kwd">KEY</span><span class="pun">,</span><span class="pln">
+ OrderNo INTEGER </span><span class="kwd">NOT</span><span class="pln"> </span><span class="kwd">NULL</span><span class="pun">,</span><span class="pln">
+ P_Id INTEGER</span><span class="pun">,</span><span class="pln">
+ </span><span class="kwd">CONSTRAINT</span><span class="pln"> fk_PerOrder </span><span class="kwd">FOREIGN</span><span class="pln"> </span><span class="kwd">KEY</span><span class="pln"> </span><span class="pun">(</span><span class="pln">P_Id</span><span class="pun">)</span><span class="pln">
+ </span><span class="kwd">REFERENCES</span><span class="pln"> Person</span><span class="pun">(</span><span class="pln">P_Id</span><span class="pun">)</span><span class="pln">
+</span><span class="pun">);</span></pre>
+<p>
+In the first brackets after FOREIGN KEY you write the name of the column
+ in the current table you want to set the foreign key. After the 
+REFERENCES-key word, you write the name (and in brackets the primary key
+ of the foreign table) this foreign key references to.
+</p>
+
+<p>
+However, it is strongly recommended to add a <strong>foreign key</strong>
+ with the ALTER TABLE statement, after all the tables have been created.
+ This is better, because then you can create all tables in a random 
+order without obeying the constraints. The constraints are added later, 
+when all the tables are created. Here is an example, the ALTER TABLE 
+statement will be described later in more detail.
+</p>
+<pre class="prettyprint  lang-sql prettyprinted" style=""><span class="kwd">ALTER</span><span class="pln"> </span><span class="kwd">TABLE</span><span class="pln"> Orders
+</span><span class="kwd">ADD</span><span class="pln"> </span><span class="kwd">CONSTRAINT</span><span class="pln"> fk_PerOrder </span><span class="kwd">FOREIGN</span><span class="pln"> </span><span class="kwd">KEY</span><span class="pun">(</span><span class="pln">P_Id</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">REFERENCES</span><span class="pln"> Person</span><span class="pun">(</span><span class="pln">P_Id</span><span class="pun">);</span></pre>
+</div>
+
+<h4 id="check-constraint">Check-Constraint</h4>
+<div class="level4">
+
+<p>
+Here is and example given to explain how to use Check Constraits:
+</p>
+<pre class="prettyprint  lang-sql prettyprinted" style=""><span class="kwd">CREATE</span><span class="pln"> </span><span class="kwd">TABLE</span><span class="pln"> Persons
+</span><span class="pun">(</span><span class="pln">
+ P_Id INT </span><span class="kwd">NOT</span><span class="pln"> </span><span class="kwd">NULL</span><span class="pun">,</span><span class="pln">
+ LastName VARCHAR</span><span class="pun">(</span><span class="lit">255</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">NOT</span><span class="pln"> </span><span class="kwd">NULL</span><span class="pun">,</span><span class="pln">
+ FirstName VARCHAR</span><span class="pun">(</span><span class="lit">255</span><span class="pun">),</span><span class="pln">
+ sal NUMBER</span><span class="pun">,</span><span class="pln">
+ </span><span class="kwd">CONSTRAINT</span><span class="pln"> chk_Person </span><span class="kwd">CHECK</span><span class="pln"> </span><span class="pun">(</span><span class="pln">P_Id</span><span class="pun">&gt;</span><span class="lit">0</span><span class="pln"> </span><span class="kwd">AND</span><span class="pln"> sal </span><span class="pun">&gt;</span><span class="pln"> </span><span class="lit">0</span><span class="pun">)</span><span class="pln">
+</span><span class="pun">);</span></pre>
+<p>
+In the brackets after the CHECK-key word you write the conditions. In 
+this example, you are only allowed to add persons into this table, which
+ have a higher P_Id than 0 and a positive salary.
+</p>
+
+<p>
+So Check-Constraints are basically used for imposing conditions which 
+must be fulfilled by the data which gets inserted. But you don’t use 
+CHECK-constraints for conditions like “Only insert when the number of 
+records is higher than 40” → this would be done with a Trigger.
+</p>
+
+</div>
+
+<h3 class="sectionedit6" id="altering_tables">Altering Tables</h3>
+<div class="level3">
+
+<p>
+When you want to change the structure of a table after you have already 
+created it, you can do it with the ALTER TABLE-command. (alter = to 
+change)
+</p>
+
+<p>
+Example how to add a column to a table:
+</p>
+<pre class="prettyprint  lang-sql prettyprinted" style=""><span class="kwd">ALTER</span><span class="pln"> </span><span class="kwd">TABLE</span><span class="pln"> TABLE_NAME
+</span><span class="kwd">ADD</span><span class="pln"> column_name datatype</span><span class="pun">;</span></pre>
+<p>
+When you want to remove a column, you use the keywords DROP COLUMN instead of ADD.
+</p>
+
+<p>
+Example how to change the datatype of an existing column in a table:
+</p>
+<pre class="prettyprint  lang-sql prettyprinted" style=""><span class="kwd">ALTER</span><span class="pln"> </span><span class="kwd">TABLE</span><span class="pln"> TABLE_NAME
+MODIFY column_name NEW DATA TYPE</span><span class="pun">;</span></pre>
+<p>
+Example how to change the name of an existing column in a table:
+</p>
+<pre class="prettyprint  lang-sql prettyprinted" style=""><span class="kwd">ALTER</span><span class="pln"> </span><span class="kwd">TABLE</span><span class="pln"> TABLE_NAME
+RENAME </span><span class="kwd">COLUMN</span><span class="pln"> column_name </span><span class="kwd">TO</span><span class="pln"> new_column_name</span><span class="pun">;</span></pre>
+</div>
+
+<h3 class="sectionedit7" id="dropping_tables">Dropping Tables</h3>
+<div class="level3">
+
+<p>
+When you want to delete a table, you use the following command:
+</p>
+<pre class="prettyprint  lang-sql prettyprinted" style=""><span class="kwd">DROP</span><span class="pln"> </span><span class="kwd">TABLE</span><span class="pln"> TABLE_NAME</span><span class="pun">;</span></pre>
+<p>
+When you want to delete the entire database, use the keyword DATABASE 
+instead of table. When you want to delete the entire data of a table, 
+but not the table itself, then you should use the TRUNCATE keyword 
+instead of the DROP keyword.
+</p>
+
+<p>
+You have the opportunity to add the CASCADE CONSTRAINTS statement. This 
+means, that also constraints get deleted which were referencing to 
+primary keys inside of the deleted table. That's a way to ensure data 
+integrity.
+</p>
+<pre class="prettyprint  lang-sql prettyprinted" style=""><span class="kwd">DROP</span><span class="pln"> </span><span class="kwd">TABLE</span><span class="pln"> TABLE_NAME
+</span><span class="kwd">CASCADE</span><span class="pln"> CONSTRAINTS</span><span class="pun">;</span></pre>
+<p>
+The risk is, that even contraints get deleted which are still necessary.
+ Therefore it's better to drop constraints by the ALTER TABLE-statement,
+ because this allows you to select the individual constraints you want 
+to delete.
+</p>
+<pre class="prettyprint  lang-sql prettyprinted" style=""><span class="kwd">ALTER</span><span class="pln"> </span><span class="kwd">TABLE</span><span class="pln"> TABLE_NAME
+</span><span class="kwd">DROP</span><span class="pln"> </span><span class="kwd">CONSTRAINT</span><span class="pln"> constraint_name</span><span class="pun">;</span></pre>
+<p>
+Dropping all tables of a schema:
+</p>
+<pre class="prettyprint  lang-sql prettyprinted" style=""><span class="kwd">SELECT</span><span class="pln"> </span><span class="str">'DROP TABLE „'</span><span class="pun">||</span><span class="pln">table_name</span><span class="pun">||</span><span class="str">'“;'</span><span class="pln"> 
+</span><span class="kwd">FROM</span><span class="pln"> user_tables</span><span class="pun">;</span></pre>
+<p>
+This returns all drop-statements for each table, but it still has to be executed
+</p>
+
+</div>
+
+<h2 class="sectionedit8" id="dml">DML</h2>
+<div class="level2">
+
+</div>
+
+<h3 class="sectionedit9" id="inserting_values">Inserting Values</h3>
+<div class="level3">
+
+<p>
+When you finally have created all the necessary tables, you now can 
+insert data into the table. The INSERT INTO statement is used to insert 
+one record into a table.
+</p>
+
+<p>
+Basically there are two ways of using the INSERT INTO statement. The first way is to specify only the values which are inserted:
+</p>
+<pre class="prettyprint  lang-sql prettyprinted" style=""><span class="kwd">INSERT</span><span class="pln"> </span><span class="kwd">INTO</span><span class="pln"> TABLE_NAME
+</span><span class="kwd">VALUES</span><span class="pln"> </span><span class="pun">(</span><span class="pln">value1</span><span class="pun">,</span><span class="pln">value2</span><span class="pun">,</span><span class="pln">value3</span><span class="pun">,...);</span></pre>
+<p>
+The second way is to specify additionally also the column names:
+</p>
+<pre class="prettyprint  lang-sql prettyprinted" style=""><span class="kwd">INSERT</span><span class="pln"> </span><span class="kwd">INTO</span><span class="pln"> TABLE_NAME </span><span class="pun">(</span><span class="pln">column1</span><span class="pun">,</span><span class="pln">column2</span><span class="pun">,</span><span class="pln">column3</span><span class="pun">,...)</span><span class="pln">
+</span><span class="kwd">VALUES</span><span class="pln"> </span><span class="pun">(</span><span class="pln">value1</span><span class="pun">,</span><span class="pln">value2</span><span class="pun">,</span><span class="pln">value3</span><span class="pun">,...);</span></pre>
+<p>
+It is also possible to insert values with a subselect.
+</p>
+<pre class="prettyprint  lang-sql prettyprinted" style=""><span class="kwd">INSERT</span><span class="pln"> </span><span class="kwd">INTO</span><span class="pln"> customerLondon
+</span><span class="kwd">SELECT</span><span class="pln"> </span><span class="pun">*</span><span class="pln">
+</span><span class="kwd">FROM</span><span class="pln"> customer
+</span><span class="kwd">WHERE</span><span class="pln"> city</span><span class="pun">=</span><span class="str">'London'</span><span class="pun">;</span></pre>
+<p>
+Different example:
+</p>
+<pre class="prettyprint  lang-sql prettyprinted" style=""><span class="kwd">INSERT</span><span class="pln"> </span><span class="kwd">INTO</span><span class="pln"> customersPrague</span><span class="pun">(</span><span class="pln">P_id </span><span class="pun">,</span><span class="pln"> Name</span><span class="pun">,</span><span class="pln"> City</span><span class="pun">)</span><span class="pln">
+</span><span class="kwd">VALUES</span><span class="pun">(</span><span class="lit">12</span><span class="pun">,(</span><span class="kwd">SELECT</span><span class="pln"> Name </span><span class="kwd">FROM</span><span class="pln"> customer </span><span class="kwd">WHERE</span><span class="pln"> P_id</span><span class="pun">=</span><span class="lit">12</span><span class="pun">),</span><span class="str">'Prague'</span><span class="pun">);</span></pre>
+</div>
+
+<h4 id="rules_for_inserting_values">Rules for inserting values</h4>
+<div class="level4">
+
+<p>
+When you write the values into the VALUES(…)-clause, you must pay attention to some things:
+</p>
+<div class="table sectionedit10"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0"><em class="u">Datatype</em> </th><th class="col1 leftalign"><em class="u">How to insert</em>   </th><th class="col2 leftalign">Example  </th>
+	</tr>
+	</thead>
+	<tbody><tr class="row1">
+		<td class="col0 leftalign">INTEGER/NUMBER  </td><td class="col1 leftalign">Simply write the number  </td><td class="col2 leftalign">…VALUES(5)  </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 leftalign">VARCHAR  </td><td class="col1 leftalign">Put the values into apostrophes  </td><td class="col2 leftalign">…VALUES('text')  </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 leftalign">DATE  </td><td class="col1 leftalign">Use the TO_DATE-function  </td><td class="col2 leftalign">…VALUES(TO_DATE('10/29/09', 'MM/DD/YYYY'))  </td>
+	</tr>
+</tbody></table></div>
+
+</div>
+
+<h3 class="sectionedit11" id="updating_values">Updating Values</h3>
+<div class="level3">
+
+<p>
+When you want to change some data in records, you use the UPDATE-command
+ to do so. Basically the syntax for this command is like this:
+</p>
+<pre class="prettyprint  lang-sql prettyprinted" style=""><span class="kwd">UPDATE</span><span class="pln"> TABLE_NAME
+</span><span class="kwd">SET</span><span class="pln"> column1</span><span class="pun">=</span><span class="pln">value1</span><span class="pun">,</span><span class="pln">column2</span><span class="pun">=</span><span class="pln">value2</span><span class="pun">,...</span><span class="pln">
+</span><span class="kwd">WHERE</span><span class="pln"> some_column</span><span class="pun">=</span><span class="pln">some_value</span><span class="pun">;</span></pre>
+<p>
+Here is an example:
+</p>
+<pre class="prettyprint  lang-sql prettyprinted" style=""><span class="kwd">UPDATE</span><span class="pln"> Customers
+</span><span class="kwd">SET</span><span class="pln"> name</span><span class="pun">=</span><span class="str">'Maier'</span><span class="pun">,</span><span class="pln"> City</span><span class="pun">=</span><span class="str">'Eisenstadt'</span><span class="pln">
+</span><span class="kwd">WHERE</span><span class="pln"> id</span><span class="pun">=</span><span class="lit">22</span><span class="pun">;</span></pre>
+</div>
+
+<h3 class="sectionedit12" id="deleting_values">Deleting Values</h3>
+<div class="level3">
+
+<p>
+You can delete rows of a table with the DELETE-statement.
+</p>
+<pre class="prettyprint  lang-sql prettyprinted" style=""><span class="kwd">DELETE</span><span class="pln"> </span><span class="kwd">FROM</span><span class="pln"> TABLE_NAME
+</span><span class="kwd">WHERE</span><span class="pln"> </span><span class="pun">[</span><span class="pln">condition</span><span class="pun">];</span></pre>
+<p>
+Don’t forget the WHERE-clause here, otherwise all the rows of the table would be deleted!
+</p>
+
+<p>
+When you want to delete all tables of a scheme, you can do this like this:
+</p>
+<pre class="prettyprint  lang-sql prettyprinted" style=""><span class="kwd">SELECT</span><span class="pln"> </span><span class="str">'DROP TABLE „'</span><span class="pun">||</span><span class="pln">TABLE_NAME</span><span class="pun">||</span><span class="str">'“;'</span><span class="pln"> </span><span class="kwd">FROM</span><span class="pln"> user_tables</span><span class="pun">;</span></pre>
+</div>
+
+<h3 class="sectionedit13" id="views">Views</h3>
+<div class="level3">
+
+<p>
+A view is basically a table, which contains the result of a 
+SELECT-Statement. So it’s possible to “store” the result of a 
+SELECT-Statement with the help of views.
+</p>
+
+</div>
+
+<h4 id="creating_views">Creating Views</h4>
+<div class="level4">
+<pre class="prettyprint  lang-sql prettyprinted" style=""><span class="kwd">CREATE</span><span class="pln"> </span><span class="kwd">VIEW</span><span class="pln"> view_name </span><span class="kwd">AS</span><span class="pln">
+</span><span class="kwd">SELECT</span><span class="pln"> column_name</span><span class="pun">(</span><span class="pln">s</span><span class="pun">)</span><span class="pln">
+</span><span class="kwd">FROM</span><span class="pln"> TABLE_NAME
+</span><span class="kwd">WHERE</span><span class="pln"> condition</span><span class="pun">;</span></pre>
+<p>
+Views are treated like tables, i. e. you can query data from a view with a SELECT-statement like you do it with tables.
+</p>
+
+</div>
+
+<h4 id="updating_views">Updating Views</h4>
+<div class="level4">
+<pre class="prettyprint  lang-sql prettyprinted" style=""><span class="kwd">CREATE</span><span class="pln"> </span><span class="kwd">OR</span><span class="pln"> REPLACE </span><span class="kwd">VIEW</span><span class="pln"> view_name </span><span class="kwd">AS</span><span class="pln">
+</span><span class="kwd">SELECT</span><span class="pln"> column_name</span><span class="pun">(</span><span class="pln">s</span><span class="pun">)</span><span class="pln">
+</span><span class="kwd">FROM</span><span class="pln"> TABLE_NAME
+</span><span class="kwd">WHERE</span><span class="pln"> condition</span><span class="pun">;</span></pre>
+</div>
+
+<h4 id="deleting_views">Deleting Views</h4>
+<div class="level4">
+<pre class="prettyprint  lang-sql prettyprinted" style=""><span class="kwd">DROP</span><span class="pln"> </span><span class="kwd">VIEW</span><span class="pln"> view_name</span><span class="pun">;</span></pre>
+</div>
+
+<h3 class="sectionedit14" id="sequences">Sequences</h3>
+<div class="level3">
+
+<p>
+A sequence is an object, which creates numeric values.
+</p>
+<pre class="prettyprint  lang-sql prettyprinted" style=""><span class="kwd">CREATE</span><span class="pln"> SEQUENCE seqOne
+  </span><span class="kwd">START</span><span class="pln"> </span><span class="kwd">WITH</span><span class="pln"> </span><span class="lit">100</span><span class="pln">
+  INCREMENT </span><span class="kwd">BY</span><span class="pln"> </span><span class="lit">1</span><span class="pln">
+  </span><span class="pun">[</span><span class="pln">MAXVALUE </span><span class="lit">1000</span><span class="pun">]</span><span class="pln">
+  </span><span class="pun">[</span><span class="pln">CYCLE</span><span class="pun">]</span></pre><pre class="prettyprint   prettyprinted" style=""><span class="pun">*</span><span class="pln"> </span><span class="typ">This</span><span class="pln"> sequence starts </span><span class="kwd">with</span><span class="pln"> the </span><span class="kwd">value</span><span class="pln"> </span><span class="lit">100</span><span class="pln">
+</span><span class="pun">*</span><span class="pln"> </span><span class="typ">It</span><span class="pln"> </span><span class="kwd">is</span><span class="pln"> incremented </span><span class="kwd">by</span><span class="pln"> </span><span class="lit">1</span><span class="pln">
+</span><span class="pun">*</span><span class="pln"> </span><span class="typ">The</span><span class="pln"> maximum </span><span class="kwd">value</span><span class="pln"> which can be obtained </span><span class="kwd">is</span><span class="pln"> </span><span class="lit">1000</span><span class="pln"> </span><span class="pun">(</span><span class="pln">optional</span><span class="pun">)</span><span class="pln">
+</span><span class="pun">*</span><span class="pln"> CYCLE means</span><span class="pun">,</span><span class="pln"> that the sequence continues creating values after the maximum </span><span class="kwd">is</span><span class="pln"> reached </span><span class="pun">(</span><span class="pln">optional</span><span class="pun">)</span></pre>
+</div>
+
+<h4 id="obtaining_values">Obtaining values</h4>
+<div class="level4">
+
+<p>
+In order to get the value of a sequence, you have two options:
+</p>
+
+<p>
+* CURVAL - gets the actual current value of the sequence * NEXTVAL - gets the next value of the sequence
+</p>
+
+<p>
+Generally sequences are used to set values into numeric columns of a table.
+</p>
+<pre class="prettyprint  lang-sql prettyprinted" style=""><span class="kwd">INSERT</span><span class="pln"> </span><span class="kwd">INTO</span><span class="pln"> Customer</span><span class="pun">(</span><span class="pln">ID</span><span class="pun">,</span><span class="pln"> name</span><span class="pun">)</span><span class="pln">
+</span><span class="kwd">VALUES</span><span class="pln"> </span><span class="pun">(</span><span class="pln">seqOne</span><span class="pun">.</span><span class="pln">NEXTVAL</span><span class="pun">,</span><span class="pln"> </span><span class="str">'Maier'</span><span class="pun">);</span></pre>
+</div>
+
+<h3 class="sectionedit15" id="merge">MERGE</h3>
+<div class="level3">
+
+<p>
+The MERGE statement will INSERT and/or UPDATE a target table, based on 
+matching values in a source table. If a matching value is missingm a new
+ row is inserted. If a matching values exists, but needs to be changed, 
+then MERGE updates it.
+</p>
+
+</div>
+
+<h5 id="example">Example</h5>
+<div class="level5">
+
+<p>
+<a href="https://wiki.htl-kaindorf.at/lib/exe/detail.php?id=dbi_rp2019%3Arelationales_datenbankmodell%3Astart&amp;media=dbi_rp2016:relationales_datenbankmodell:merge_example_pic1.jpg" class="media" title="dbi_rp2016:relationales_datenbankmodell:merge_example_pic1.jpg"><img src="Relationales%20Datenbankmodell%20[HTBLA%20Kaindorf%20Wiki]_files/fetch.jpg" class="media" title="merge_example_pic1.jpg" alt="merge_example_pic1.jpg" width="500"></a>
+</p>
+
+<p>
+The statement shown uses ITEMS and the source tabe to merge and update information into ART, the target table:
+</p>
+<pre class="prettyprint  lang-sql prettyprinted" style=""><span class="kwd">MERGE</span><span class="pln"> </span><span class="kwd">INTO</span><span class="pln"> art a
+  </span><span class="kwd">USING</span><span class="pln"> items i
+    </span><span class="kwd">ON</span><span class="pln"> </span><span class="pun">(</span><span class="pln">a</span><span class="pun">.</span><span class="pln">id </span><span class="pun">=</span><span class="pln"> i</span><span class="pun">.</span><span class="pln">item_id</span><span class="pun">)</span><span class="pln">
+  </span><span class="kwd">WHEN</span><span class="pln"> </span><span class="kwd">MATCHED</span><span class="pln">
+  </span><span class="kwd">THEN</span><span class="pln"> </span><span class="kwd">UPDATE</span><span class="pln"> </span><span class="kwd">SET</span><span class="pln">
+    a</span><span class="pun">.</span><span class="pln">artist      </span><span class="pun">=</span><span class="pln"> i</span><span class="pun">.</span><span class="pln">artist</span><span class="pun">,</span><span class="pln">
+    a</span><span class="pun">.</span><span class="pln">description </span><span class="pun">=</span><span class="pln"> i</span><span class="pun">.</span><span class="pln">description
+  </span><span class="kwd">WHEN</span><span class="pln"> </span><span class="kwd">NOT</span><span class="pln"> </span><span class="kwd">MATCHED</span><span class="pln">
+  </span><span class="kwd">THEN</span><span class="pln"> </span><span class="kwd">INSERT</span><span class="pln">
+    </span><span class="kwd">VALUES</span><span class="pun">(</span><span class="pln">i</span><span class="pun">.</span><span class="pln">item_id</span><span class="pun">,</span><span class="pln"> i</span><span class="pun">.</span><span class="pln">title</span><span class="pun">,</span><span class="pln"> i</span><span class="pun">.</span><span class="pln">artist</span><span class="pun">,</span><span class="pln"> i</span><span class="pun">.</span><span class="pln">description</span><span class="pun">);</span></pre>
+<p>
+After the MERGE statement, the ART table should look like this:
+</p>
+
+<p>
+<a href="https://wiki.htl-kaindorf.at/lib/exe/detail.php?id=dbi_rp2019%3Arelationales_datenbankmodell%3Astart&amp;media=dbi_rp2016:relationales_datenbankmodell:merge_example_pic2.jpg" class="media" title="dbi_rp2016:relationales_datenbankmodell:merge_example_pic2.jpg"><img src="Relationales%20Datenbankmodell%20[HTBLA%20Kaindorf%20Wiki]_files/fetch_003.jpg" class="media" title="merge_example_pic2.jpg" alt="merge_example_pic2.jpg" width="500"></a>
+</p>
+
+</div>
+
+<h2 class="sectionedit16" id="database_nomalization">Database nomalization</h2>
+<div class="level2">
+
+<p>
+There are two ways to create relations of a database:
+</p>
+
+<p>
+* by making an ER model * by normalisation of a relation, which contains relevant attributes
+</p>
+
+<p>
+So normalization is briefly spoken another way to create relational data
+ models. All the relations in a databse are organized in a way to…
+</p>
+
+<p>
+* minimize data redundancy (means to avoid unnecessary, multiple 
+occurances of data) * avoid anomalies * make the data more clearly for 
+users and programmers
+</p>
+
+<p>
+There are 5 normal forms, the first 3 of them are important for us to know.
+</p>
+
+</div>
+
+<h3 class="sectionedit17" id="first_normal_form">First normal form</h3>
+<div class="level3">
+
+<p>
+A relation is in the first normal form, when all of their attributes 
+only contain atomic attribute values. In practise this means, that every
+ cell of a table only contains one value, but not more.
+</p>
+
+<p>
+This would be a table without the first normal form:
+</p>
+
+<p>
+<a href="https://wiki.htl-kaindorf.at/lib/exe/detail.php?id=dbi_rp2019%3Arelationales_datenbankmodell%3Astart&amp;media=dbi_rp2016:relationales_datenbankmodell:normalization_pic1.png" class="media" title="dbi_rp2016:relationales_datenbankmodell:normalization_pic1.png"><img src="Relationales%20Datenbankmodell%20[HTBLA%20Kaindorf%20Wiki]_files/fetch_004.png" class="media" alt="" width="500"></a>
+</p>
+
+<p>
+There are several values in the column “ProjektNr”, “Beschreibung” or “Zeit” of the third row.
+</p>
+
+<p>
+This would be a table after the first normal form would be applied:
+</p>
+
+<p>
+<a href="https://wiki.htl-kaindorf.at/lib/exe/detail.php?id=dbi_rp2019%3Arelationales_datenbankmodell%3Astart&amp;media=dbi_rp2016:relationales_datenbankmodell:normalization_pic2.png" class="media" title="dbi_rp2016:relationales_datenbankmodell:normalization_pic2.png"><img src="Relationales%20Datenbankmodell%20[HTBLA%20Kaindorf%20Wiki]_files/fetch_002.png" class="media" alt="" width="500"></a>
+</p>
+
+<p>
+There is only one value in each of the cells. The third row was splitted
+ up into three records to guarantee that there is only one value in each
+ of the cells. A disadvantage is, that the primary key “PersNr” loses 
+its uniqueness. Therefore, we must use a combined primary key, in this 
+case a combination of “PersNr” and “ProjektNr” is appropriate.
+</p>
+
+</div>
+
+<h3 class="sectionedit18" id="second_normal_form">Second normal form</h3>
+<div class="level3">
+
+<p>
+A relation is in the second normal form when…
+</p>
+
+<p>
+* …the relation is in the first normal form. * …every non-key attribute 
+is dependent from the fully defined key, and not the partial key.
+</p>
+
+</div>
+
+<h5 id="example1">Example</h5>
+<div class="level5">
+
+<p>
+The table from the previous example “First normal form” would look like this in second normal form:
+</p>
+
+<p>
+<a href="https://wiki.htl-kaindorf.at/lib/exe/detail.php?id=dbi_rp2019%3Arelationales_datenbankmodell%3Astart&amp;media=dbi_rp2016:relationales_datenbankmodell:normalization_pic3.png" class="media" title="dbi_rp2016:relationales_datenbankmodell:normalization_pic3.png"><img src="Relationales%20Datenbankmodell%20[HTBLA%20Kaindorf%20Wiki]_files/fetch_006.png" class="media" alt="" width="500"></a>
+</p>
+
+<p>
+* Now there are more than just one table * The description of a project 
+(which is a non-prime attribute) is dependend on the primary key of the 
+described project, which is “ProjektNr”. Therefore these two attributes 
+are combined into a single table * The last name and the first name of a
+ person, but also the number and name of the department where the person
+ works in, are dependent on the person and consequentially it’s primary 
+key, in this case the primary key of a person is “PersNr” * The time, 
+how long a specific person works on a single project, is dependent on 
+the person and the project. Therefore the time is dependent on the 
+primary key of the person who works this amount of time (PersNr), and on
+ the primary key of the project the person is working on this specific 
+amount of time (ProjektNr)
+</p>
+
+<p>
+This model shows again the dependencies of the attributes:
+</p>
+
+<p>
+<a href="https://wiki.htl-kaindorf.at/lib/exe/detail.php?id=dbi_rp2019%3Arelationales_datenbankmodell%3Astart&amp;media=dbi_rp2016:relationales_datenbankmodell:normalization_pic4.png" class="media" title="dbi_rp2016:relationales_datenbankmodell:normalization_pic4.png"><img src="Relationales%20Datenbankmodell%20[HTBLA%20Kaindorf%20Wiki]_files/fetch.png" class="media" alt="" width="500"></a>
+</p>
+
+</div>
+
+<h3 class="sectionedit19" id="third_normal_form">Third normal form</h3>
+<div class="level3">
+
+<p>
+A relation is in the third normal form when…
+</p>
+
+<p>
+* …the relation is in the second normal form * …every non-key attribute 
+is not transitive dependend from the primary key. This means, a non-key 
+attribute is not following out of another non-key attribute.
+</p>
+
+</div>
+
+<h5 id="example2">Example</h5>
+<div class="level5">
+
+<p>
+Before third normal form:
+</p>
+
+<p>
+<a href="https://wiki.htl-kaindorf.at/lib/exe/detail.php?id=dbi_rp2019%3Arelationales_datenbankmodell%3Astart&amp;media=dbi_rp2016:relationales_datenbankmodell:normalization_pic5.png" class="media" title="dbi_rp2016:relationales_datenbankmodell:normalization_pic5.png"><img src="Relationales%20Datenbankmodell%20[HTBLA%20Kaindorf%20Wiki]_files/fetch_003.png" class="media" alt="" width="500"></a>
+</p>
+
+<p>
+After third normal form:
+</p>
+
+<p>
+<a href="https://wiki.htl-kaindorf.at/lib/exe/detail.php?id=dbi_rp2019%3Arelationales_datenbankmodell%3Astart&amp;media=dbi_rp2016:relationales_datenbankmodell:normalization_pic6.png" class="media" title="dbi_rp2016:relationales_datenbankmodell:normalization_pic6.png"><img src="Relationales%20Datenbankmodell%20[HTBLA%20Kaindorf%20Wiki]_files/fetch_005.png" class="media" alt="" width="500"></a>
+</p>
+
+<p>
+* There is an additional table “Abteilung”, which contains all 
+department numbers (as primary keys) and the particular name of each 
+department identified by the department number. * In the table 
+“Personal” there is only the primary key “AbtNr” of “Abteilung”. Because
+ the name of the departments are descriptions and no primary keys! 
+Therefore they are not necessary in the table “Personal”, the department
+ number is sufficient for identifying each department uniquely.
+</p>
+
+<p>
+The dependencies of the attributes now look like this:
+</p>
+
+<p>
+<a href="https://wiki.htl-kaindorf.at/lib/exe/detail.php?id=dbi_rp2019%3Arelationales_datenbankmodell%3Astart&amp;media=dbi_rp2016:relationales_datenbankmodell:normalization_pic7.png" class="media" title="dbi_rp2016:relationales_datenbankmodell:normalization_pic7.png"><img src="Relationales%20Datenbankmodell%20[HTBLA%20Kaindorf%20Wiki]_files/fetch_007.png" class="media" alt="" width="500"></a>
+</p>
+
+<p>
+Here is an example, how normalization could be used: <a href="https://wiki.htl-kaindorf.at/doku.php?id=dbi_rp2016:relationales_datenbankmodell:zirbez" class="wikilink1" title="dbi_rp2016:relationales_datenbankmodell:zirbez">Zirkelbezug </a>
+</p>
+
+</div>
+
+<h3 class="sectionedit20" id="circular_reference">Circular reference</h3>
+<div class="level3">
+
+<p>
+These example should give you an idea what a Circular reference (Zirkelbezug) exactly is.
+</p>
+
+<p>
+<img src="Relationales%20Datenbankmodell%20[HTBLA%20Kaindorf%20Wiki]_files/fetch_002.jpg" class="media" title="zirkelbezug.jpg" alt="zirkelbezug.jpg" width="500">
+</p>
+
+<p>
+* Lieferung has LieferNr and the primary key of Bestellung (BestellNr, 
+here the foreign key) as primary key. * Bestellposition has PositionsNr 
+and also the primary key of Bestellung as primary key. * Lieferposition 
+has the primary keys of Lieferung and Bestellposition as primary key. 
+The problem is, that both of these tables have BestellNr as part of its 
+primary keys. Therefore BestellNr is now twice existent in 
+Lieferposition. * This problem is called „Circular reference“ - it is 
+solved by summarizing these two foreign keys into one attribute.
+</p>
+
+<p>
+<br>
+
+</p>
+
+</div>
+
+                    <!-- wikipage stop -->
+                                    </div>
+
+                <div class="docInfo"><bdi>dbi_rp2019/relationales_datenbankmodell/start.txt</bdi> · Zuletzt geändert: 2019/05/21 08:17 (Externe Bearbeitung)</div>
+
+                            </div></div><!-- /content -->
+
+            <hr class="a11y">
+
+            <!-- PAGE ACTIONS -->
+            <div id="dokuwiki__pagetools">
+                <h3 class="a11y">Seiten-Werkzeuge</h3>
+                <div class="tools">
+                    <ul>
+                        <li class="source"><a href="https://wiki.htl-kaindorf.at/doku.php?id=dbi_rp2019:relationales_datenbankmodell:start&amp;do=edit" title="Zeige Quelltext [v]" rel="nofollow" accesskey="v"><span>Zeige Quelltext</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m.12 13.5l3.74 3.74 1.42-1.41-2.33-2.33 2.33-2.33-1.42-1.41-3.74 3.74m11.16 0l-3.74-3.74-1.42 1.41 2.33 2.33-2.33 2.33 1.42 1.41 3.74-3.74z"></path></svg></a></li><li class="revs"><a href="https://wiki.htl-kaindorf.at/doku.php?id=dbi_rp2019:relationales_datenbankmodell:start&amp;do=revisions" title="Ältere Versionen [o]" rel="nofollow" accesskey="o"><span>Ältere Versionen</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11 7v5.11l4.71 2.79.79-1.28-4-2.37V7m0-5C8.97 2 5.91 3.92 4.27 6.77L2 4.5V11h6.5L5.75 8.25C6.96 5.73 9.5 4 12.5 4a7.5 7.5 0 0 1 7.5 7.5 7.5 7.5 0 0 1-7.5 7.5c-3.27 0-6.03-2.09-7.06-5h-2.1c1.1 4.03 4.77 7 9.16 7 5.24 0 9.5-4.25 9.5-9.5A9.5 9.5 0 0 0 12.5 2z"></path></svg></a></li><li class="backlink"><a href="https://wiki.htl-kaindorf.at/doku.php?id=dbi_rp2019:relationales_datenbankmodell:start&amp;do=backlink" title="Links hierher" rel="nofollow"><span>Links hierher</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.982 2.982 0 0 0 0-4.24 2.982 2.982 0 0 0-4.24 0l-3.53 3.53a2.982 2.982 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.982 2.982 0 0 0 0 4.24 2.982 2.982 0 0 0 4.24 0l3.53-3.53a2.982 2.982 0 0 0 0-4.24.973.973 0 0 1 0-1.42z"></path></svg></a></li><li class="siteexport_addpage"><a href="https://wiki.htl-kaindorf.at/doku.php?id=dbi_rp2019:relationales_datenbankmodell:start&amp;do=siteexport_addpage" title="Seite als HTML/PDF exportieren" rel="nofollow"><span>Seite als HTML/PDF exportieren</span><svg width="61px" height="51px" viewBox="0 0 61 51" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink"><defs></defs><path d="M26.1891503,39.0065635 L26.0876578,38.9773206 L60.6523866,1.23972885 L60.4321374,2.11844376 L60.476442,2.07071678 L60.4265202,2.14085429 L49.5024876,45.7237994 L32.8255882,40.9187101 L26,50.508302 L26,39.2103249 L26.1891503,39.0065635 Z M60.9727675,0.862917243 L22.2676619,38.2155059 L-0.00245042233,30.2214566 L60.9727675,0.862917243 Z" id="Paper-Plane"></path></svg></a></li><li class="top"><a href="#dokuwiki__top" title="Nach oben [t]" rel="nofollow" accesskey="t"><span>Nach oben</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path></svg></a></li>                    </ul>
+                </div>
+            </div>
+        </div><!-- /wrapper -->
+
+        
+<!-- <strong></strong><strong></strong><strong> FOOTER </strong><strong></strong><strong></strong> -->
+<div id="dokuwiki__footer"><div class="pad">
+    
+    <div class="buttons">
+                <a href="https://www.dokuwiki.org/donate" title="Donate"><img src="Relationales%20Datenbankmodell%20[HTBLA%20Kaindorf%20Wiki]_files/button-donate.gif" alt="Donate" width="80" height="15"></a>
+        <a href="https://php.net/" title="Powered by PHP"><img src="Relationales%20Datenbankmodell%20[HTBLA%20Kaindorf%20Wiki]_files/button-php.gif" alt="Powered by PHP" width="80" height="15"></a>
+        <a href="https://wiki.htl-kaindorf.at/validator.w3.org/check/referer" title="Valid HTML5"><img src="Relationales%20Datenbankmodell%20[HTBLA%20Kaindorf%20Wiki]_files/button-html5.png" alt="Valid HTML5" width="80" height="15"></a>
+        <a href="https://wiki.htl-kaindorf.at/%3C/em%3Ejigsaw.w3.org/css-validator/check/referer?profile=css3" title="Valid CSS"><img src="Relationales%20Datenbankmodell%20[HTBLA%20Kaindorf%20Wiki]_files/button-css.png" alt="Valid CSS" width="80" height="15"></a>
+        <a href="https://dokuwiki.org/" title="Driven by DokuWiki"><img src="Relationales%20Datenbankmodell%20[HTBLA%20Kaindorf%20Wiki]_files/button-dw.png" alt="Driven by DokuWiki" width="80" height="15"></a>
+    </div>
+</div></div><!-- /footer -->
+
+    </div></div><!-- /site -->
+
+    <div class="no"><img src="Relationales%20Datenbankmodell%20[HTBLA%20Kaindorf%20Wiki]_files/indexer.gif" alt="" width="2" height="1"></div>
+    <div id="screen__mode" class="no"></div>
+
+</body></html>

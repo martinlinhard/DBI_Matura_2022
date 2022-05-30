@@ -1,0 +1,2513 @@
+<!DOCTYPE html>
+<html dir="ltr" class="js desktop" lang="de"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Transaktionen und Concurrency [HTBLA Kaindorf Wiki]</title>
+    <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+    <meta name="generator" content="DokuWiki">
+<meta name="theme-color" content="#008800">
+<meta name="robots" content="index,follow">
+<meta name="keywords" content="dbi_rp2016,transaktionen_und_concurrency,start">
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.htl-kaindorf.at/lib/exe/opensearch.php" title="HTBLA Kaindorf Wiki">
+<link rel="start" href="https://wiki.htl-kaindorf.at/">
+<link rel="contents" href="https://wiki.htl-kaindorf.at/doku.php?id=dbi_rp2016:transaktionen_und_concurrency:start&amp;do=index" title="Übersicht">
+<link rel="manifest" href="https://wiki.htl-kaindorf.at/lib/exe/manifest.php">
+<link rel="alternate" type="application/rss+xml" title="Letzte Änderungen" href="https://wiki.htl-kaindorf.at/feed.php">
+<link rel="alternate" type="application/rss+xml" title="Aktueller Namensraum" href="https://wiki.htl-kaindorf.at/feed.php?mode=list&amp;ns=dbi_rp2016:transaktionen_und_concurrency">
+<link rel="alternate" type="text/html" title="HTML Klartext" href="https://wiki.htl-kaindorf.at/doku.php?do=export_xhtml&amp;id=dbi_rp2016:transaktionen_und_concurrency:start">
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="https://wiki.htl-kaindorf.at/doku.php?do=export_raw&amp;id=dbi_rp2016:transaktionen_und_concurrency:start">
+<link rel="canonical" href="https://wiki.htl-kaindorf.at/doku.php?id=dbi_rp2016:transaktionen_und_concurrency:start">
+<link rel="stylesheet" type="text/css" href="Transaktionen%20und%20Concurrency%20[HTBLA%20Kaindorf%20Wiki]_files/css.css">
+<link rel="stylesheet" type="text/css" href="Transaktionen%20und%20Concurrency%20[HTBLA%20Kaindorf%20Wiki]_files/prettify.css">
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='dbi_rp2016:transaktionen_und_concurrency';var SIG=' --- //[[linmad17@htl-kaindorf.at|Martin LINHARD]] 2022/05/30 14:06//';var JSINFO = {"plugins":{"edittable":{"default columnwidth":""}},"fastwiki":{"secedit":1,"preview":1,"fastpages":1,"save":0,"fastshow":0,"fastshow_same_ns":1,"fastshow_include":"","fastshow_exclude":"","preload":0,"preload_head":"====47hsjwycv782nwncv8b920m8bv72jmdm3929bno3b3====","preload_batchsize":10,"preload_per_page":100,"locktime":840,"usedraft":1,"text_btn_show":"Seite anzeigen","templatename":"dokuwiki"},"isadmin":0,"isauth":1,"move_renameokay":false,"id":"dbi_rp2016:transaktionen_und_concurrency:start","namespace":"dbi_rp2016:transaktionen_und_concurrency","ACT":"show","useHeadingNavigation":1,"useHeadingContent":1};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="Transaktionen%20und%20Concurrency%20[HTBLA%20Kaindorf%20Wiki]_files/jquery.php"></script>
+<script type="text/javascript" charset="utf-8" src="Transaktionen%20und%20Concurrency%20[HTBLA%20Kaindorf%20Wiki]_files/js.php"></script><style id="iris-css">.iris-picker{display:block;position:relative}.iris-picker,.iris-picker *{-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input+.iris-picker{margin-top:4px}.iris-error{background-color:#ffafaf}.iris-border{border-radius:3px;border:1px solid #aaa;width:200px;background-color:#fff}.iris-picker-inner{position:absolute;top:0;right:0;left:0;bottom:0}.iris-border .iris-picker-inner{top:10px;right:10px;left:10px;bottom:10px}.iris-picker .iris-square-inner{position:absolute;left:0;right:0;top:0;bottom:0}.iris-picker .iris-square,.iris-picker .iris-slider,.iris-picker .iris-square-inner,.iris-picker .iris-palette{border-radius:3px;box-shadow:inset 0 0 5px rgba(0,0,0,.4);height:100%;width:12.5%;float:left;margin-right:5%}.iris-picker .iris-square{width:76%;margin-right:10%;position:relative}.iris-picker .iris-square-inner{width:auto;margin:0}.iris-ie-9 .iris-square,.iris-ie-9 .iris-slider,.iris-ie-9 .iris-square-inner,.iris-ie-9 .iris-palette{box-shadow:none;border-radius:0}.iris-ie-9 .iris-square,.iris-ie-9 .iris-slider,.iris-ie-9 .iris-palette{outline:1px solid rgba(0,0,0,.1)}.iris-ie-lt9 .iris-square,.iris-ie-lt9 .iris-slider,.iris-ie-lt9 .iris-square-inner,.iris-ie-lt9 .iris-palette{outline:1px solid #aaa}.iris-ie-lt9 .iris-square .ui-slider-handle{outline:1px solid #aaa;background-color:#fff;-ms-filter:"alpha(Opacity=30)"}.iris-ie-lt9 .iris-square .iris-square-handle{background:0;border:3px solid #fff;-ms-filter:"alpha(Opacity=50)"}.iris-picker .iris-strip{margin-right:0;position:relative}.iris-picker .iris-strip .ui-slider-handle{position:absolute;background:0;margin:0;right:-3px;left:-3px;border:4px solid #aaa;border-width:4px 3px;width:auto;height:6px;border-radius:4px;box-shadow:0 1px 2px rgba(0,0,0,.2);opacity:.9;z-index:5;cursor:ns-resize}.iris-strip .ui-slider-handle:before{content:" ";position:absolute;left:-2px;right:-2px;top:-3px;bottom:-3px;border:2px solid #fff;border-radius:3px}.iris-picker .iris-slider-offset{position:absolute;top:11px;left:0;right:0;bottom:-3px;width:auto;height:auto;background:transparent;border:0;border-radius:0}.iris-picker .iris-square-handle{background:transparent;border:5px solid #aaa;border-radius:50%;border-color:rgba(128,128,128,.5);box-shadow:none;width:12px;height:12px;position:absolute;left:-10px;top:-10px;cursor:move;opacity:1;z-index:10}.iris-picker .ui-state-focus .iris-square-handle{opacity:.8}.iris-picker .iris-square-handle:hover{border-color:#999}.iris-picker .iris-square-value:focus .iris-square-handle{box-shadow:0 0 2px rgba(0,0,0,.75);opacity:.8}.iris-picker .iris-square-handle:hover::after{border-color:#fff}.iris-picker .iris-square-handle::after{position:absolute;bottom:-4px;right:-4px;left:-4px;top:-4px;border:3px solid #f9f9f9;border-color:rgba(255,255,255,.8);border-radius:50%;content:" "}.iris-picker .iris-square-value{width:8px;height:8px;position:absolute}.iris-ie-lt9 .iris-square-value,.iris-mozilla .iris-square-value{width:1px;height:1px}.iris-palette-container{position:absolute;bottom:0;left:0;margin:0;padding:0}.iris-border .iris-palette-container{left:10px;bottom:10px}.iris-picker .iris-palette{margin:0;cursor:pointer}.iris-square-handle,.ui-slider-handle{border:0;outline:0}</style>
+<script type="text/x-mathjax-config;executed=true">/*<![CDATA[*/MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+        displayMath: [ ["$$","$$"], ["\\[","\\]"] ],
+        processEscapes: true
+    }
+});
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="Transaktionen%20und%20Concurrency%20[HTBLA%20Kaindorf%20Wiki]_files/MathJax.js"></script>
+<script type="text/javascript" charset="utf-8" src="Transaktionen%20und%20Concurrency%20[HTBLA%20Kaindorf%20Wiki]_files/prettify.js"></script>
+<script type="text/javascript" charset="utf-8" src="Transaktionen%20und%20Concurrency%20[HTBLA%20Kaindorf%20Wiki]_files/lang-css.js"></script>
+<script type="text/javascript" charset="utf-8" src="Transaktionen%20und%20Concurrency%20[HTBLA%20Kaindorf%20Wiki]_files/lang-sql.js"></script>
+<script type="text/javascript" charset="utf-8" src="Transaktionen%20und%20Concurrency%20[HTBLA%20Kaindorf%20Wiki]_files/lang-oracle11.htm"></script><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1px; bottom: 2px; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style>
+<script type="text/javascript" charset="utf-8" src="Transaktionen%20und%20Concurrency%20[HTBLA%20Kaindorf%20Wiki]_files/lang-plsql.js"></script>
+<script type="text/javascript" charset="utf-8" src="Transaktionen%20und%20Concurrency%20[HTBLA%20Kaindorf%20Wiki]_files/lang-none.js"></script>
+<!--<![endif]-->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="shortcut icon" href="https://wiki.htl-kaindorf.at/lib/tpl/dokuwiki/images/favicon.ico">
+<link rel="apple-touch-icon" href="https://wiki.htl-kaindorf.at/lib/tpl/dokuwiki/images/apple-touch-icon.png">
+    <style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover, .MJXp-munder {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > *, .MJXp-munder > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+
+<body><div id="MathJax_Message" style="display: none;"></div>
+    <div id="dokuwiki__site"><div id="dokuwiki__top" class="site dokuwiki mode_show tpl_dokuwiki loggedIn    ">
+
+        
+<!-- <strong></strong><strong></strong><strong> HEADER </strong><strong></strong><strong></strong> -->
+<div id="dokuwiki__header"><div class="pad group">
+
+    
+    <div class="headings group">
+        <ul class="a11y skip">
+            <li><a href="#dokuwiki__content">zum Inhalt springen</a></li>
+        </ul>
+
+        <h1><a href="https://wiki.htl-kaindorf.at/doku.php?id=start" accesskey="h" title="[H]"><img src="Transaktionen%20und%20Concurrency%20[HTBLA%20Kaindorf%20Wiki]_files/logo.png" alt="" width="64" height="64"> <span>HTBLA Kaindorf Wiki</span></a></h1>
+            </div>
+
+    <div class="tools group">
+        <!-- USER TOOLS -->
+                    <div id="dokuwiki__usertools">
+                <h3 class="a11y">Benutzer-Werkzeuge</h3>
+                <ul>
+                    <li class="user">Angemeldet als: <bdi>Martin LINHARD</bdi> (<bdi>linmad17</bdi>)</li><li class="action logout"><a href="https://wiki.htl-kaindorf.at/doku.php?id=dbi_rp2016:transaktionen_und_concurrency:start&amp;do=logout&amp;sectok=c813d5870a0c15faeb08ae9b046626a8" title="Abmelden" rel="nofollow"><span>Abmelden</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M17 17.25V14h-7v-4h7V6.75L22.25 12 17 17.25M13 2a2 2 0 0 1 2 2v4h-2V4H4v16h9v-4h2v4a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9z"></path></svg></a></li>                </ul>
+            </div>
+        
+        <!-- SITE TOOLS -->
+        <div id="dokuwiki__sitetools">
+            <h3 class="a11y">Webseiten-Werkzeuge</h3>
+            <form action="/doku.php?id=start" method="get" role="search" class="search doku_form" id="dw__search" accept-charset="utf-8"><input type="hidden" name="do" value="search"><input type="hidden" name="id" value="dbi_rp2016:transaktionen_und_concurrency:start"><div class="no"><input name="q" type="text" class="edit" title="[F]" accesskey="f" placeholder="Suche" autocomplete="on" id="qsearch__in"><button value="1" type="submit" title="Suche">Suche</button><div id="qsearch__out" class="ajax_qsearch JSpopup" style="display: none;"></div></div></form>            <div class="mobileTools">
+                <form action="/doku.php" method="get" accept-charset="utf-8"><div class="no"><input type="hidden" name="id" value="dbi_rp2016:transaktionen_und_concurrency:start"><input type="hidden" name="sectok" value="c813d5870a0c15faeb08ae9b046626a8"><select name="do" class="edit quickselect" title="Werkzeuge"><option value="" selected="selected">Werkzeuge</option><optgroup label="Seiten-Werkzeuge"><option value="edit">Zeige Quelltext</option><option value="revisions">Ältere Versionen</option><option value="siteexport_addpage">Seite als HTML/PDF exportieren</option><option value="backlink">Links hierher</option></optgroup><optgroup label="Webseiten-Werkzeuge"><option value="recent">Letzte Änderungen</option><option value="media">Medien-Manager</option><option value="index">Übersicht</option></optgroup><optgroup label="Benutzer-Werkzeuge"><option value="logout">Abmelden</option></optgroup></select><button type="submit" style="display: none;">&gt;</button></div></form>            </div>
+            <ul>
+                <li class="action recent"><a href="https://wiki.htl-kaindorf.at/doku.php?id=dbi_rp2016:transaktionen_und_concurrency:start&amp;do=recent" title="Letzte Änderungen [r]" rel="nofollow" accesskey="r">Letzte Änderungen</a></li><li class="action media"><a href="https://wiki.htl-kaindorf.at/doku.php?id=dbi_rp2016:transaktionen_und_concurrency:start&amp;do=media&amp;ns=dbi_rp2016%3Atransaktionen_und_concurrency" title="Medien-Manager" rel="nofollow">Medien-Manager</a></li><li class="action index"><a href="https://wiki.htl-kaindorf.at/doku.php?id=dbi_rp2016:transaktionen_und_concurrency:start&amp;do=index" title="Übersicht [x]" rel="nofollow" accesskey="x">Übersicht</a></li>            </ul>
+        </div>
+
+    </div>
+
+    <!-- BREADCRUMBS -->
+            <div class="breadcrumbs">
+                                        <div class="trace"><span class="bchead">Zuletzt angesehen:</span> <span class="bcsep">•</span> <bdi><a href="https://wiki.htl-kaindorf.at/doku.php?id=start" class="breadcrumbs" title="start">HTBLA-Kaindorf Wiki</a></bdi> <span class="bcsep">•</span> <bdi><a href="https://wiki.htl-kaindorf.at/doku.php?id=dbi_rp2022:start" class="breadcrumbs" title="dbi_rp2022:start">DBI RP 2022</a></bdi> <span class="bcsep">•</span> <span class="curid"><bdi><a href="https://wiki.htl-kaindorf.at/doku.php?id=dbi_rp2016:transaktionen_und_concurrency:start" class="breadcrumbs" title="dbi_rp2016:transaktionen_und_concurrency:start">Transaktionen und Concurrency</a></bdi></span></div>
+                    </div>
+    
+
+
+    <hr class="a11y">
+</div></div><!-- /header -->
+
+        <div class="wrapper group">
+
+            
+            <!-- <strong></strong><strong></strong><strong> CONTENT </strong><strong></strong><strong></strong> -->
+            <div id="dokuwiki__content"><div class="pad group">
+                <div class="error">Action unknown: siteexport_addpage</div>
+                <div class="pageId"><span>dbi_rp2016:transaktionen_und_concurrency:start</span></div>
+
+                <div class="page group content_initial">
+                                                            <!-- wikipage start -->
+                    <div class="plugin_loadskin"><form id="tpl__switcher" title="Templäte wechseln" action="/doku.php?id=dbi_rp2016:transaktionen_und_concurrency:start" method="post" accept-charset="utf-8"><div class="no">
+<input type="hidden" name="sectok" value="c813d5870a0c15faeb08ae9b046626a8"><input type="hidden" name="act" value="select"><label><span>Template</span> <select name="tpl" class="quickselect">
+<option value="dokubook">dokubook</option><option value="dokuwiki" selected="selected">dokuwiki</option>
+</select></label>
+<button type="submit" name="switch" style="display: none;">Wechseln</button>
+</div></form>
+</div><div class="plugin_fastwiki_marker" style="display:none"></div><!-- TOC START -->
+<div id="dw__toc" class="dw__toc">
+<h3 class="toggle open" style="cursor: pointer;"><strong><span>−</span></strong>Inhaltsverzeichnis</h3>
+<div style="" aria-expanded="true">
+
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#transaktionen_und_concurrency">Transaktionen und Concurrency</a></div></li>
+<li class="level1"><div class="li"><a href="#transaktionen">Transaktionen</a></div></li>
+<li class="level2"><div class="li"><a href="#allgemeines">Allgemeines</a></div></li>
+<li class="level1"><div class="li"><a href="#anomalien_im_einbenutzerbetrieb">Anomalien im Einbenutzerbetrieb</a></div></li>
+<li class="level2"><div class="li"><a href="#probleme">Probleme</a></div></li>
+<li class="level1"><div class="li"><a href="#concurrency_synchronisation_paralleler_transaktionen">Concurrency (Synchronisation paralleler Transaktionen)</a></div></li>
+<li class="level2"><div class="li"><a href="#problemstellung">Problemstellung</a></div></li>
+<li class="level3"><div class="li"><a href="#lost-update_problem">Lost-Update Problem</a></div></li>
+<li class="level3"><div class="li"><a href="#inconsistent_analysis_problem">Inconsistent Analysis Problem</a></div></li>
+<li class="level3"><div class="li"><a href="#dirty-read">Dirty-read</a></div></li>
+<li class="level2"><div class="li"><a href="#serialisierbarkeit">Serialisierbarkeit</a></div></li>
+<li class="level3"><div class="li"><a href="#schedule">Schedule</a></div></li>
+<li class="level2"><div class="li"><a href="#loesungsmoeglichkeiten">Lösungsmöglichkeiten</a></div></li>
+<li class="level3"><div class="li"><a href="#loesungen_von_concurrency_problemen">Lösungen von Concurrency Problemen</a></div></li>
+<li class="level3"><div class="li"><a href="#sperrobjekte">Sperrobjekte</a></div></li>
+<li class="level3"><div class="li"><a href="#sperrmodi">Sperrmodi</a></div></li>
+<li class="level3"><div class="li"><a href="#realisierung_von_locking">Realisierung von Locking</a></div></li>
+<li class="level2"><div class="li"><a href="#deadlocks">Deadlocks</a></div></li>
+<li class="level2"><div class="li"><a href="#die_re-read-methode">Die Re-Read-Methode</a></div></li>
+<li class="level2"><div class="li"><a href="#sperrmodus_u-lock">Sperrmodus U-Lock</a></div></li>
+<li class="level2"><div class="li"><a href="#isolation_levels">Isolation Levels</a></div></li>
+<li class="level2"><div class="li"><a href="#hierarchische_sperrverfahren">Hierarchische Sperrverfahren</a></div></li>
+<li class="level1"><div class="li"><a href="#backup_und_recovery">Backup und Recovery</a></div></li>
+<li class="level2"><div class="li"><a href="#backup">Backup</a></div></li>
+<li class="level3"><div class="li"><a href="#arten_von_backups">Arten von Backups</a></div></li>
+<li class="level2"><div class="li"><a href="#recovery">Recovery</a></div></li>
+<li class="level3"><div class="li"><a href="#arten_von_fehlersituationen">Arten von Fehlersituationen</a></div></li>
+<li class="level3"><div class="li"><a href="#techniken_fuer_recovery">Techniken für Recovery</a></div></li>
+<li class="level1"><div class="li"><a href="#data_control_language">Data Control Language</a></div></li>
+<li class="level3"><div class="li"><a href="#dcl_fuer_sql">DCL für Sql</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<h3 class="sectionedit1" id="transaktionen_und_concurrency">Transaktionen und Concurrency</h3>
+<div class="level3">
+
+</div>
+
+<h1 class="sectionedit2" id="transaktionen">Transaktionen</h1>
+<div class="level1">
+
+</div>
+
+<h2 class="sectionedit3" id="allgemeines">Allgemeines</h2>
+<div class="level2">
+
+<p>
+Eine Transaktion ist eine Folge von Datenmanipulationsanweisungen 
+(INSERT, UPDATE, DELETE, vgl. DML), die als atomare Einheit ausgeführt 
+werden. Eine Transaktion überführt einen konsistenten DB-Zustand in 
+einen wiederum konsistenten DB-Zustand und sie müssen nach dem 
+ACID-Prinzip ablaufen. Eine Transaktion hat das alles oder nichts 
+Prinzip, sie muss unteilbar sein.
+</p>
+
+<p>
+Das <strong>ACID-Prinzip</strong>:
+</p>
+<ol>
+<li class="level1"><div class="li">
+ <strong>Atomicity</strong>(Atomarität, Unteilbarkeit)
+</div><ul>
+<li class="level2"><div class="li">
+ Veränderungen der Daten erfolgt vollständig oder gar nicht(alles oder nichts)
+</div></li>
+<li class="level2"><div class="li">
+ wird ein Einzelschritt nicht erfolgreich beendet, so wird der gesamte Vorgang zurückgesetzt
+</div></li>
+</ul>
+</li>
+<li class="level1"><div class="li">
+ <strong>Consistency</strong>(Konsistenz)
+</div><ul>
+<li class="level2"><div class="li">
+ Daten sind immer in einem logischen konsistenten Zustand
+</div></li>
+<li class="level2"><div class="li">
+ Verarbeitung erfolgt von einem konsistenten Zustand zum nächsten
+</div></li>
+</ul>
+</li>
+<li class="level1"><div class="li">
+ <strong>Isolation</strong>
+</div><ul>
+<li class="level2"><div class="li">
+ Datenänderungen innerhalb der Transaktion sind nur ihr selbst bekannt
+</div></li>
+<li class="level2"><div class="li">
+ Andere Transaktionen haben gleichzeitig keinen oder nur beschränkten Zugriff auf diese Daten
+</div></li>
+<li class="level2"><div class="li">
+ Transaktion darf keine andere, gleichzeitig mit ihr laufende beeinflussen
+</div></li>
+<li class="level2"><div class="li">
+ Problemberecih 'Synchronisation paralleler Transaktionen' oder auch Concurrency
+</div></li>
+</ul>
+</li>
+<li class="level1"><div class="li">
+ <strong>Durability</strong>(Persistenz, Dauerhaftigkeit)
+</div><ul>
+<li class="level2"><div class="li">
+ Nach Transaktionsabschluss müssen die Datenänderungen dauerhaft (gegen Fehler jeglicher Art) bestehen bleiben
+</div></li>
+<li class="level2"><div class="li">
+ Problembereich 'Recovery'
+</div></li>
+</ul>
+</li>
+</ol>
+
+
+<p>
+<strong>Commit und Rollback</strong>
+</p>
+<ul>
+<li class="level1"><div class="li">
+ Mit einem COMMIT wird eine Transaktion ordnungsgemäß beendet. Somit werden die Veränderungen auch für andere Nutzer sichtbar.
+</div></li>
+<li class="level1"><div class="li">
+ Mit der ROLLBACK, Abort, Reset oder Blackout-Anweisung wird die gesamte
+ Transaktion zurückgerollt, was heißt, dass alle durch DML-Anweisungen 
+verursachten Datenänderungen rückgängig gemacht werden.
+</div></li>
+</ul>
+
+
+<p>
+<strong>Autocommit</strong>
+</p>
+<ul>
+<li class="level1"><div class="li">
+ Der Autocommit-Modus ist der Standardmodus zur Transaktionsverwaltung. 
+Für jede Transact-SQL-Anweisung wird beim   Beenden ein Commit oder 
+Rollback ausgeführt. Wird eine Anweisung erfolgreich beendet, so wird 
+ein Commit ausgeführt. Wenn aber Fehler auftreten, wird ein Rollback 
+ausgeführt. Eine Verbindung befindet sich immer dann im 
+Autocommit-Modus, wenn dieser Standardmodus nicht durch explizite oder 
+implizite Transaktionen außer Kraft gesetzt wird. Der Autocommit-Modus 
+ist der Standardmodus für ADO, OLE DB, ODBC und DB-Library.
+</div></li>
+</ul>
+
+<ul>
+<li class="level1"><div class="li"> Eine Verbindung verbleibt im 
+Autocommit-Modus, bis eine explizite Transaktion durch eine BEGIN 
+TRANSACTION-Anweisung gestartet oder eine implizite Transaktion 
+aktiviert wird. Wenn für die explizite Transaktion ein Commit oder 
+Rollback ausgeführt wird oder wenn der implizite Transaktionsmodus 
+deaktiviert wird, wechselt die Verbindung wieder in den 
+Autocommit-Modus.</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Beispiel:</div>
+</li>
+</ul>
+<ol>
+<li class="level2"><div class="li">Ist SET IMPLICIT_TRANSACTIONS auf ON festgelegt, so wird für die Verbindung der implizite Transaktionsmodus festgelegt.</div>
+</li>
+<li class="level2"><div class="li">Ist SET IMPLICIT_TRANSACTIONS auf OFF festgelegt, so wechselt die Verbindung wieder in den Autocommit-Transaktionsmodus.</div>
+</li>
+</ol>
+
+<p>
+<strong>Beginn und Ende einer Transaktion</strong>
+Im Anwendungsprogramm werden Beginn und Ende
+</p>
+<ul>
+<li class="level1"><div class="li">
+ entweder explizit angegeben (BEGIN/ COMMIT TRANSACTION, COMMIT WORK für Transaktionsende)
+</div></li>
+<li class="level1"><div class="li">
+ oder implizit angenommen (z.B. Prozeduren oder bestimmte Blöcke)
+</div></li>
+</ul>
+
+
+<p>
+<strong>Länge von Transaktionen</strong>
+</p>
+<ul>
+<li class="level1"><div class="li">
+ so kurz als möglich:
+</div><ul>
+<li class="level2"><div class="li">
+ geringer Systemoverhead
+</div></li>
+<li class="level2"><div class="li">
+ wenige Funktionen sind im Fehlerfall zu wiederholen
+</div></li>
+<li class="level2"><div class="li">
+ kurze Sperreinheiten für andere Anwender
+</div></li>
+</ul>
+</li>
+<li class="level1"><div class="li">
+ so lang als notwendig:
+</div><ul>
+<li class="level2"><div class="li">
+ konsistenter Datenzustand muss gewährleistet sein
+</div></li>
+</ul>
+</li>
+</ul>
+
+
+<p>
+<strong>Savepoints</strong>
+</p>
+<ul>
+<li class="level1"><div class="li">
+Explizite Savepoints
+</div></li>
+<li class="level1"><div class="li">
+Implizite Savepoints
+</div></li>
+</ul>
+
+
+</div>
+
+<h1 class="sectionedit4" id="anomalien_im_einbenutzerbetrieb">Anomalien im Einbenutzerbetrieb</h1>
+<div class="level1">
+
+<p>
+Eine Anomalie ist ein Fehlverhalten der Datenbank. Im Einbenutzer 
+Betrieb können Anomalien durch nicht normalisierte bzw. denormalisierte 
+Datenstrukturen entstehen und führen zu Inkontinenzen.
+</p>
+
+</div>
+
+<h2 class="sectionedit5" id="probleme">Probleme</h2>
+<div class="level2">
+
+<p>
+<strong>Einfüge Anomalie</strong>
+</p>
+<ul>
+<li class="level1"><div class="li">
+Man von einer Einfüge-Anomalie (Insertion-Anomalie) beim Einfügen von 
+Daten in die DB, wenn eine neue Entität eines Entitätstyps in die 
+Datenbank nicht oder nur schwierig eingetragen werden kann, weil nicht 
+zu allen Attributen des Primärschlüssels Werte vorliegen. So können z.B.
+ Informationen nicht aufgenommen werden, da in diesem Zusammenhang 
+uninteressante bzw. zu diesem Zeitpunkt unbekannte Angaben fehlen.
+</div></li>
+</ul>
+
+<ul>
+<li class="level1"><div class="li">
+Beispiel: In einer Tabelle wird für Fahrzeuge der jeweilige Fahrer 
+angegeben. Die Attribute (Kennzeichen, Nachname) sind 
+Identifikationsschlüssel. Hier treten Einfügeanomalien auf, wenn mehrere
+ Fahrer mit gleichem Nachnamen dasselbe Fahrzeug fahren, oder für 
+mehrere Fahrzeuge noch kein Fahrer bestimmt wurde.
+</div></li>
+</ul>
+
+<ul>
+<li class="level1"><div class="li">Das Einfügen von Datensätzen mit gleichen Schlüsseln in eine Datenbank ist schwierig oder unmöglich.</div>
+</li>
+</ul>
+
+<p>
+<strong>Änderungs Anomalie</strong>
+</p>
+<ul>
+<li class="level1"><div class="li">
+Beim Ändern von Daten in einer Datenbank spricht man von einer 
+Änderungs-Anomalie (Update-Anomalie), wenn nicht alle Vorkommen einer 
+Entität zugleich geändert werden. Dieses kann zu inkonsistenten Daten 
+führen.
+</div></li>
+</ul>
+
+<ul>
+<li class="level1"><div class="li">Beispiel: Es wird in einer Tabelle 
+davon ausgegangen, dass die Erwähnungen von „Max Maier“ für ein und 
+dieselbe Person gelten. Wird der Name „Maier“ in „Meier“ geändert, muss 
+das an zwei Stellen geschehen. Geschieht das nicht, spricht man von 
+einer Update-Anomalie. Die Tabelle enthält nun inkonsistente Daten.</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li">
+Um dieses Problem zu verhindern, sollte die Tabelle in die 3. Normalform gebracht werden.
+</div></li>
+</ul>
+
+
+<p>
+<strong>Lösch Anomalie</strong>
+</p>
+<ul>
+<li class="level1"><div class="li">
+Eine Lösch-Anomalie (Delete-Anomalie) entsteht, wenn durch das Löschen 
+eines Datensatzes mehr Informationen als erwünscht verloren gehen, wenn 
+ein Datensatz mehrere unabhängige Informationen enthält. Durch das 
+Löschen der einen Information wird dann auch die andere gelöscht, obwohl
+ diese noch benötigt wird.
+</div></li>
+</ul>
+
+<ul>
+<li class="level1"><div class="li">Beispiel: Wenn Kennzeichen, Auto und 
+Name des Fahrers in einer Tabelle stehen, kann man das Fahrzeug nicht 
+löschen ohne das man auch den Fahrer löscht.</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li">
+Um das Problem zu vermeiden, muss die Tabelle in die 3. Normalform gebracht werden.
+</div></li>
+</ul>
+
+
+</div>
+
+<h1 class="sectionedit6" id="concurrency_synchronisation_paralleler_transaktionen">Concurrency (Synchronisation paralleler Transaktionen)</h1>
+<div class="level1">
+
+<p>
+Eine der Haupteigenschaften von Datenbanksystemen ist, 
+dass viele Benutzer gleichzeitig darauf zugreifen können, 
+<strong>ohne</strong> dass die Konsistenz der Daten verletzt wird.  
+(Concurrency-Control)
+</p>
+
+<p>
+Bei unkontrollierten Zugriffen auf Datenobjekte im Mehrbenutzerbetrieb 
+können einige unerwünschte Probleme auftreten, sogennante Anomalien. Auf
+ diese Problemstellungen soll nun näher eingegangen und durch Beispiele 
+verdeutlicht werden.
+</p>
+
+</div>
+
+<h2 class="sectionedit7" id="problemstellung">Problemstellung</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li">
+ Lost-Update Problem
+</div></li>
+<li class="level1"><div class="li">
+ Inconsistent Analysis Problem
+</div></li>
+<li class="level1"><div class="li">
+ Uncommitted Dependency Problem
+</div></li>
+</ul>
+
+
+</div>
+
+<h3 class="sectionedit8" id="lost-update_problem">Lost-Update Problem</h3>
+<div class="level3">
+
+<p>
+Unter dem Lost-Update-Problem versteht man, dass eine Transaktion den 
+veränderten Wert einer anderen Transaktion überschreibt, ohne zu 
+erkennen, dass zwischen der eigenen Leseaktion und der anschließenden 
+Änderung die gelesenen Daten von dieser anderen Transaktion geändert 
+wurden. 
+</p>
+<div class="table sectionedit9"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0"> Transaktion A </th><th class="col1"> Zeit </th><th class="col2"> Transaktion B </th>
+	</tr>
+	</thead>
+	<tbody><tr class="row1">
+		<td class="col0 leftalign"> FETCH R       </td><td class="col1 centeralign">  t1  </td><td class="col2 centeralign">       -       </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 centeralign">       -       </td><td class="col1 centeralign">  t2  </td><td class="col2 leftalign"> FETCH R       </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 leftalign"> UPDATE R      </td><td class="col1 centeralign">  t3  </td><td class="col2 centeralign">       -       </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 centeralign">       -       </td><td class="col1 centeralign">  t4  </td><td class="col2 leftalign"> UPDATE R      </td>
+	</tr>
+</tbody></table></div>
+
+<p>
+<strong>Problem: </strong> Änderung der Transaktion A zum Zeipunkt <em>t3</em> wurden von Transaktion B zum Zeitpunkt <em>t4</em> überschreiben und gehen somit verloren. 
+</p>
+
+</div>
+
+<h3 class="sectionedit10" id="inconsistent_analysis_problem">Inconsistent Analysis Problem</h3>
+<div class="level3">
+
+<p>
+Die inkonsistente Analyse betrifft die Lesetransaktionen, die aufgrund 
+parallel durchgeführter Änderungen während ihrer Ausführungszeit 
+unterschiedliche Zustände der Datenbank sehen.
+</p>
+
+<p>
+<strong>Gegeben: </strong> R1.stand=40 | R2.stand=50 | R3 stand=30<br>
+
+Tansaktion A  –&gt;                 Summiert die Kontostände auf<br>
+
+Transaktion B  –&gt;             Bucht 10 Einheiten von R3.stand(-10) auf R1.stand(+10) um
+</p>
+<div class="table sectionedit11"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0 leftalign"> Transaktion A                </th><th class="col1"> Zeit </th><th class="col2 leftalign"> Transaktion B         </th>
+	</tr>
+	</thead>
+	<tbody><tr class="row1">
+		<td class="col0 leftalign"> FETCH R1                     </td><td class="col1 centeralign">  t1  </td><td class="col2 centeralign">           -           </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 leftalign"> sum = sum + stand (sum:40)   </td><td class="col1 leftalign">      </td><td class="col2 leftalign">                       </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 leftalign"> FETCH R2                     </td><td class="col1 centeralign">  t2  </td><td class="col2 centeralign">           -           </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 leftalign"> sum = sum + stand (sum:90)   </td><td class="col1 leftalign">      </td><td class="col2 leftalign">                       </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0 centeralign">              -               </td><td class="col1 centeralign">  t3  </td><td class="col2 leftalign"> FETCH R3              </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0 leftalign">                              </td><td class="col1 leftalign">      </td><td class="col2 leftalign"> stand = stand - 10    </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0 centeralign">              -               </td><td class="col1 centeralign">  t4  </td><td class="col2"> UPDATE R3 (stand: 20) </td>
+	</tr>
+	<tr class="row8">
+		<td class="col0 centeralign">              -               </td><td class="col1 centeralign">  t5  </td><td class="col2 leftalign"> FETCH R1              </td>
+	</tr>
+	<tr class="row9">
+		<td class="col0 leftalign">                              </td><td class="col1 leftalign">      </td><td class="col2 leftalign"> stand = stand + 10    </td>
+	</tr>
+	<tr class="row10">
+		<td class="col0 centeralign">              -               </td><td class="col1 centeralign">  t6  </td><td class="col2"> UPDATE R1 (stand: 50) </td>
+	</tr>
+	<tr class="row11">
+		<td class="col0 centeralign">              -               </td><td class="col1 centeralign">  t7  </td><td class="col2 leftalign"> COMMIT                </td>
+	</tr>
+	<tr class="row12">
+		<td class="col0 leftalign"> FETCH R3                     </td><td class="col1 centeralign">  t8  </td><td class="col2 centeralign">           -           </td>
+	</tr>
+	<tr class="row13">
+		<td class="col0"> sum = sum + stand (sum: 110!) </td><td class="col1 leftalign">      </td><td class="col2 leftalign">                       </td>
+	</tr>
+</tbody></table></div>
+
+<p>
+<strong>Problem: </strong> Transaktion A ermittelt eine falsche Summe <em>t8</em>, richtig wäre 120.
+</p>
+
+</div>
+
+<h3 class="sectionedit12" id="dirty-read">Dirty-read</h3>
+<div class="level3">
+
+<p>
+Aufgrund parallel durchgeführter Änderungen während der Ausführungszeit kommt es zu falsch ausgelesenen Werten.
+</p>
+<div class="table sectionedit13"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0"> Transaktion A </th><th class="col1"> Zeit </th><th class="col2"> Transaktion B </th>
+	</tr>
+	</thead>
+	<tbody><tr class="row1">
+		<td class="col0 centeralign">       -        </td><td class="col1 centeralign">  t1  </td><td class="col2 leftalign"> UPDATE R      </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 leftalign"> FETCH R       </td><td class="col1 centeralign">  t2  </td><td class="col2 centeralign">       -       </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 centeralign">       -       </td><td class="col1 centeralign">  t3  </td><td class="col2 leftalign"> ROLLBACK      </td>
+	</tr>
+</tbody></table></div>
+
+<p>
+<strong>Problem: </strong> Transaktion A liest Daten <em>t2</em>, die logisch nie existiert haben <em>t3</em>
+ weil die die Änderung nicht durchgeführt sonder zurückgesetzt wurde. 
+Man könnte auch sagen, es wurde ein Phantom-Wert ausgelesen.
+Einen solchen Lesevorgang bezeichnet man als <em class="u">Dirty Read</em>.
+</p>
+<div class="table sectionedit14"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0"> Transaktion A </th><th class="col1"> Zeit </th><th class="col2"> Transaktion B </th>
+	</tr>
+	</thead>
+	<tbody><tr class="row1">
+		<td class="col0 centeralign">       -       </td><td class="col1 centeralign">  t1  </td><td class="col2 leftalign"> UPDATE R      </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 leftalign"> UPDATE R      </td><td class="col1 centeralign">  t2  </td><td class="col2 centeralign">       -       </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 centeralign">       -       </td><td class="col1 centeralign">  t3  </td><td class="col2 leftalign"> ROLLBACK      </td>
+	</tr>
+</tbody></table></div>
+
+<p>
+<strong>Probleme: </strong>
+</p>
+<ul>
+<li class="level1"><div class="li">
+ Transaktion A ändert Daten (t2), ausgehen von einem nicht existierenden Stand 
+</div></li>
+<li class="level1"><div class="li">
+ Änderungen werden wieder zurückgenommen (t3). Variante des Lost Update Problems 
+</div></li>
+</ul>
+
+
+</div>
+
+<h2 class="sectionedit15" id="serialisierbarkeit">Serialisierbarkeit</h2>
+<div class="level2">
+
+<p>
+Der Zustand der Datenbank muss während eines Lesezugriff nach dem 
+Ausführen von konkirrierenden Transaktionen der selbe sein wie 
+während/nach einem beliebigen seriellen (sequentiellen) Ablauf der 
+Transaktionen.
+</p>
+
+</div>
+
+<h3 class="sectionedit16" id="schedule">Schedule</h3>
+<div class="level3">
+
+<p>
+Um zu überprüfen, ob ein bestimmter Schedule, d.h. ein Ausführungsplan 
+von Transaktionen mit ihren zugehörigen 
+Operationen, serialisierbar ist, kann ein Serialisierbarkeits- oder 
+Abhängigkeitsgraph darstellen. In diesem Graphen treten die einzelnen 
+Transaktionen als Knoten auf und die Abhängigkeiten zwischen 
+Transaktionen als (gerichtete) Kanten. Eine Abhängigkeit zwischen zwei 
+Transaktionen Ti und Tj liegt vor, wenn Ti vor Tj auf dasselbe Objekt 
+zugegriffen hat und die Operationen der beiden Transaktionen nicht 
+reihenfolgeunabhängig (kommutativ) sind. Werden (wie üblich) als 
+Operationen Lese- und Schreibzugriffe betrachtet, dann liegt eine 
+Abhängigkeit vor, wenn wenigstens eine der beiden Operationen eine 
+Schreiboperation darstellt. Es kann gezeigt werden, dass ein Schedule 
+genau dann serialisierbar ist, wenn der zugehörige Abhängigkeitsgraph 
+azyklisch ist. Denn nur in diesem Fall reflektiert der Graph eine 
+partielle Ordnung zwischen den Transaktionen, die zu einer vollständigen
+ Ordnung, die zugleich den äquivalenten seriellen Schedule bestimmt, 
+erweitert werden kann.
+</p>
+
+<p>
+Folgendes Beispiel zeigt eine Schedule mit drei Transaktionen, wobei 
+r(x) bzw. w(x) den Lese- bzw. Schreibzugriff der jeweiligen Transaktion 
+auf Objekt x kennzeichnen. Der zugehörige Abhängigkeitsgraph ist in Abb.
+ 8-1b gezeigt, wobei die Kanten zusätzlich mit dem die Abhängigkeit 
+verursachenden Objekt gekennzeichnet sind. Da der Graph keinen Zyklus 
+enthält, ist der gezeigte Schedule serialisierbar. Die 
+Serialisierungsreihenfolge lautet T3 &lt; T1 &lt; T2.
+</p>
+
+<p>
+<a href="https://wiki.htl-kaindorf.at/lib/exe/detail.php?id=dbi_rp2016%3Atransaktionen_und_concurrency%3Astart&amp;media=dbi5:5a:schedule.png" class="media" title="dbi5:5a:schedule.png"><img src="Transaktionen%20und%20Concurrency%20[HTBLA%20Kaindorf%20Wiki]_files/fetch.png" class="media" alt=""></a>
+</p>
+
+</div>
+
+<h2 class="sectionedit17" id="loesungsmoeglichkeiten">Lösungsmöglichkeiten</h2>
+<div class="level2">
+
+<p>
+Sperrverfahren sind dadurch gekennzeichnet, dass vor dem Zugriff auf ein
+ Objekt für die betreffende Transaktion eine Sperre erwirbt, deren Modus
+ dem Zugriffswunsch entspricht. 
+</p>
+
+<p>
+<strong>Man unterscheidet:</strong>
+</p>
+<ul>
+<li class="level1"><div class="li">
+ <em>Serieller Schedule:</em> Transaktionen werden hintereinander ausgeführt(Reihenfolge der Transaktionen ist beliebig)
+</div></li>
+</ul>
+
+<ul>
+<li class="level1"><div class="li">
+ <em>Serialisierbarer Schedule:</em> Schedule ist äquivalent zu irgendeinem Seriellen Schedule
+</div></li>
+</ul>
+
+<ul>
+<li class="level1"><div class="li">
+ <em>Zwei äquivalente Schedules:</em> Zwei in Konflikt stehende Operationen werden jeweils in derselben Reihenfolge ausgeführt
+</div></li>
+</ul>
+
+<ul>
+<li class="level1"><div class="li">
+ <em>Konfliktoperationen:</em>  - gehören zu unterschiedlichen 
+Transaktionen - greifen aus dasselbe Datenobjekt zu - mindestens eine 
+Operation ist eine Schreiboperation <br>
+
+</div></li>
+</ul>
+
+
+</div>
+
+<h3 class="sectionedit18" id="loesungen_von_concurrency_problemen">Lösungen von Concurrency Problemen</h3>
+<div class="level3">
+
+<p>
+Bei der Lösung von Concurrency-Problemen gibt es verschiedene Lösungsmethoden
+</p>
+<ul>
+<li class="level1"><div class="li">
+<em class="u">Pessimistische Sperr-Verfahren</em>: Annahme, dass 
+Konflikte auftreten. Daher werden die Objekte von den Transaktionen 
+gesperrt, um damit den Zugriff anderer Transaktionen auf diese Objekte 
+für eine bestimmte (möglichst kurze) Zeit einzuschränken oder zu 
+verhindern.
+</div></li>
+<li class="level1"><div class="li">
+<em class="u">Optimistische Sperr-Verfahren</em>: Annahme, dass keine 
+Konflikte auftreten. drei Phasen: Lesephase - Validierungsphase - 
+Schreibphase. Die Objekte werden möglichst lange nicht gesperrt, 
+scheitert allerdings die Validierung, muss reagiert werden.
+</div></li>
+<li class="level1"><div class="li">
+<em class="u">Zeitstempel-Verfahren</em>: Jede Transaktion erählt eine 
+Zeitmarke (Startzeitpunkt). Synchronisiert wird so, dass die Abareitung 
+äquivalent zu einem seriellen Schedule ist. Ein Konflikt tritt auf, 
+falls eine Transaktion z.B. eine Leseanforderung auf ein Objekt absetzt,
+ das bereits von einer 'jüngeren' Transaktionverändert wurde. Konflikte 
+werden durch einen Neustart einer betroffenen Transaktion gelöst. Diese 
+Methode hat im Zusammenhang mit optimistischen Sperrverfahren und 
+verteilten Datenbanken an Bedeutung gewonnen.
+</div></li>
+</ul>
+
+
+</div>
+
+<h3 class="sectionedit19" id="sperrobjekte">Sperrobjekte</h3>
+<div class="level3">
+
+<p>
+* <em class="u">Hierarchy</em>
+</p>
+<ul>
+<li class="level1"><div class="li">
+ Datenbank
+</div></li>
+<li class="level1"><div class="li">
+ Tabelle
+</div></li>
+<li class="level1"><div class="li">
+ Physischer Block / Seite
+</div></li>
+<li class="level1"><div class="li">
+ Zeile
+</div></li>
+</ul>
+
+
+<p>
+<strong>Vorteil feiner Sperreinheiten</strong>: Höhere Parallelität zwischen Transaktionen ist möglich<br>
+
+<strong>Vorteil grober Sperreinheiten</strong>: Geringerer Verwaltungsaufwand für die Sperren ist notwendig <br>
+
+</p>
+
+<p>
+In der Praxis stellt Sperren auf Zeilenebene die feinste Sperrform dar. 
+</p>
+
+</div>
+
+<h3 class="sectionedit20" id="sperrmodi">Sperrmodi</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li">
+<em class="u">X-Lock</em>(Exklusive Sperre): Wenn eine Transaktion A das
+ Objekt R mit X-Lock gesperrt hat, kann eine andere Transaktion B das 
+Objekt R weder mit X-Lock noch mit S-Lock sperren. In diesem Fall muss 
+Transaktion B solange warten, bis Transaktion A das Objekt R freigegeben
+ hat.
+</div></li>
+<li class="level1"><div class="li">
+<em class="u">S-Lock</em>(Gemeinsame Sperre):Wenn eine Transaktion A das
+ Objekt R mit S-Lock gesperrt hat, kann eine andere Transaktion B 
+dasselbe Objekt zwar zusätzlich ebenfalls mit S-Lock, nicht aber mit 
+X-Lock sperren. Im zweiten Fall muss Transaktion B solange warten, bis 
+Transaktion A das Objekt R freigegeben hat. Transaktion A kann ein 
+Objekt R, das ausschließlich von ihr mit S-Lock belegt ist, sehr wohl 
+mit X-Lock sperren.
+</div></li>
+</ul>
+
+
+</div>
+
+<h4 id="kompatibilitaetsmatirx">Kompatibilitätsmatirx</h4>
+<div class="level4">
+<div class="table sectionedit21"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<td class="col0 leftalign" colspan="2">                                                   </td><th class="col2 rightalign" colspan="3">  Transaktion A hat Objekt gesperrt mit</th>
+	</tr>
+	<tr class="row1">
+		<td class="col0 leftalign" colspan="2">                                                   </td><th class="col2 leftalign"> X-Lock    </th><th class="col3 leftalign"> S-Lock    </th><th class="col4 leftalign"> kein Lock    </th>
+	</tr>
+	</thead>
+	<tbody><tr class="row2">
+		<th class="col0 leftalign" rowspan="3"> Transaktion B<br>
+kann Objekt <br>
+sperren mit  </th><th class="col1 leftalign"> X-Lock  </th><td class="col2 centeralign">    nein     </td><td class="col3 centeralign">    nein     </td><td class="col4 centeralign">    ja     </td>
+	</tr>
+	<tr class="row3">
+		<th class="col0 leftalign"> S-Lock  </th><td class="col1 centeralign">    nein     </td><td class="col2 centeralign">    ja    </td><td class="col3 centeralign">    ja     </td>
+	</tr>
+	<tr class="row4">
+		<th class="col0"> kein Lock </th><td class="col1 centeralign">    ja    </td><td class="col2 centeralign">    ja    </td><td class="col3 centeralign">    ja     </td>
+	</tr>
+</tbody></table></div>
+<ul>
+<li class="level1"><div class="li">
+ Konkrete Systeme arbeiten mit:
+</div><ul>
+<li class="level2"><div class="li">
+ nur einem Sperrmodus (X-Lock): geringer Verwaltungsaufwand
+</div></li>
+<li class="level2"><div class="li">
+ beiden Sperrmodi (S-Lock und X-Lock): höhere Prallelität
+</div></li>
+</ul>
+</li>
+</ul>
+
+
+<p>
+Für jedes System muss der Sperrmechanismus definiert werden: <br>
+
+<em class="u">Wodurch</em> (explizit oder implizit) bei <em class="u">welchen Objekt</em> <em class="u">welche Sperre</em> <em class="u">angebracht wird</em> und wodurch diese wieder <em class="u">aufgehoben</em> werden. 
+</p>
+
+</div>
+
+<h3 class="sectionedit22" id="realisierung_von_locking">Realisierung von Locking</h3>
+<div class="level3">
+
+<p>
+In einer Tabelle werden pro Transaktion alle Sperren und Sperranforderungen gespeichert
+</p>
+<ul>
+<li class="level1"><div class="li">
+ Identifikation der Transaktion
+</div></li>
+<li class="level1"><div class="li">
+ Identifikation des Sperrobjekts (z.B. Tabellenname, Zeilennummer)
+</div></li>
+<li class="level1"><div class="li">
+ Art der Sperre (S, X)
+</div></li>
+<li class="level1"><div class="li">
+ Kennzeichen, ob Sperre oder Sperranforderung
+</div></li>
+</ul>
+
+
+</div>
+
+<h2 class="sectionedit23" id="deadlocks">Deadlocks</h2>
+<div class="level2">
+
+<p>
+Ein Deadlock (Verklemmung) bezeichnet einen Zustand, bei dem ein oder 
+mehrere Transaktionen auf die Möglichkeit warten, einen LOCK auf 
+Datenbankobjekte abzusetzen und sich dabei gegenseitig behindern.
+</p>
+
+<p>
+Die Transaktion kann von sich aus <strong>nicht</strong> erkennen, ob sie in eine Deadlock-Situation kommt oder sich in einer Deadlocksituation befindet.
+</p>
+<div class="table sectionedit24"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0 leftalign"> Transaktion A         </th><th class="col1"> Zeit </th><th class="col2 leftalign"> Transaktion B              </th>
+	</tr>
+	</thead>
+	<tbody><tr class="row1">
+		<td class="col0 leftalign"> FETCH R               </td><td class="col1 centeralign">  t1  </td><td class="col2 centeralign">             -              </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 leftalign"> (S-Lock auf R)         </td><td class="col1 leftalign">      </td><td class="col2 leftalign">                            </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 centeralign">           -           </td><td class="col1 centeralign">  t2  </td><td class="col2 leftalign"> FETCH R                    </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 leftalign">                       </td><td class="col1 leftalign">      </td><td class="col2 leftalign"> (S-Lock auf R)              </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0 leftalign"> UPDATE R              </td><td class="col1 centeralign">  t3  </td><td class="col2 centeralign">             -              </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"> (Request X-Lock auf R) </td><td class="col1 leftalign">      </td><td class="col2 leftalign">                            </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0 leftalign"> (warten)             </td><td class="col1 leftalign">      </td><td class="col2 leftalign"> DISPLAY R                  </td>
+	</tr>
+	<tr class="row8">
+		<td class="col0 leftalign"> (warten)             </td><td class="col1 leftalign">      </td><td class="col2"> DISPLAY 'Weiter ja/nein?' </td>
+	</tr>
+	<tr class="row9">
+		<td class="col0 leftalign"> (warten)             </td><td class="col1 leftalign">      </td><td class="col2 leftalign"> READ Antwort                </td>
+	</tr>
+	<tr class="row10">
+		<td class="col0 leftalign"> (warten)             </td><td class="col1 centeralign">  t4  </td><td class="col2 leftalign"> COMMIT                     </td>
+	</tr>
+	<tr class="row11">
+		<td class="col0 leftalign"> (warten)             </td><td class="col1 leftalign">      </td><td class="col2 leftalign"> (Release S-Lock auf R)      </td>
+	</tr>
+	<tr class="row12">
+		<td class="col0 leftalign"> (Resume UPDATE R)     </td><td class="col1 centeralign">  t5  </td><td class="col2 centeralign">             -              </td>
+	</tr>
+	<tr class="row13">
+		<td class="col0 leftalign"> (X-Lock auf R)         </td><td class="col1 leftalign">      </td><td class="col2 leftalign">                            </td>
+	</tr>
+</tbody></table></div>
+
+<p>
+<strong>Problem</strong>: Beim Warten nach der UPDATE-Anforderung (t3) 
+ist für die Transaktion A nicht ersichtlich, ob ein Deadlock vorliegt 
+oder nicht. 
+</p>
+
+<p>
+Das Deadlock-Problem wird <em class="u">systemmäßig</em> im Wesentlichen auf 2 Arten behandelt:
+</p>
+<ul>
+<li class="level1"><div class="li">
+ <em class="u">Deadlock-Vermeidung</em>: Besteht bei einer 
+Sperranforderung die Gefahr, dass ein Deadlock auftreten kann, wird die 
+Transaktion abgebrochen. Alle Objekte, die die Transaktion will, werden 
+zu Beginn der Transaktion gesperrt.\\Mit dem Zeitstempel-Verfahren ist 
+ebenfalls eine Deadlock-Vermeidung möglich.
+</div></li>
+<li class="level1"><div class="li">
+ <em class="u">Deadlock-Erkennung</em>:
+</div></li>
+</ul>
+
+
+<p>
+<em>Erkennung</em>:<br>
+
+Zur Deadlock-Erkennung wir ein (gerichteter) <em class="u">Wartegraph</em> geführt:
+</p>
+<ul>
+<li class="level1"><div class="li">
+ Knoten: Im System vorhandene Transaktionen
+</div></li>
+<li class="level1"><div class="li">
+ Kanten: Wenn Transaktion A ein Objekt sperren will (Request), 
+Transaktion B aber eine entsprechende Sperre auf dieses Objekt aufrecht 
+hält und Transaktion A daher warten muss, wird eine Kante von A nach B 
+gezeichnet. Zur besseren Übersicht können die Kanten auch mit dem Namen 
+des Objekts und der Art der gewünschten Sperre bezeichnet werden. z.B. 
+R1(X), R3(S) 
+</div></li>
+<li class="level1"><div class="li">
+ Eine Deadlock-Situation liegt genau dann vor, wenn im Wartegraph Zyklen
+ (Kreise) enthalten sind. Der Wartegraph muss von Zeit zu Zeit (wann?) 
+auf das Vorhandensein von Zyklen geprüft werden.
+</div></li>
+</ul>
+
+
+<p>
+<a href="https://wiki.htl-kaindorf.at/lib/exe/detail.php?id=dbi_rp2016%3Atransaktionen_und_concurrency%3Astart&amp;media=dbi5:5a:ein_kein_deadlock.png" class="media" title="dbi5:5a:ein_kein_deadlock.png"><img src="Transaktionen%20und%20Concurrency%20[HTBLA%20Kaindorf%20Wiki]_files/fetch_002.png" class="media" alt=""></a>
+</p>
+
+<p>
+<em>Beseitigung</em>:<br>
+
+</p>
+<ul>
+<li class="level1"><div class="li">
+ Eine an der Deadlocksituation beteiligte Transaktion ist als 'Opfer' auszuwählen und zurückzusetzen 
+</div></li>
+</ul>
+
+
+</div>
+
+<h2 class="sectionedit25" id="die_re-read-methode">Die Re-Read-Methode</h2>
+<div class="level2">
+
+<p>
+Wird ein Datensatz in einem Multi-Tasking-Betrieb geändert wird das 
+Re-Read-Verfahren(Read-Before-Write-Verfahren) verwendet, welches 
+folgende Kriterien entspricht:
+</p>
+<ul>
+<li class="level1"><div class="li">
+ Es darf zu keinen Inkonsistenzen kommen
+</div></li>
+<li class="level1"><div class="li">
+ Die Objekte dürfen nicht zu lange gesperrt sein
+</div></li>
+<li class="level1"><div class="li">
+ Es darf keine Deadlock-Situation auftreten
+</div></li>
+</ul>
+
+
+<p>
+<strong>Grafische Darstellung</strong>
+</p>
+
+<p>
+<a href="https://wiki.htl-kaindorf.at/lib/exe/detail.php?id=dbi_rp2016%3Atransaktionen_und_concurrency%3Astart&amp;media=dbi5:5a:re-read-methode.png" class="media" title="dbi5:5a:re-read-methode.png"><img src="Transaktionen%20und%20Concurrency%20[HTBLA%20Kaindorf%20Wiki]_files/fetch_003.png" class="media" alt=""></a>
+</p>
+
+<p>
+<strong>Beschreibung</strong>:
+</p>
+<ol>
+<li class="level1"><div class="li">
+ Datensatz nach Record-Old <em class="u">ohne</em> <em class="u">Sperre</em> einlesen
+</div></li>
+<li class="level1"><div class="li">
+ Datensatz(oder Teile davon) aus Record-Old nach Record-Update kopieren
+</div></li>
+<li class="level1"><div class="li">
+ Datensatz Record-Update(oder Teile davon) vom Benutzer ändern lassen
+</div></li>
+<li class="level1"><div class="li">
+ Datensatz nach Record-Check mit <em class="u">X-Lock</em> noch einmal einlesen(Re-Read)
+</div></li>
+<li class="level1"><div class="li">
+ <em class="u">Ganzen</em> Datensatz in Record-Old mit <em class="u">ganzem</em> Datensatz in Record-Check vergleichen
+</div></li>
+<li class="level1"><div class="li">
+ <strong>wenn gleich</strong>: dann Satz auf Grund von Record-Update ändern <br>
+<strong>wenn ungleich</strong>: dann Meldung 'Satz wurde mittlerweile geändert' an den Benutzer
+</div></li>
+</ol>
+
+
+</div>
+
+<h2 class="sectionedit26" id="sperrmodus_u-lock">Sperrmodus U-Lock</h2>
+<div class="level2">
+
+<p>
+Wird bei Lese-Operationen angegeben, wenn danach eine Änderungs-Operation beabsichtigt ist.
+</p>
+
+<p>
+<strong><em>Vorteil:</em></strong>
+</p>
+<ul>
+<li class="level1"><div class="li">
+ geringere Deadlock-Gefahr als bei Lesen mit S-Lock
+</div></li>
+</ul>
+
+<ul>
+<li class="level1"><div class="li"> höhere Parallelität als bei Lesen mit X-Lock</div>
+</li>
+</ul>
+
+<p>
+<strong>Kompabilitätsmatrix:</strong>
+</p>
+<div class="table sectionedit27"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<td class="col0"> </td><th class="col1"> X-Lock </th><th class="col2 leftalign"> U-Lock    </th><th class="col3 leftalign"> S-Lock    </th><th class="col4 leftalign"> kein Lock  </th>
+	</tr>
+	</thead>
+	<tbody><tr class="row1">
+		<th class="col0 leftalign"> X-Lock   </th><td class="col1 centeralign">   nein     </td><td class="col2 centeralign">    nein     </td><td class="col3 centeralign">    nein    </td><td class="col4"> ja </td>
+	</tr>
+	<tr class="row2">
+		<th class="col0 leftalign"> U-Lock   </th><td class="col1 centeralign">   nein     </td><td class="col2 centeralign">    nein     </td><td class="col3 centeralign">    ja      </td><td class="col4"> ja </td>
+	</tr>
+	<tr class="row3">
+		<th class="col0 leftalign"> S-Lock   </th><td class="col1 centeralign">   nein     </td><td class="col2 centeralign">    ja       </td><td class="col3 centeralign">    ja      </td><td class="col4"> ja </td>
+	</tr>
+	<tr class="row4">
+		<th class="col0 leftalign"> kein Lock  </th><td class="col1 centeralign">   ja     </td><td class="col2 centeralign">    ja       </td><td class="col3 centeralign">    ja      </td><td class="col4"> ja </td>
+	</tr>
+</tbody></table></div>
+
+</div>
+
+<h2 class="sectionedit28" id="isolation_levels">Isolation Levels</h2>
+<div class="level2">
+
+<p>
+<strong>Definition</strong>: Ein Grad, zu dem die Datenkonsistenz eingehalten wird.
+</p>
+
+<p>
+Es werden nicht für einzelne Operationen Sperrmodi angegeben, sondern 
+für Transaktionen Isolation Levels definiert, die festlegen welche 
+Serialisierungsprobleme auftreten dürfen und welche nicht.
+</p>
+
+<p>
+<strong>3 Arten von Serialisierungsproblemen:</strong>
+</p>
+<ul>
+<li class="level1"><div class="li">
+ <strong>Dirty Read</strong>: Transaktion A liest Zeile, die von einer 
+anderen Transaktion B geändert wurde. B führt ein Rollback durch und A 
+arbeitet mit einer Zeile, die so nie existiert hat.
+</div></li>
+</ul>
+
+<ul>
+<li class="level1"><div class="li"> <strong>Nonrepeatable Read</strong>(Fuzzy
+ Read): Transaktion A liest eine Zeile; eine andere Transkation B ändert
+ diese Zeile. A liest diese Zeile nochmals und erhält eine andere 
+Version derselben Zeile.</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> <strong>Phantoms</strong>: 
+Transaktion A liest mehrere Zeilen, die einer bestimmten Bedingung 
+genügen, eine andere Transaktion B fügt eine Zeile ein, die auch diese 
+Bedingung erfüllt. A wiederholt die Abfrage und erhält ein anderes 
+Ergebnis. </div>
+</li>
+</ul>
+
+<p>
+Folgende Tabelle gibt an, ob bei einem bestimmten Isolation Level ein bestimmtes Problem auftreten kann:
+</p>
+<div class="table sectionedit29"><table class="inline">
+	<tbody><tr class="row0">
+		<td class="col0"> </td><th class="col1"> Dirty Read </th><th class="col2 leftalign"> Nonrepeatable Read    </th><th class="col3 leftalign"> Phantoms     </th>
+	</tr>
+	<tr class="row1">
+		<th class="col0 leftalign"> Read Uncommitted   </th><td class="col1 centeralign">   ja     </td><td class="col2 centeralign">    ja     </td><td class="col3 centeralign">    ja    </td>
+	</tr>
+	<tr class="row2">
+		<th class="col0 leftalign"> Read Committed  </th><td class="col1 centeralign">   nein     </td><td class="col2 centeralign">    ja     </td><td class="col3 centeralign">    ja      </td>
+	</tr>
+	<tr class="row3">
+		<th class="col0 leftalign"> Repeatable Read   </th><td class="col1 centeralign">   nein     </td><td class="col2 centeralign">    nein       </td><td class="col3 centeralign">    ja      </td>
+	</tr>
+	<tr class="row4">
+		<th class="col0 leftalign"> Serializable  </th><td class="col1 centeralign">   nein     </td><td class="col2 centeralign">    nein       </td><td class="col3 centeralign">    nein      </td>
+	</tr>
+</tbody></table></div>
+
+<p>
+<em>Read Uncommitted</em>: kein Lock beim Lesen<br>
+
+<em>Read Committed</em>: S-Lock auf Zeile beim Lesen - nicht Two-Phase Locking<br>
+
+<em>Repeatable Read</em>: S-Lock auf Zeile beim Lesen bis Transaktionsende<br>
+
+<em>Serializable</em>: <strong>einfach</strong> - S-Lock auf Tabelle(n) beim Lesen bis Transaktionsende ODER <strong>komplex</strong> - Predicate Locking; Zugriffspfad für die angegebene Bedingung sperren; Sperren 'nicht existenter' Zeilen
+</p>
+
+</div>
+
+<h2 class="sectionedit30" id="hierarchische_sperrverfahren">Hierarchische Sperrverfahren</h2>
+<div class="level2">
+
+<p>
+Sperren von verschiedenen Granulaten/ auf verschiedenen Hierarchen <br>
+(Datenbank – Tabelle – (Seite) – Zeile)
+</p>
+
+<p>
+<strong>Problem:</strong> Wenn eine Transaktion ein Objekt sperren will,
+ muss für alle untergeordneten Objekte überprüft werden, ob ein 
+Sperrkonflikt auftritt.
+</p>
+
+<p>
+Beim Sperren eines Objekts muss Top-Down bei allen in der Hierarchie 
+übergeordneten Objekten eine geeignete Sperre erworben werden, das 
+freigeben erfolgt Bottum-Up.
+</p>
+
+<p>
+<strong>Arten von Intent Locks:</strong>
+</p>
+<ul>
+<li class="level1"><div class="li">
+ IS-Lock(Intent Shared Lock): alle untergeordneten Objekte werden mit S-Lock gesperrt
+</div></li>
+<li class="level1"><div class="li">
+ IX-Lock(Intent Exclusive Lock): alle untergeordneten Objekte werden mit X-Lock gesperrt
+</div></li>
+<li class="level1"><div class="li">
+ SIX-Lock(Shared Intent Exclusive Lock): sperrt das Objekt mit S-Lock und alle untergeordneten Objekte mit X-Lock
+</div></li>
+</ul>
+
+
+<p>
+<strong>Stärke der Sperrmodi</strong>(links ist stärker):
+</p>
+
+<p>
+<a href="https://wiki.htl-kaindorf.at/lib/exe/detail.php?id=dbi_rp2016%3Atransaktionen_und_concurrency%3Astart&amp;media=dbi5:5a:staerke_sperrmodi.png" class="media" title="dbi5:5a:staerke_sperrmodi.png"><img src="Transaktionen%20und%20Concurrency%20[HTBLA%20Kaindorf%20Wiki]_files/fetch_004.png" class="media" alt=""></a>
+</p>
+
+<p>
+<strong>Sperrstrategie</strong>
+</p>
+<ul>
+<li class="level1"><div class="li">
+ Bevor eine Transaktion ein Objekt mit S-Lock sperren kann, müssen alle 
+seine übergeordneten Objekte Top-Down (von oben nach unten) mit IS-Lock 
+oder stärker gesperrt werden
+</div></li>
+<li class="level1"><div class="li">
+ Bevor eine Transaktion ein Objekt mit X-Lock sperren kann, müssen alle 
+seine übergeordneten Objekte Top-Down (von oben nach unten) mit IX-Lock 
+oder stärker gesperrt werden
+</div></li>
+<li class="level1"><div class="li">
+ Die sperren werden mit Buttom-Up (von unten nach oben) freigegeben, 
+dass heißt es wird die Sperre nicht freigegeben, wenn die Transaktion 
+noch untergeordnete Objekte gesperrt hat.
+</div></li>
+</ul>
+
+
+<p>
+<strong>Kompatibilitätsmatrix</strong>
+</p>
+
+<p>
+Die folgende Tabelle zeigt die angeforderten Sperrmodi und deren Kompatibilität mit dem vorhandenen Sperrmodus.
+</p>
+<div class="table sectionedit31"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0 leftalign"> Angeforderter Modus                        </th><th class="col1 leftalign"> IS   </th><th class="col2 leftalign"> S    </th><th class="col3 leftalign"> U    </th><th class="col4 leftalign"> IX   </th><th class="col5 leftalign"> SIX  </th><th class="col6 leftalign"> X    </th>
+	</tr>
+	</thead>
+	<tbody><tr class="row1">
+		<th class="col0"> Beabsichtigt gemeinsam (Intend shared, IS) </th><td class="col1 centeralign">  Ja  </td><td class="col2 leftalign"> Ja   </td><td class="col3 leftalign"> Ja   </td><td class="col4 leftalign"> Ja   </td><td class="col5 leftalign"> Ja   </td><td class="col6"> Nein </td>
+	</tr>
+	<tr class="row2">
+		<th class="col0 leftalign"> S(Shared)                                  </th><td class="col1 centeralign">  Ja  </td><td class="col2 leftalign"> Ja   </td><td class="col3 leftalign"> Ja   </td><td class="col4"> Nein </td><td class="col5"> Nein </td><td class="col6"> Nein </td>
+	</tr>
+	<tr class="row3">
+		<th class="col0 leftalign"> U(Update)                                  </th><td class="col1 centeralign">  Ja  </td><td class="col2 leftalign"> Ja   </td><td class="col3"> Nein </td><td class="col4"> Nein </td><td class="col5"> Nein </td><td class="col6"> Nein </td>
+	</tr>
+	<tr class="row4">
+		<th class="col0 leftalign"> Beabsichtigte exklusiv Sperre              </th><td class="col1 centeralign">  ja  </td><td class="col2"> Nein </td><td class="col3"> Nein </td><td class="col4 leftalign"> Ja   </td><td class="col5"> Nein </td><td class="col6"> Nein </td>
+	</tr>
+	<tr class="row5">
+		<th class="col0 leftalign"> Gemeinsam mit beabsichtigt exklusiv        </th><td class="col1 centeralign">  Ja  </td><td class="col2"> Nein </td><td class="col3"> Nein </td><td class="col4"> Nein </td><td class="col5"> Nein </td><td class="col6"> Nein </td>
+	</tr>
+	<tr class="row6">
+		<th class="col0 leftalign"> Exklusiv (Exklusiv, X)                     </th><td class="col1"> Nein </td><td class="col2"> Nein </td><td class="col3"> Nein </td><td class="col4"> Nein </td><td class="col5"> Nein </td><td class="col6"> Nein </td>
+	</tr>
+</tbody></table></div>
+
+</div>
+
+<h1 class="sectionedit32" id="backup_und_recovery">Backup und Recovery</h1>
+<div class="level1">
+
+<p>
+Moderne Datenbanksysteme sollen dafür sorgen, dass auch Daten im 
+Fehlerfall verfügbar sind. Jedoch ist dafür nicht die Datenbank alleine 
+verantwortlich. Deshalb ist es notwendig, ein Backup zu machen. Oft 
+werden die Begriffe Backup und Recovery vertauscht, die Unterschiede 
+sind jedoch einfach zu verstehen:
+</p>
+<ul>
+<li class="level1"><div class="li">
+ <strong>Backup: </strong> Ein Backup ist die Kopie von Daten einer Datenbank mit der man später Daten rekonstruieren kann.
+</div></li>
+<li class="level1"><div class="li">
+ <strong>Recovery: </strong> Recovery beschreibt alle Tätigkeiten, nach 
+denen die Daten nach einem Fehlerfall wieder verwendbar sind, also 
+einfach gesagt das Wiederherstellen von Daten.  
+</div></li>
+</ul>
+
+
+</div>
+
+<h2 class="sectionedit33" id="backup">Backup</h2>
+<div class="level2">
+
+<p>
+Backup ist also der Prozess, in dem Daten gesichert werden mit der 
+Absicht, diese bei einem Verlust wiederherzustellen. Diese Daten sind 
+daher mindestens zwei mal gespeichert.
+</p>
+
+</div>
+
+<h3 class="sectionedit34" id="arten_von_backups">Arten von Backups</h3>
+<div class="level3">
+
+<p>
+Es gibt verschiedene Arten von Backups und daher auch verschiedene Möglichkeiten, Backups zu kategorisieren.
+</p>
+
+</div>
+
+<h4 id="kategorie_1menge_der_daten_haeufigkeit_der_backups">Kategorie 1: Menge der Daten, Häufigkeit der Backups</h4>
+<div class="level4">
+
+</div>
+
+<h5 id="full_backup">Full Backup</h5>
+<div class="level5">
+
+<p>
+Beim Full Backup werden die gesamten Daten gesichert.
+</p>
+<ul>
+<li class="level1"><div class="li">
+ <em>Vorteil:</em> Die Restore-Zeit ist gering und durch die redundante Datenspeicherung ist es sehr sicher.
+</div></li>
+<li class="level1"><div class="li">
+ <em>Nachteil:</em> Es wird viel Speicherplatz benötigt und das Backup zu machen braucht sehr lange.  
+</div></li>
+</ul>
+
+
+</div>
+
+<h5 id="partial_backup">Partial Backup</h5>
+<div class="level5">
+
+<p>
+Beim Partial Backup werden nicht immer alle Daten gesichert, sondern nur die, die sich verändert haben.
+</p>
+<ul>
+<li class="level1"><div class="li">
+ Vorteil: Es wird wenig Speicherplatz gebraucht und die Zeit, die das Backup benötigt, ist gering.
+</div></li>
+<li class="level1"><div class="li">
+ Nachteil:  Die Restore-Zeit ist sehr hoch und es gibt kaum Redundanzen, daher ist es nicht so sicher wie ein Full Backup.
+</div></li>
+</ul>
+
+
+<p>
+Das Partial Backup kann weiter in zwei Unterarten geteilt werden:
+</p>
+<ul>
+<li class="level1"><div class="li">
+ <strong>Differential Backup: </strong> Hierbei werden nur die Daten gespeichert, die sich seit dem letzten Full Backup geändert haben.
+</div><ul>
+<li class="level2"><div class="li">
+ Vorteil: Die Restore-Zeit ist gering und es ist sicherer, da eine gewisse Redundanz gewährleistet ist.
+</div></li>
+<li class="level2"><div class="li">
+ Nachteil: Es wird viel Speicherplatz benötigt und das Backup dauert länger.
+</div></li>
+</ul>
+</li>
+</ul>
+
+<ul>
+<li class="level1 node"><div class="li"> <strong>Incremental Backup: </strong> Hierbei werden nur die Daten gespeichert, die sich seit dem letzten Partial Backup geändert haben.</div>
+<ul>
+<li class="level3"><div class="li"> Vorteil: Es wird wenig Speicherplatz benötigt und das Backup zu machen dauert nicht lange.</div>
+</li>
+<li class="level3"><div class="li"> Nachteil: Ein Restore dauert länger und das Backup ist nicht sehr sicher, da es nur wenige Redundanzen gibt.</div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<h4 id="kategorie_2zustand_des_systems_zum_zeitpunkt_des_backups">Kategorie 2: Zustand des Systems zum Zeitpunkt des Backups</h4>
+<div class="level4">
+
+</div>
+
+<h5 id="offline_backup">Offline Backup</h5>
+<div class="level5">
+
+<p>
+Das Offline Backup, auch Cold Backup genannt, wird ausgeführt, wenn die 
+Datenbank offline ist. Ist dies der Fall können keine 
+Datenbankänderungen durchgeführt werden und ein konsistenter und integer
+ Zustand wird gewährleistet. Dafür kann man zu dieser Zeit nicht mit der
+ Datenbank arbeiten, was heutzutage nicht mehr möglich ist.
+</p>
+
+</div>
+
+<h5 id="online_backup">Online Backup</h5>
+<div class="level5">
+
+<p>
+Das Online Backup, auch Hot Backup genannt, wird bei laufendem Betrieb 
+ausgeführt. Dabei ist zu beachten, dass während des Backups Änderungen 
+gemacht werden könnten. Dies kann zu Inkonsistenzen führen, mit denen 
+aber auch umgegangen werden muss.
+Deshalb muss von Beginn des Backups die Änderungen mitprotokolliert 
+werden. Um einen konsistenten Zustand einzuspielen, müssen die Redo Logs
+ ausgeführt werden.
+</p>
+
+</div>
+
+<h2 class="sectionedit35" id="recovery">Recovery</h2>
+<div class="level2">
+
+<p>
+Recovery bezeichnet die Wiederherstellung eines Konsistenten Datenzustands nach einer Fehlersituation.
+</p>
+
+</div>
+
+<h3 class="sectionedit36" id="arten_von_fehlersituationen">Arten von Fehlersituationen</h3>
+<div class="level3">
+
+<p>
+Es gibt drei Arten von Fehlersituationen.
+</p>
+
+</div>
+
+<h4 id="transaktionsfehler_lokaler_fehler">Transaktionsfehler (lokaler Fehler)</h4>
+<div class="level4">
+
+<p>
+Eine Transaktion ist eine Arbeitseinheit, die entweder ganz oder 
+garnicht durchgeführt werden muss oder darf. Sie führt die Daten von 
+einem konsistenten Zustand in einen anderen konsistenten Zustand über.
+</p>
+
+<p>
+Bei einem Transaktionsfehler wird eine Transaktion nicht ordnungsgemäß 
+beendet. Die Daten befinden sich dann in einem inkonsistenten Zustand.
+</p>
+
+</div>
+
+<h5 id="was_kann_einen_transaktionsfehler_ausloesen">Was kann einen Transaktionsfehler auslösen ?</h5>
+<div class="level5">
+<ul>
+<li class="level1"><div class="li">
+ Laufzeitfehler im Anwenderprogramm (z.B. Division durch 0)
+</div></li>
+<li class="level1"><div class="li">
+ Endlosschleife im Anwenderprogramm
+</div></li>
+<li class="level1"><div class="li">
+ Deadlock
+</div></li>
+<li class="level1"><div class="li">
+ Abbruch des Anwenderprogramms durch den Systembediener
+</div></li>
+<li class="level1"><div class="li">
+ Time-Out des Anwenderprogramms (Überschreiten einer CPU-Zeitgrenze)
+</div></li>
+<li class="level1"><div class="li">
+ kein verfügbarer Plattenplatz bei einem Schreibbefehl im Anwenderprogramm
+</div></li>
+<li class="level1"><div class="li">
+ Befehl zum Zurücknehmen der Transaktion im Anwenderprogramm selbst
+</div></li>
+</ul>
+
+
+</div>
+
+<h5 id="welche_massnahmen_sind_erforderlich">Welche Maßnahmen sind erforderlich?</h5>
+<div class="level5">
+
+<p>
+Alle Änderungen, die die Transaktion bis zum Abbruch gemacht hat, müssen
+ im laufenden Systembetrieb zurückgenommen werden. Dies nennt man 
+Transaction Recovery, Transaction Rollback oder Dynamic Transaction 
+Backout. Nur so kann man einen konsistenten Zustand gewährleisten. Man 
+spricht hier von Backward Recovery.
+</p>
+
+</div>
+
+<h5 id="wer_ist_involviert">Wer ist involviert?</h5>
+<div class="level5">
+<ul>
+<li class="level1"><div class="li">
+ Der User, der mit einem DML Befehl eine Transaktion auslöst
+</div></li>
+<li class="level1"><div class="li">
+ Der Transaktionsmonitor, der die Änderungen zurücknimmt, also ein Rollback auslöst
+</div></li>
+<li class="level1"><div class="li">
+ Der Systembetreuer, wenn er für den Transaktionsfehler verantwortlich 
+ist indem er der Datenbank beispielsweise den Stecker zieht
+</div></li>
+</ul>
+
+
+</div>
+
+<h4 id="systemfehler_globaler_fehler_soft_crash">Systemfehler (globaler Fehler, Soft Crash)</h4>
+<div class="level4">
+
+<p>
+Ein Systemfehler tritt dann auf, wenn statt einer Transaktion mehere Transaktionen nicht ordnungsgemäß beendet werden können.
+Die Daten befinden sich dann in einem inkonsistenten Zustand.
+</p>
+
+</div>
+
+<h5 id="was_kann_einen_systemfehler_ausloesen">Was kann einen Systemfehler auslösen ?</h5>
+<div class="level5">
+<ul>
+<li class="level1"><div class="li">
+ Stromausfall
+</div></li>
+<li class="level1"><div class="li">
+ Abbruch des Transaktionsmonitors durch den Systembediener
+</div></li>
+<li class="level1"><div class="li">
+ Fehler im Betriebssystem
+</div></li>
+<li class="level1"><div class="li">
+ Verlust von Hauptspeicherinhalten
+</div></li>
+</ul>
+
+
+</div>
+
+<h5 id="welche_massnahmen_sind_erforderlich1">Welche Maßnahmen sind erforderlich?</h5>
+<div class="level5">
+
+<p>
+Alle Änderungen der Transaktionen, die zum Zeitpunkt des Systemfehlers 
+aktiv (in flight) waren, müssen beim Systemwiederstart zurückgenommen 
+werden. Dies nennt man Crash Recovery und zählt zum Backward Recovery.
+</p>
+
+</div>
+
+<h5 id="wer_ist_involviert1">Wer ist involviert?</h5>
+<div class="level5">
+<ul>
+<li class="level1"><div class="li">
+ Die User, die die Transaktionen ausgelöst haben.
+</div></li>
+<li class="level1"><div class="li">
+ Der Systemadministrator, der die Datenbank wieder hochfaren muss
+</div></li>
+</ul>
+
+
+</div>
+
+<h4 id="mediumfehler_speicherfehler_hard_crash">Mediumfehler (Speicherfehler, Hard Crash)</h4>
+<div class="level4">
+
+<p>
+Bei diesem Fehler sind die Daten physikalisch zerstört oder nicht mehr lesbar.
+</p>
+
+</div>
+
+<h5 id="was_kann_einen_mediumfehler_ausloesen">Was kann einen Mediumfehler auslösen ?</h5>
+<div class="level5">
+<ul>
+<li class="level1"><div class="li">
+ Irrtümliches Löschen von Daten
+</div></li>
+<li class="level1"><div class="li">
+ Irrtümliches Formatieren von Festplatten
+</div></li>
+<li class="level1"><div class="li">
+ Fehler in der Dateiverwaltung des Betriebssystems
+</div></li>
+<li class="level1"><div class="li">
+ Katastrophenfälle (Brand, Erdbeben, etc.)
+</div></li>
+<li class="level1"><div class="li">
+ Hard-Crash auf der Magnetplatte
+</div></li>
+<li class="level1"><div class="li">
+ Fehler im Disk-Controller
+</div></li>
+</ul>
+
+
+</div>
+
+<h5 id="welche_massnahmen_sind_erforderlich2">Welche Maßnahmen sind erforderlich?</h5>
+<div class="level5">
+
+<p>
+Ein Sicherungsstand (Backup Copy) der Daten wird eingespielt und die 
+Änderungen aller Transaktionen, die seit dem Zeitpunkt der Sicherung 
+beendet wurden, müssen vom System nachvollzogen werden. Dies nennt man 
+Archive Recovery, Media Recovery oder Disaster Recovery, es zählt zum 
+Forward Recovery.
+</p>
+
+</div>
+
+<h5 id="wer_ist_involviert2">Wer ist involviert?</h5>
+<div class="level5">
+<ul>
+<li class="level1"><div class="li">
+ Der Administrator, der neue Hardware kaufen muss und das Backup einspielen muss
+</div></li>
+</ul>
+
+
+</div>
+
+<h3 class="sectionedit37" id="techniken_fuer_recovery">Techniken für Recovery</h3>
+<div class="level3">
+
+<p>
+Für die oben genannten Fehlersituationen gibt es zwei Techniken. 
+Transaction Recovery und Crash Recovery werden unter demBegriff Backward
+ Recovery zusammengefasst. Archive Recovery wird auch Forward Recovery 
+genannt.
+</p>
+
+<p>
+Bei kombinierten System- und Mediumfehlern ist Forward- und 
+Backward-Recovery (in dieser Reihenfolge) durchzuführen. Bei gewissen 
+Strategien werden die After-Images erst bei Transaktionsende auf die 
+Log-Datei geschrieben. Dadurch kann das Backward-Recovery entfallen.
+</p>
+
+</div>
+
+<h4 id="backward_recovery">Backward Recovery</h4>
+<div class="level4">
+
+</div>
+
+<h5 id="logging">Logging</h5>
+<div class="level5">
+
+<p>
+Hier spricht man auch noch von Journaling in Undo-Logs. Vor jeder 
+Veränderung wird eine Kopie dieser Daten erstellt (=Before Image) und in
+ die Undo-Log-Datei eingetragen. Diese Kopie ist das Before Image (Daten
+ vor der Änderung). Dieses Prinzip nennt man Write Ahead Log (WAL). 
+Durch diesen Vorgang ist für jede Operation wie aufnehmen, ändern und 
+löschen der alte Wert bekannt. Beim Rückgängigmachen der Transaktion 
+wird das Undo-Log rückwärts durchlaufen und jeweils der alte Wert 
+wiederhergestellt.
+</p>
+
+<p>
+In einer Undo-Log-Datei müssen folgende Informationen enthalten sein:
+</p>
+<ul>
+<li class="level1"><div class="li">
+ Identifikation der Transaktion
+</div></li>
+<li class="level1"><div class="li">
+ Kennzeichen der Operation: Welche Transaktion? Welche Tabelle? Welche Zeile?
+</div></li>
+<li class="level1"><div class="li">
+ Before-Image der Daten
+</div></li>
+<li class="level1"><div class="li">
+ Identifikation des Benutzers
+</div></li>
+<li class="level1"><div class="li">
+ Identifikation des Terminals
+</div></li>
+<li class="level1"><div class="li">
+ Identifikation des Programmes
+</div></li>
+<li class="level1"><div class="li">
+ Zeitstempel
+</div></li>
+</ul>
+
+
+<p>
+Eigentlich müsste diese Log-Datei nur bis zum erfolgreichen Ende einer 
+Transaktion aufgehoben werden, meistens wird sie aber zu 
+Recovery-Zwecken fortlaufend geführt.
+Beim Transaction Recovery muss das Undo Log bis zum Beginn der 
+Transaktion gelesen werden. 
+</p>
+
+<p>
+Beim Crash Recovery mus das Undo-Log bis zum Anfang durchgelesen werden,
+ den es könnten imer noch Before-Images einer nicht beendeten 
+Transaktion existieren.Um den Abschnitt zu begrenzen, in dem gesucht 
+werden muss, verwendet man Checkpoints. Dabei werden die Transaktionen, 
+die zu diesem Zeitpunkt aktiv sind, gespeichert.
+</p>
+
+<p>
+<!--?xml version="1.0" encoding="utf-8"?-->
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="553.676px" height="322.104px" viewBox="0 0 553.676 322.104" enable-background="new 0 0 553.676 322.104" xml:space="preserve">
+<g>
+	<g>
+		<polyline fill="none" stroke="#1D1D1B" stroke-miterlimit="10" points="547.641,53.812 45.585,53.813 547.641,53.812 		"></polyline>
+		<g>
+			<path fill="#1D1D1B" d="M553.676,53.812c-2.84-1.054-6.363-2.852-8.548-4.756l1.721,4.756l-1.721,4.755
+				C547.313,56.663,550.836,54.865,553.676,53.812z"></path>
+		</g>
+		<g>
+			<path fill="#1D1D1B" d="M553.676,53.812c-2.84,1.054-6.363,2.852-8.548,4.756l1.721-4.756l-1.721-4.755
+				C547.313,50.962,550.836,52.76,553.676,53.812z"></path>
+		</g>
+	</g>
+</g>
+<line fill="none" stroke="#1D1D1B" stroke-miterlimit="10" x1="272.83" y1="22.354" x2="272.83" y2="296.899"></line>
+<line fill="none" stroke="#1D1D1B" stroke-miterlimit="10" x1="503.936" y1="22.354" x2="503.936" y2="296.899"></line>
+<g>
+	<path d="M269.289,11.997c0.215,0,0.423-0.016,0.623-0.047s0.359-0.065,0.477-0.099v0.93c-0.133,0.063-0.326,0.116-0.582,0.157
+		c-0.258,0.042-0.488,0.062-0.693,0.062c-1.553,0-2.328-0.818-2.328-2.454V5.771h-1.15V5.186l1.15-0.505l0.512-1.714H268v1.86h2.33
+		v0.945H268v4.724c0,0.483,0.115,0.854,0.345,1.113S268.888,11.997,269.289,11.997z"></path>
+	<path d="M275.2,13c-1.162,0-2.062-0.357-2.699-1.073c-0.637-0.715-0.956-1.727-0.956-3.036c0-1.343,0.324-2.38,0.971-3.113
+		s1.568-1.099,2.766-1.099c0.385,0,0.771,0.042,1.156,0.125c0.387,0.083,0.689,0.181,0.908,0.293l-0.373,1.033
+		c-0.269-0.107-0.562-0.196-0.879-0.268c-0.317-0.07-0.598-0.106-0.842-0.106c-1.631,0-2.447,1.04-2.447,3.12
+		c0,0.986,0.199,1.743,0.598,2.271c0.397,0.527,0.987,0.791,1.769,0.791c0.669,0,1.354-0.144,2.058-0.432v1.077
+		C276.691,12.861,276.015,13,275.2,13z"></path>
+</g>
+<g>
+	<path d="M502.306,11.997c0.215,0,0.422-0.016,0.623-0.047c0.199-0.032,0.358-0.065,0.476-0.099v0.93
+		c-0.132,0.063-0.326,0.116-0.582,0.157C502.566,12.979,502.335,13,502.13,13c-1.553,0-2.329-0.818-2.329-2.454V5.771h-1.149V5.186
+		l1.149-0.505l0.513-1.714h0.703v1.86h2.329v0.945h-2.329v4.724c0,0.483,0.115,0.854,0.344,1.113
+		C501.591,11.868,501.906,11.997,502.306,11.997z"></path>
+	<path d="M508.626,5.771h-2.043v7.083h-1.216V5.771h-1.436V5.222l1.436-0.439V4.336c0-1.973,0.862-2.959,2.585-2.959
+		c0.426,0,0.924,0.085,1.494,0.256l-0.314,0.974c-0.469-0.151-0.869-0.227-1.201-0.227c-0.459,0-0.799,0.153-1.018,0.458
+		c-0.221,0.305-0.33,0.794-0.33,1.468v0.52h2.043V5.771z"></path>
+</g>
+<g>
+	<path d="M242.795,310.132c-1.02,0-1.825,0.34-2.416,1.02c-0.59,0.678-0.885,1.608-0.885,2.789c0,1.215,0.285,2.152,0.854,2.814
+		c0.569,0.663,1.38,0.994,2.434,0.994c0.647,0,1.386-0.116,2.215-0.35v0.946c-0.643,0.241-1.437,0.362-2.38,0.362
+		c-1.367,0-2.421-0.415-3.165-1.244c-0.742-0.83-1.114-2.008-1.114-3.536c0-0.956,0.179-1.794,0.537-2.514
+		c0.357-0.72,0.874-1.274,1.549-1.663c0.675-0.389,1.469-0.584,2.383-0.584c0.973,0,1.824,0.178,2.552,0.533l-0.457,0.927
+		C244.2,310.297,243.498,310.132,242.795,310.132z"></path>
+	<path d="M251.625,318.582v-4.501c0-0.567-0.129-0.99-0.387-1.27s-0.662-0.419-1.212-0.419c-0.732,0-1.267,0.199-1.603,0.597
+		c-0.337,0.397-0.505,1.05-0.505,1.955v3.638h-1.054v-9.877h1.054v2.989c0,0.36-0.017,0.658-0.051,0.896h0.063
+		c0.208-0.335,0.502-0.598,0.886-0.791c0.383-0.192,0.82-0.289,1.311-0.289c0.851,0,1.488,0.203,1.914,0.607
+		c0.425,0.403,0.638,1.045,0.638,1.926v4.539H251.625z"></path>
+	<path d="M257.782,318.708c-1.028,0-1.84-0.313-2.435-0.939c-0.594-0.627-0.892-1.496-0.892-2.609c0-1.121,0.276-2.012,0.829-2.672
+		c0.551-0.66,1.293-0.99,2.225-0.99c0.871,0,1.561,0.286,2.068,0.859c0.508,0.574,0.762,1.33,0.762,2.27v0.666h-4.792
+		c0.021,0.817,0.228,1.438,0.618,1.86c0.393,0.423,0.943,0.635,1.654,0.635c0.749,0,1.49-0.157,2.222-0.47v0.939
+		c-0.372,0.16-0.725,0.275-1.058,0.346C258.652,318.673,258.251,318.708,257.782,318.708z M257.496,312.379
+		c-0.559,0-1.004,0.183-1.336,0.546s-0.527,0.867-0.587,1.511h3.638c0-0.665-0.148-1.173-0.445-1.526
+		C258.469,312.556,258.046,312.379,257.496,312.379z"></path>
+	<path d="M264.917,318.708c-1.007,0-1.787-0.311-2.339-0.93c-0.553-0.621-0.828-1.498-0.828-2.632c0-1.163,0.279-2.063,0.841-2.698
+		c0.561-0.635,1.359-0.951,2.396-0.951c0.335,0,0.669,0.035,1.004,0.107c0.334,0.072,0.596,0.156,0.787,0.254l-0.324,0.895
+		c-0.232-0.093-0.486-0.17-0.762-0.23c-0.275-0.062-0.519-0.093-0.73-0.093c-1.413,0-2.119,0.901-2.119,2.704
+		c0,0.855,0.172,1.511,0.517,1.968s0.856,0.686,1.533,0.686c0.579,0,1.175-0.125,1.784-0.374v0.933
+		C266.209,318.587,265.623,318.708,264.917,318.708z"></path>
+	<path d="M269.367,315.02c0.182-0.259,0.459-0.597,0.831-1.016l2.247-2.38h1.25l-2.818,2.964l3.016,3.993h-1.275l-2.457-3.289
+		l-0.793,0.686v2.604h-1.041v-9.877h1.041v5.236c0,0.232-0.018,0.592-0.051,1.079H269.367z"></path>
+	<path d="M278.386,318.708c-0.453,0-0.866-0.084-1.241-0.252c-0.374-0.166-0.688-0.424-0.942-0.771h-0.076
+		c0.051,0.406,0.076,0.792,0.076,1.155v2.863h-1.054v-10.08h0.856l0.146,0.951h0.051c0.271-0.381,0.586-0.655,0.946-0.824
+		c0.359-0.17,0.771-0.254,1.237-0.254c0.923,0,1.635,0.314,2.136,0.945c0.502,0.631,0.752,1.516,0.752,2.653
+		c0,1.143-0.255,2.03-0.765,2.663S279.292,318.708,278.386,318.708z M278.234,312.392c-0.711,0-1.226,0.197-1.542,0.59
+		c-0.318,0.395-0.48,1.021-0.489,1.879v0.235c0,0.978,0.163,1.677,0.489,2.099c0.325,0.42,0.848,0.631,1.567,0.631
+		c0.601,0,1.071-0.243,1.412-0.73c0.341-0.486,0.511-1.156,0.511-2.012c0-0.867-0.17-1.533-0.511-1.996
+		S278.852,312.392,278.234,312.392z"></path>
+	<path d="M289.12,315.096c0,1.134-0.286,2.02-0.856,2.657c-0.572,0.637-1.361,0.955-2.368,0.955c-0.622,0-1.175-0.146-1.657-0.438
+		s-0.854-0.711-1.117-1.257c-0.262-0.546-0.393-1.186-0.393-1.917c0-1.134,0.283-2.018,0.85-2.649
+		c0.567-0.633,1.354-0.949,2.361-0.949c0.974,0,1.747,0.323,2.32,0.971S289.12,313.992,289.12,315.096z M283.82,315.096
+		c0,0.889,0.178,1.565,0.533,2.031s0.878,0.698,1.567,0.698s1.214-0.232,1.571-0.695s0.536-1.141,0.536-2.034
+		c0-0.884-0.179-1.556-0.536-2.015c-0.357-0.46-0.886-0.689-1.584-0.689c-0.689,0-1.21,0.227-1.562,0.68
+		C283.995,313.524,283.82,314.199,283.82,315.096z"></path>
+	<path d="M290.877,309.739c0-0.241,0.06-0.418,0.178-0.53c0.118-0.111,0.267-0.168,0.444-0.168c0.169,0,0.315,0.057,0.438,0.172
+		c0.123,0.113,0.185,0.289,0.185,0.526s-0.062,0.413-0.185,0.53c-0.122,0.116-0.269,0.174-0.438,0.174
+		c-0.178,0-0.326-0.058-0.444-0.174C290.937,310.152,290.877,309.976,290.877,309.739z M292.02,318.582h-1.054v-6.957h1.054V318.582
+		z"></path>
+	<path d="M299.015,318.582v-4.501c0-0.567-0.129-0.99-0.388-1.27c-0.258-0.279-0.662-0.419-1.212-0.419
+		c-0.728,0-1.261,0.197-1.6,0.59c-0.339,0.395-0.508,1.043-0.508,1.949v3.65h-1.054v-6.957h0.857l0.171,0.951h0.051
+		c0.216-0.342,0.519-0.607,0.907-0.797c0.39-0.188,0.823-0.281,1.302-0.281c0.838,0,1.469,0.201,1.892,0.605
+		s0.635,1.051,0.635,1.939v4.539H299.015z"></path>
+	<path d="M304.481,317.838c0.187,0,0.366-0.014,0.54-0.042c0.173-0.027,0.311-0.055,0.412-0.085v0.806
+		c-0.114,0.056-0.282,0.102-0.505,0.137c-0.222,0.036-0.422,0.055-0.6,0.055c-1.346,0-2.019-0.709-2.019-2.127v-4.139h-0.996v-0.508
+		l0.996-0.438l0.444-1.486h0.609v1.613h2.019v0.818h-2.019v4.094c0,0.42,0.1,0.741,0.298,0.965
+		C303.861,317.726,304.134,317.838,304.481,317.838z"></path>
+</g>
+<g>
+	<path d="M465.273,316.112c0,0.817-0.297,1.454-0.889,1.911s-1.396,0.686-2.412,0.686c-1.1,0-1.947-0.143-2.539-0.426v-1.041
+		c0.381,0.16,0.795,0.287,1.244,0.381s0.893,0.14,1.333,0.14c0.72,0,1.261-0.136,1.625-0.409s0.546-0.652,0.546-1.14
+		c0-0.321-0.064-0.585-0.193-0.79s-0.346-0.395-0.647-0.568c-0.303-0.174-0.763-0.37-1.381-0.59
+		c-0.863-0.31-1.479-0.676-1.851-1.099c-0.37-0.423-0.555-0.976-0.555-1.657c0-0.715,0.268-1.283,0.806-1.707
+		s1.249-0.635,2.133-0.635c0.923,0,1.771,0.17,2.546,0.508l-0.337,0.939c-0.767-0.322-1.511-0.482-2.234-0.482
+		c-0.571,0-1.018,0.123-1.339,0.368c-0.322,0.245-0.482,0.586-0.482,1.022c0,0.321,0.059,0.584,0.178,0.789
+		c0.118,0.206,0.318,0.395,0.6,0.566c0.281,0.17,0.712,0.359,1.291,0.567c0.974,0.347,1.644,0.72,2.01,1.117
+		C465.089,314.96,465.273,315.477,465.273,316.112z"></path>
+	<path d="M465.908,311.625h1.13l1.523,3.967c0.335,0.906,0.542,1.56,0.622,1.961h0.051c0.055-0.215,0.17-0.584,0.346-1.107
+		c0.176-0.522,0.75-2.129,1.724-4.82h1.13l-2.99,7.922c-0.296,0.782-0.642,1.338-1.037,1.666c-0.396,0.328-0.881,0.492-1.457,0.492
+		c-0.322,0-0.639-0.037-0.952-0.108v-0.845c0.233,0.051,0.493,0.076,0.78,0.076c0.725,0,1.24-0.406,1.549-1.219l0.388-0.99
+		L465.908,311.625z"></path>
+	<path d="M478.05,316.683c0,0.647-0.24,1.146-0.723,1.498s-1.16,0.527-2.031,0.527c-0.923,0-1.643-0.146-2.158-0.438v-0.978
+		c0.334,0.17,0.692,0.303,1.075,0.4c0.384,0.097,0.753,0.146,1.108,0.146c0.55,0,0.973-0.088,1.27-0.263
+		c0.296-0.176,0.443-0.443,0.443-0.804c0-0.271-0.117-0.503-0.352-0.694c-0.235-0.193-0.693-0.421-1.375-0.684
+		c-0.646-0.24-1.107-0.451-1.38-0.631c-0.273-0.18-0.477-0.385-0.609-0.613c-0.134-0.229-0.2-0.501-0.2-0.818
+		c0-0.566,0.23-1.015,0.691-1.342c0.462-0.328,1.094-0.492,1.898-0.492c0.749,0,1.48,0.152,2.196,0.457l-0.374,0.856
+		c-0.699-0.288-1.332-0.432-1.898-0.432c-0.5,0-0.876,0.078-1.13,0.235c-0.254,0.156-0.381,0.372-0.381,0.646
+		c0,0.187,0.048,0.346,0.143,0.477c0.096,0.131,0.249,0.256,0.46,0.375c0.212,0.118,0.618,0.289,1.219,0.514
+		c0.826,0.301,1.383,0.604,1.673,0.908S478.05,316.222,478.05,316.683z"></path>
+	<path d="M482.011,317.838c0.187,0,0.367-0.014,0.54-0.042c0.173-0.027,0.312-0.055,0.413-0.085v0.806
+		c-0.115,0.056-0.283,0.102-0.506,0.137c-0.221,0.036-0.422,0.055-0.6,0.055c-1.346,0-2.018-0.709-2.018-2.127v-4.139h-0.997v-0.508
+		l0.997-0.438l0.443-1.486h0.609v1.613h2.02v0.818h-2.02v4.094c0,0.42,0.1,0.741,0.299,0.965
+		C481.392,317.726,481.665,317.838,482.011,317.838z"></path>
+	<path d="M487.292,318.708c-1.027,0-1.84-0.313-2.434-0.939c-0.595-0.627-0.893-1.496-0.893-2.609c0-1.121,0.276-2.012,0.829-2.672
+		c0.552-0.66,1.294-0.99,2.225-0.99c0.872,0,1.562,0.286,2.069,0.859c0.508,0.574,0.762,1.33,0.762,2.27v0.666h-4.793
+		c0.021,0.817,0.229,1.438,0.619,1.86c0.392,0.423,0.943,0.635,1.654,0.635c0.748,0,1.489-0.157,2.221-0.47v0.939
+		c-0.372,0.16-0.725,0.275-1.057,0.346S487.763,318.708,487.292,318.708z M487.007,312.379c-0.559,0-1.004,0.183-1.336,0.546
+		s-0.528,0.867-0.588,1.511h3.638c0-0.665-0.147-1.173-0.444-1.526S487.558,312.379,487.007,312.379z"></path>
+	<path d="M500.515,318.582v-4.526c0-0.554-0.119-0.97-0.355-1.247s-0.605-0.416-1.104-0.416c-0.656,0-1.141,0.188-1.455,0.564
+		c-0.312,0.377-0.469,0.957-0.469,1.74v3.885h-1.055v-4.526c0-0.554-0.118-0.97-0.355-1.247c-0.236-0.277-0.607-0.416-1.11-0.416
+		c-0.66,0-1.144,0.197-1.45,0.594c-0.307,0.396-0.461,1.044-0.461,1.945v3.65h-1.053v-6.957h0.856l0.171,0.951h0.051
+		c0.199-0.338,0.48-0.603,0.842-0.793s0.767-0.285,1.215-0.285c1.088,0,1.799,0.393,2.133,1.18h0.051
+		c0.208-0.363,0.508-0.651,0.902-0.863c0.393-0.211,0.842-0.316,1.346-0.316c0.787,0,1.375,0.201,1.768,0.605
+		c0.391,0.404,0.588,1.051,0.588,1.939v4.539H500.515z"></path>
+	<path d="M510.056,318.708c-1.029,0-1.84-0.313-2.435-0.939c-0.595-0.627-0.892-1.496-0.892-2.609c0-1.121,0.275-2.012,0.828-2.672
+		c0.552-0.66,1.294-0.99,2.225-0.99c0.872,0,1.562,0.286,2.069,0.859c0.508,0.574,0.762,1.33,0.762,2.27v0.666h-4.792
+		c0.021,0.817,0.227,1.438,0.618,1.86s0.942,0.635,1.653,0.635c0.75,0,1.49-0.157,2.223-0.47v0.939
+		c-0.373,0.16-0.726,0.275-1.058,0.346S510.525,318.708,510.056,318.708z M509.77,312.379c-0.559,0-1.004,0.183-1.336,0.546
+		s-0.528,0.867-0.587,1.511h3.637c0-0.665-0.148-1.173-0.444-1.526S510.32,312.379,509.77,312.379z"></path>
+	<path d="M517.583,311.498c0.309,0,0.586,0.025,0.832,0.076l-0.146,0.977c-0.288-0.062-0.542-0.095-0.762-0.095
+		c-0.562,0-1.044,0.229-1.444,0.686c-0.399,0.457-0.6,1.026-0.6,1.708v3.732h-1.054v-6.957h0.869l0.121,1.288h0.051
+		c0.258-0.452,0.569-0.802,0.934-1.048C516.748,311.62,517.148,311.498,517.583,311.498z"></path>
+	<path d="M522.89,311.498c0.309,0,0.586,0.025,0.832,0.076l-0.146,0.977c-0.288-0.062-0.542-0.095-0.762-0.095
+		c-0.562,0-1.044,0.229-1.444,0.686c-0.399,0.457-0.6,1.026-0.6,1.708v3.732h-1.054v-6.957h0.869l0.121,1.288h0.051
+		c0.258-0.452,0.569-0.802,0.934-1.048C522.054,311.62,522.455,311.498,522.89,311.498z"></path>
+	<path d="M531.028,315.096c0,1.134-0.286,2.02-0.856,2.657c-0.572,0.637-1.361,0.955-2.368,0.955c-0.622,0-1.175-0.146-1.657-0.438
+		s-0.854-0.711-1.117-1.257c-0.262-0.546-0.393-1.186-0.393-1.917c0-1.134,0.283-2.018,0.85-2.649
+		c0.567-0.633,1.354-0.949,2.361-0.949c0.974,0,1.747,0.323,2.32,0.971S531.028,313.992,531.028,315.096z M525.728,315.096
+		c0,0.889,0.178,1.565,0.533,2.031s0.878,0.698,1.567,0.698s1.214-0.232,1.571-0.695s0.536-1.141,0.536-2.034
+		c0-0.884-0.179-1.556-0.536-2.015c-0.357-0.46-0.886-0.689-1.584-0.689c-0.689,0-1.21,0.227-1.562,0.68
+		C525.903,313.524,525.728,314.199,525.728,315.096z"></path>
+	<path d="M536.048,311.498c0.309,0,0.586,0.025,0.832,0.076l-0.146,0.977c-0.288-0.062-0.542-0.095-0.762-0.095
+		c-0.562,0-1.044,0.229-1.444,0.686c-0.399,0.457-0.6,1.026-0.6,1.708v3.732h-1.054v-6.957h0.869l0.121,1.288h0.051
+		c0.258-0.452,0.569-0.802,0.934-1.048C535.212,311.62,535.613,311.498,536.048,311.498z"></path>
+</g>
+<g>
+	<path d="M4.132,57.622H3.053V49.3H0.114v-0.958h6.957V49.3H4.132V57.622z"></path>
+	<path d="M8.22,48.779c0-0.241,0.059-0.418,0.178-0.53c0.119-0.112,0.267-0.168,0.444-0.168c0.169,0,0.315,0.057,0.438,0.171
+		s0.184,0.29,0.184,0.527s-0.062,0.414-0.184,0.53c-0.123,0.117-0.269,0.175-0.438,0.175c-0.178,0-0.326-0.058-0.444-0.175
+		C8.279,49.193,8.22,49.016,8.22,48.779z M9.363,57.622H8.309v-6.957h1.054V57.622z"></path>
+	<path d="M20.465,57.622v-4.526c0-0.554-0.119-0.97-0.355-1.248c-0.237-0.277-0.605-0.416-1.104-0.416
+		c-0.656,0-1.141,0.188-1.454,0.565s-0.47,0.957-0.47,1.739v3.885h-1.054v-4.526c0-0.554-0.119-0.97-0.355-1.248
+		c-0.237-0.277-0.607-0.416-1.111-0.416c-0.66,0-1.144,0.198-1.451,0.593c-0.307,0.396-0.46,1.044-0.46,1.946v3.65h-1.054v-6.957
+		h0.857l0.171,0.952h0.051c0.199-0.338,0.479-0.603,0.841-0.793c0.362-0.19,0.767-0.286,1.216-0.286
+		c1.087,0,1.798,0.394,2.133,1.181h0.051c0.208-0.364,0.508-0.652,0.901-0.863s0.842-0.317,1.346-0.317
+		c0.787,0,1.376,0.202,1.768,0.606c0.392,0.404,0.587,1.05,0.587,1.939v4.539H20.465z"></path>
+	<path d="M26.628,57.749c-1.028,0-1.84-0.313-2.434-0.939c-0.595-0.626-0.892-1.496-0.892-2.609c0-1.122,0.276-2.012,0.829-2.672
+		c0.552-0.66,1.293-0.99,2.225-0.99c0.872,0,1.562,0.287,2.069,0.86c0.508,0.573,0.762,1.33,0.762,2.269v0.667h-4.792
+		c0.021,0.817,0.228,1.437,0.619,1.86c0.392,0.423,0.943,0.635,1.654,0.635c0.749,0,1.49-0.157,2.222-0.47v0.939
+		c-0.373,0.161-0.725,0.276-1.057,0.346C27.499,57.713,27.098,57.749,26.628,57.749z M26.343,51.42
+		c-0.559,0-1.004,0.182-1.336,0.546c-0.333,0.364-0.528,0.868-0.587,1.511h3.637c0-0.665-0.148-1.173-0.444-1.527
+		C27.316,51.597,26.893,51.42,26.343,51.42z"></path>
+</g>
+<g>
+	<g>
+		<path d="M49.318,93.81h-0.654v-8.671h-3.015v-0.609h6.684v0.609h-3.015V93.81z"></path>
+		<path d="M56.269,86.776c0.292,0,0.605,0.03,0.939,0.089l-0.121,0.603c-0.288-0.072-0.586-0.108-0.895-0.108
+			c-0.588,0-1.071,0.25-1.447,0.749s-0.565,1.13-0.565,1.892v3.809h-0.628v-6.9h0.533l0.063,1.244h0.044
+			c0.284-0.508,0.586-0.864,0.908-1.07C55.422,86.879,55.812,86.776,56.269,86.776z"></path>
+		<path d="M62.8,93.81l-0.159-1.092h-0.051c-0.347,0.444-0.704,0.759-1.07,0.942c-0.366,0.185-0.798,0.276-1.298,0.276
+			c-0.677,0-1.204-0.173-1.581-0.521s-0.565-0.827-0.565-1.441c0-0.673,0.28-1.195,0.841-1.568c0.561-0.373,1.373-0.569,2.435-0.59
+			l1.314-0.038v-0.457c0-0.656-0.133-1.151-0.4-1.485s-0.696-0.501-1.289-0.501c-0.639,0-1.301,0.178-1.987,0.533l-0.235-0.546
+			c0.757-0.355,1.506-0.533,2.247-0.533c0.757,0,1.324,0.197,1.698,0.59c0.375,0.394,0.562,1.007,0.562,1.841v4.589H62.8z
+			 M60.261,93.365c0.736,0,1.317-0.21,1.742-0.632c0.426-0.421,0.638-1.006,0.638-1.755v-0.679l-1.206,0.051
+			c-0.969,0.046-1.66,0.198-2.073,0.454c-0.412,0.256-0.619,0.655-0.619,1.197c0,0.432,0.132,0.767,0.397,1.006
+			C59.405,93.246,59.779,93.365,60.261,93.365z"></path>
+		<path d="M70.31,93.81v-4.475c0-0.694-0.146-1.199-0.438-1.514c-0.292-0.315-0.745-0.473-1.358-0.473
+			c-0.825,0-1.429,0.208-1.812,0.625c-0.383,0.417-0.575,1.093-0.575,2.028v3.809h-0.628v-6.9h0.533l0.121,0.946h0.038
+			c0.449-0.719,1.246-1.079,2.393-1.079c1.566,0,2.349,0.84,2.349,2.52v4.513H70.31z"></path>
+		<path d="M77.444,92.013c0,0.618-0.235,1.093-0.705,1.425c-0.47,0.332-1.136,0.498-2,0.498c-0.922,0-1.655-0.142-2.196-0.425
+			v-0.679c0.694,0.347,1.426,0.521,2.196,0.521c0.681,0,1.199-0.113,1.552-0.34c0.354-0.226,0.53-0.528,0.53-0.904
+			c0-0.347-0.141-0.639-0.422-0.876c-0.282-0.237-0.744-0.47-1.387-0.698c-0.69-0.25-1.174-0.464-1.454-0.645
+			c-0.279-0.18-0.49-0.383-0.632-0.609c-0.142-0.226-0.212-0.502-0.212-0.828c0-0.516,0.217-0.925,0.651-1.225
+			c0.434-0.3,1.04-0.451,1.818-0.451c0.745,0,1.452,0.14,2.12,0.419l-0.235,0.571c-0.677-0.279-1.306-0.419-1.885-0.419
+			c-0.563,0-1.009,0.093-1.339,0.279s-0.495,0.444-0.495,0.774c0,0.36,0.128,0.647,0.384,0.863c0.256,0.216,0.756,0.457,1.501,0.724
+			c0.622,0.224,1.075,0.426,1.358,0.606c0.284,0.18,0.496,0.384,0.638,0.612C77.374,91.436,77.444,91.704,77.444,92.013z"></path>
+		<path d="M83.411,93.81l-0.159-1.092h-0.051c-0.347,0.444-0.704,0.759-1.07,0.942c-0.366,0.185-0.798,0.276-1.298,0.276
+			c-0.677,0-1.204-0.173-1.581-0.521s-0.565-0.827-0.565-1.441c0-0.673,0.28-1.195,0.841-1.568c0.561-0.373,1.373-0.569,2.435-0.59
+			l1.314-0.038v-0.457c0-0.656-0.133-1.151-0.4-1.485s-0.696-0.501-1.289-0.501c-0.639,0-1.301,0.178-1.987,0.533l-0.235-0.546
+			c0.757-0.355,1.506-0.533,2.247-0.533c0.757,0,1.324,0.197,1.698,0.59c0.375,0.394,0.562,1.007,0.562,1.841v4.589H83.411z
+			 M80.872,93.365c0.736,0,1.317-0.21,1.742-0.632c0.426-0.421,0.638-1.006,0.638-1.755v-0.679l-1.206,0.051
+			c-0.969,0.046-1.66,0.198-2.073,0.454c-0.412,0.256-0.619,0.655-0.619,1.197c0,0.432,0.132,0.767,0.397,1.006
+			C80.016,93.246,80.39,93.365,80.872,93.365z"></path>
+		<path d="M88.864,93.937c-0.986,0-1.758-0.311-2.316-0.933s-0.838-1.49-0.838-2.603c0-1.143,0.289-2.032,0.869-2.669
+			c0.58-0.637,1.373-0.955,2.381-0.955c0.596,0,1.168,0.104,1.713,0.311l-0.171,0.559c-0.597-0.199-1.115-0.298-1.556-0.298
+			c-0.846,0-1.487,0.261-1.923,0.784c-0.436,0.522-0.653,1.274-0.653,2.256c0,0.931,0.218,1.66,0.653,2.187
+			c0.436,0.526,1.045,0.79,1.828,0.79c0.626,0,1.208-0.112,1.745-0.336v0.584C90.157,93.829,89.579,93.937,88.864,93.937z"></path>
+		<path d="M94.106,93.378c0.398,0,0.745-0.034,1.041-0.102v0.508c-0.305,0.102-0.655,0.152-1.053,0.152
+			c-0.609,0-1.06-0.163-1.35-0.489s-0.435-0.838-0.435-1.536v-4.456h-1.022v-0.368l1.022-0.286l0.317-1.562h0.324v1.669h2.024v0.546
+			h-2.024v4.367c0,0.529,0.093,0.92,0.279,1.174C93.417,93.251,93.708,93.378,94.106,93.378z"></path>
+		<path d="M96.55,84.993c0-0.406,0.133-0.609,0.4-0.609c0.131,0,0.233,0.053,0.308,0.159s0.11,0.256,0.11,0.451
+			c0,0.19-0.036,0.341-0.11,0.451s-0.177,0.165-0.308,0.165C96.683,85.608,96.55,85.403,96.55,84.993z M97.267,93.81h-0.628v-6.9
+			h0.628V93.81z"></path>
+		<path d="M105.284,90.35c0,1.125-0.272,2.005-0.818,2.637c-0.546,0.633-1.299,0.949-2.26,0.949c-0.605,0-1.139-0.146-1.6-0.438
+			s-0.814-0.711-1.061-1.257c-0.245-0.546-0.367-1.176-0.367-1.892c0-1.125,0.272-2.002,0.818-2.631
+			c0.546-0.628,1.295-0.942,2.247-0.942c0.948,0,1.691,0.318,2.231,0.955C105.014,88.369,105.284,89.241,105.284,90.35z
+			 M99.838,90.35c0,0.948,0.208,1.688,0.625,2.218c0.417,0.531,1.006,0.797,1.768,0.797s1.351-0.266,1.768-0.797
+			c0.417-0.531,0.625-1.271,0.625-2.218c0-0.952-0.21-1.69-0.631-2.215s-1.013-0.787-1.774-0.787s-1.349,0.261-1.762,0.784
+			C100.044,88.654,99.838,89.394,99.838,90.35z"></path>
+		<path d="M112.006,93.81v-4.475c0-0.694-0.146-1.199-0.438-1.514c-0.293-0.315-0.745-0.473-1.359-0.473
+			c-0.824,0-1.429,0.208-1.812,0.625c-0.383,0.417-0.575,1.093-0.575,2.028v3.809h-0.628v-6.9h0.533l0.12,0.946h0.039
+			c0.448-0.719,1.246-1.079,2.393-1.079c1.565,0,2.349,0.84,2.349,2.52v4.513H112.006z"></path>
+		<path d="M121.414,93.81h-0.622v-6.76c0-0.614,0.025-1.25,0.076-1.911c-0.063,0.063-0.129,0.125-0.197,0.184
+			c-0.067,0.059-0.721,0.573-1.961,1.542l-0.361-0.451l2.52-1.885h0.546V93.81z"></path>
+	</g>
+	<g>
+		<g>
+			<line fill="none" stroke="#1D1D1B" stroke-width="2" stroke-miterlimit="10" x1="158.686" y1="89.989" x2="249.43" y2="89.989"></line>
+			<g>
+				<rect x="157.585" y="82.839" fill="#1D1D1B" width="2.2" height="14.3"></rect>
+			</g>
+			<g>
+				<rect x="248.33" y="82.839" fill="#1D1D1B" width="2.2" height="14.3"></rect>
+			</g>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<path d="M49.318,138.742h-0.654v-8.671h-3.015v-0.609h6.684v0.609h-3.015V138.742z"></path>
+		<path d="M56.269,131.708c0.292,0,0.605,0.03,0.939,0.089l-0.121,0.603c-0.288-0.072-0.586-0.108-0.895-0.108
+			c-0.588,0-1.071,0.25-1.447,0.749s-0.565,1.13-0.565,1.892v3.809h-0.628v-6.9h0.533l0.063,1.244h0.044
+			c0.284-0.508,0.586-0.864,0.908-1.07C55.422,131.811,55.812,131.708,56.269,131.708z"></path>
+		<path d="M62.8,138.742l-0.159-1.092h-0.051c-0.347,0.444-0.704,0.759-1.07,0.942c-0.366,0.185-0.798,0.276-1.298,0.276
+			c-0.677,0-1.204-0.173-1.581-0.521s-0.565-0.827-0.565-1.441c0-0.673,0.28-1.195,0.841-1.568c0.561-0.373,1.373-0.569,2.435-0.59
+			l1.314-0.038v-0.457c0-0.656-0.133-1.151-0.4-1.485s-0.696-0.501-1.289-0.501c-0.639,0-1.301,0.178-1.987,0.533l-0.235-0.546
+			c0.757-0.355,1.506-0.533,2.247-0.533c0.757,0,1.324,0.197,1.698,0.59c0.375,0.394,0.562,1.007,0.562,1.841v4.589H62.8z
+			 M60.261,138.297c0.736,0,1.317-0.21,1.742-0.632c0.426-0.421,0.638-1.006,0.638-1.755v-0.679l-1.206,0.051
+			c-0.969,0.046-1.66,0.198-2.073,0.454c-0.412,0.256-0.619,0.655-0.619,1.197c0,0.432,0.132,0.767,0.397,1.006
+			C59.405,138.178,59.779,138.297,60.261,138.297z"></path>
+		<path d="M70.31,138.742v-4.475c0-0.694-0.146-1.199-0.438-1.514c-0.292-0.315-0.745-0.473-1.358-0.473
+			c-0.825,0-1.429,0.208-1.812,0.625c-0.383,0.417-0.575,1.093-0.575,2.028v3.809h-0.628v-6.9h0.533l0.121,0.946h0.038
+			c0.449-0.719,1.246-1.079,2.393-1.079c1.566,0,2.349,0.84,2.349,2.52v4.513H70.31z"></path>
+		<path d="M77.444,136.945c0,0.618-0.235,1.093-0.705,1.425c-0.47,0.332-1.136,0.498-2,0.498c-0.922,0-1.655-0.142-2.196-0.425
+			v-0.679c0.694,0.347,1.426,0.521,2.196,0.521c0.681,0,1.199-0.113,1.552-0.34c0.354-0.226,0.53-0.528,0.53-0.904
+			c0-0.347-0.141-0.639-0.422-0.876c-0.282-0.237-0.744-0.47-1.387-0.698c-0.69-0.25-1.174-0.464-1.454-0.645
+			c-0.279-0.18-0.49-0.383-0.632-0.609c-0.142-0.226-0.212-0.502-0.212-0.828c0-0.516,0.217-0.925,0.651-1.225
+			c0.434-0.3,1.04-0.451,1.818-0.451c0.745,0,1.452,0.14,2.12,0.419l-0.235,0.571c-0.677-0.279-1.306-0.419-1.885-0.419
+			c-0.563,0-1.009,0.093-1.339,0.279s-0.495,0.444-0.495,0.774c0,0.36,0.128,0.647,0.384,0.863c0.256,0.216,0.756,0.457,1.501,0.724
+			c0.622,0.224,1.075,0.426,1.358,0.606c0.284,0.18,0.496,0.384,0.638,0.612C77.374,136.368,77.444,136.636,77.444,136.945z"></path>
+		<path d="M83.411,138.742l-0.159-1.092h-0.051c-0.347,0.444-0.704,0.759-1.07,0.942c-0.366,0.185-0.798,0.276-1.298,0.276
+			c-0.677,0-1.204-0.173-1.581-0.521s-0.565-0.827-0.565-1.441c0-0.673,0.28-1.195,0.841-1.568c0.561-0.373,1.373-0.569,2.435-0.59
+			l1.314-0.038v-0.457c0-0.656-0.133-1.151-0.4-1.485s-0.696-0.501-1.289-0.501c-0.639,0-1.301,0.178-1.987,0.533l-0.235-0.546
+			c0.757-0.355,1.506-0.533,2.247-0.533c0.757,0,1.324,0.197,1.698,0.59c0.375,0.394,0.562,1.007,0.562,1.841v4.589H83.411z
+			 M80.872,138.297c0.736,0,1.317-0.21,1.742-0.632c0.426-0.421,0.638-1.006,0.638-1.755v-0.679l-1.206,0.051
+			c-0.969,0.046-1.66,0.198-2.073,0.454c-0.412,0.256-0.619,0.655-0.619,1.197c0,0.432,0.132,0.767,0.397,1.006
+			C80.016,138.178,80.39,138.297,80.872,138.297z"></path>
+		<path d="M88.864,138.869c-0.986,0-1.758-0.311-2.316-0.933s-0.838-1.49-0.838-2.603c0-1.143,0.289-2.032,0.869-2.669
+			c0.58-0.637,1.373-0.955,2.381-0.955c0.596,0,1.168,0.104,1.713,0.311l-0.171,0.559c-0.597-0.199-1.115-0.298-1.556-0.298
+			c-0.846,0-1.487,0.261-1.923,0.784c-0.436,0.522-0.653,1.274-0.653,2.256c0,0.931,0.218,1.66,0.653,2.187
+			c0.436,0.526,1.045,0.79,1.828,0.79c0.626,0,1.208-0.112,1.745-0.336v0.584C90.157,138.761,89.579,138.869,88.864,138.869z"></path>
+		<path d="M94.106,138.31c0.398,0,0.745-0.034,1.041-0.102v0.508c-0.305,0.102-0.655,0.152-1.053,0.152
+			c-0.609,0-1.06-0.163-1.35-0.489s-0.435-0.838-0.435-1.536v-4.456h-1.022v-0.368l1.022-0.286l0.317-1.562h0.324v1.669h2.024v0.546
+			h-2.024v4.367c0,0.529,0.093,0.92,0.279,1.174C93.417,138.183,93.708,138.31,94.106,138.31z"></path>
+		<path d="M96.55,129.925c0-0.406,0.133-0.609,0.4-0.609c0.131,0,0.233,0.053,0.308,0.159s0.11,0.256,0.11,0.451
+			c0,0.19-0.036,0.341-0.11,0.451s-0.177,0.165-0.308,0.165C96.683,130.541,96.55,130.335,96.55,129.925z M97.267,138.742h-0.628
+			v-6.9h0.628V138.742z"></path>
+		<path d="M105.284,135.282c0,1.125-0.272,2.005-0.818,2.637c-0.546,0.633-1.299,0.949-2.26,0.949c-0.605,0-1.139-0.146-1.6-0.438
+			s-0.814-0.711-1.061-1.257c-0.245-0.546-0.367-1.176-0.367-1.892c0-1.125,0.272-2.002,0.818-2.631
+			c0.546-0.628,1.295-0.942,2.247-0.942c0.948,0,1.691,0.318,2.231,0.955C105.014,133.301,105.284,134.173,105.284,135.282z
+			 M99.838,135.282c0,0.948,0.208,1.688,0.625,2.218c0.417,0.531,1.006,0.797,1.768,0.797s1.351-0.266,1.768-0.797
+			c0.417-0.531,0.625-1.271,0.625-2.218c0-0.952-0.21-1.69-0.631-2.215s-1.013-0.787-1.774-0.787s-1.349,0.261-1.762,0.784
+			C100.044,133.586,99.838,134.326,99.838,135.282z"></path>
+		<path d="M112.006,138.742v-4.475c0-0.694-0.146-1.199-0.438-1.514c-0.293-0.315-0.745-0.473-1.359-0.473
+			c-0.824,0-1.429,0.208-1.812,0.625c-0.383,0.417-0.575,1.093-0.575,2.028v3.809h-0.628v-6.9h0.533l0.12,0.946h0.039
+			c0.448-0.719,1.246-1.079,2.393-1.079c1.565,0,2.349,0.84,2.349,2.52v4.513H112.006z"></path>
+		<path d="M123.61,138.742h-5.809v-0.559l2.47-2.577c0.694-0.719,1.181-1.27,1.46-1.65s0.484-0.745,0.615-1.092
+			c0.132-0.347,0.197-0.711,0.197-1.092c0-0.554-0.182-1.005-0.546-1.352s-0.836-0.521-1.415-0.521
+			c-0.775,0-1.516,0.281-2.223,0.844l-0.342-0.438c0.773-0.652,1.633-0.978,2.576-0.978c0.809,0,1.444,0.216,1.908,0.647
+			c0.463,0.432,0.695,1.026,0.695,1.784c0,0.614-0.156,1.207-0.467,1.78c-0.312,0.574-0.879,1.281-1.705,2.124l-2.38,2.444v0.025
+			h4.964V138.742z"></path>
+	</g>
+	<g>
+		<g>
+			
+				<line fill="none" stroke="#1D1D1B" stroke-width="2" stroke-miterlimit="10" x1="197.686" y1="134.92" x2="390.487" y2="134.92"></line>
+			<g>
+				<rect x="196.585" y="127.771" fill="#1D1D1B" width="2.2" height="14.3"></rect>
+			</g>
+			<g>
+				<rect x="389.386" y="127.771" fill="#1D1D1B" width="2.2" height="14.3"></rect>
+			</g>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<path d="M49.318,183.673h-0.654v-8.671h-3.015v-0.609h6.684v0.609h-3.015V183.673z"></path>
+		<path d="M56.269,176.64c0.292,0,0.605,0.029,0.939,0.089l-0.121,0.603c-0.288-0.071-0.586-0.107-0.895-0.107
+			c-0.588,0-1.071,0.25-1.447,0.749s-0.565,1.13-0.565,1.892v3.809h-0.628v-6.9h0.533l0.063,1.244h0.044
+			c0.284-0.508,0.586-0.863,0.908-1.069C55.422,176.743,55.812,176.64,56.269,176.64z"></path>
+		<path d="M62.8,183.673l-0.159-1.092h-0.051c-0.347,0.444-0.704,0.759-1.07,0.942c-0.366,0.185-0.798,0.276-1.298,0.276
+			c-0.677,0-1.204-0.174-1.581-0.521s-0.565-0.827-0.565-1.44c0-0.674,0.28-1.195,0.841-1.568c0.561-0.373,1.373-0.569,2.435-0.59
+			l1.314-0.039v-0.457c0-0.655-0.133-1.15-0.4-1.484c-0.267-0.335-0.696-0.502-1.289-0.502c-0.639,0-1.301,0.178-1.987,0.533
+			l-0.235-0.546c0.757-0.355,1.506-0.533,2.247-0.533c0.757,0,1.324,0.196,1.698,0.591c0.375,0.393,0.562,1.007,0.562,1.84v4.59
+			H62.8z M60.261,183.229c0.736,0,1.317-0.21,1.742-0.632c0.426-0.421,0.638-1.006,0.638-1.755v-0.679l-1.206,0.051
+			c-0.969,0.046-1.66,0.197-2.073,0.453c-0.412,0.256-0.619,0.655-0.619,1.197c0,0.432,0.132,0.767,0.397,1.006
+			C59.405,183.109,59.779,183.229,60.261,183.229z"></path>
+		<path d="M70.31,183.673v-4.475c0-0.694-0.146-1.199-0.438-1.515s-0.745-0.473-1.358-0.473c-0.825,0-1.429,0.208-1.812,0.625
+			c-0.383,0.417-0.575,1.093-0.575,2.028v3.809h-0.628v-6.9h0.533l0.121,0.946h0.038c0.449-0.72,1.246-1.079,2.393-1.079
+			c1.566,0,2.349,0.84,2.349,2.52v4.514H70.31z"></path>
+		<path d="M77.444,181.876c0,0.618-0.235,1.094-0.705,1.426s-1.136,0.498-2,0.498c-0.922,0-1.655-0.142-2.196-0.426v-0.679
+			c0.694,0.347,1.426,0.521,2.196,0.521c0.681,0,1.199-0.113,1.552-0.34c0.354-0.227,0.53-0.527,0.53-0.904
+			c0-0.348-0.141-0.639-0.422-0.876c-0.282-0.237-0.744-0.47-1.387-0.698c-0.69-0.25-1.174-0.465-1.454-0.645
+			s-0.49-0.383-0.632-0.609c-0.142-0.227-0.212-0.502-0.212-0.828c0-0.516,0.217-0.925,0.651-1.225
+			c0.434-0.301,1.04-0.451,1.818-0.451c0.745,0,1.452,0.14,2.12,0.419l-0.235,0.571c-0.677-0.279-1.306-0.419-1.885-0.419
+			c-0.563,0-1.009,0.093-1.339,0.279s-0.495,0.444-0.495,0.774c0,0.359,0.128,0.647,0.384,0.863
+			c0.256,0.216,0.756,0.457,1.501,0.724c0.622,0.224,1.075,0.427,1.358,0.606s0.496,0.384,0.638,0.612
+			C77.374,181.299,77.444,181.568,77.444,181.876z"></path>
+		<path d="M83.411,183.673l-0.159-1.092h-0.051c-0.347,0.444-0.704,0.759-1.07,0.942c-0.366,0.185-0.798,0.276-1.298,0.276
+			c-0.677,0-1.204-0.174-1.581-0.521s-0.565-0.827-0.565-1.44c0-0.674,0.28-1.195,0.841-1.568c0.561-0.373,1.373-0.569,2.435-0.59
+			l1.314-0.039v-0.457c0-0.655-0.133-1.15-0.4-1.484c-0.267-0.335-0.696-0.502-1.289-0.502c-0.639,0-1.301,0.178-1.987,0.533
+			l-0.235-0.546c0.757-0.355,1.506-0.533,2.247-0.533c0.757,0,1.324,0.196,1.698,0.591c0.375,0.393,0.562,1.007,0.562,1.84v4.59
+			H83.411z M80.872,183.229c0.736,0,1.317-0.21,1.742-0.632c0.426-0.421,0.638-1.006,0.638-1.755v-0.679l-1.206,0.051
+			c-0.969,0.046-1.66,0.197-2.073,0.453c-0.412,0.256-0.619,0.655-0.619,1.197c0,0.432,0.132,0.767,0.397,1.006
+			C80.016,183.109,80.39,183.229,80.872,183.229z"></path>
+		<path d="M88.864,183.8c-0.986,0-1.758-0.311-2.316-0.934c-0.559-0.621-0.838-1.489-0.838-2.602c0-1.143,0.289-2.033,0.869-2.67
+			s1.373-0.955,2.381-0.955c0.596,0,1.168,0.104,1.713,0.311l-0.171,0.559c-0.597-0.198-1.115-0.298-1.556-0.298
+			c-0.846,0-1.487,0.261-1.923,0.784c-0.436,0.522-0.653,1.274-0.653,2.256c0,0.932,0.218,1.66,0.653,2.188
+			c0.436,0.526,1.045,0.79,1.828,0.79c0.626,0,1.208-0.112,1.745-0.337v0.584C90.157,183.693,89.579,183.8,88.864,183.8z"></path>
+		<path d="M94.106,183.242c0.398,0,0.745-0.033,1.041-0.102v0.508c-0.305,0.102-0.655,0.152-1.053,0.152
+			c-0.609,0-1.06-0.163-1.35-0.488c-0.29-0.326-0.435-0.838-0.435-1.537v-4.455h-1.022v-0.369l1.022-0.285l0.317-1.562h0.324v1.669
+			h2.024v0.547h-2.024v4.367c0,0.528,0.093,0.92,0.279,1.174C93.417,183.115,93.708,183.242,94.106,183.242z"></path>
+		<path d="M96.55,174.857c0-0.406,0.133-0.609,0.4-0.609c0.131,0,0.233,0.053,0.308,0.158s0.11,0.256,0.11,0.451
+			c0,0.189-0.036,0.34-0.11,0.45s-0.177,0.165-0.308,0.165C96.683,175.472,96.55,175.267,96.55,174.857z M97.267,183.673h-0.628
+			v-6.9h0.628V183.673z"></path>
+		<path d="M105.284,180.214c0,1.125-0.272,2.004-0.818,2.637s-1.299,0.949-2.26,0.949c-0.605,0-1.139-0.146-1.6-0.438
+			c-0.461-0.293-0.814-0.711-1.061-1.258c-0.245-0.545-0.367-1.176-0.367-1.891c0-1.126,0.272-2.003,0.818-2.632
+			c0.546-0.628,1.295-0.942,2.247-0.942c0.948,0,1.691,0.318,2.231,0.955C105.014,178.232,105.284,179.105,105.284,180.214z
+			 M99.838,180.214c0,0.947,0.208,1.688,0.625,2.218c0.417,0.531,1.006,0.797,1.768,0.797s1.351-0.266,1.768-0.797
+			c0.417-0.53,0.625-1.271,0.625-2.218c0-0.953-0.21-1.691-0.631-2.216s-1.013-0.787-1.774-0.787s-1.349,0.261-1.762,0.784
+			C100.044,178.518,99.838,179.257,99.838,180.214z"></path>
+		<path d="M112.006,183.673v-4.475c0-0.694-0.146-1.199-0.438-1.515c-0.293-0.315-0.745-0.473-1.359-0.473
+			c-0.824,0-1.429,0.208-1.812,0.625s-0.575,1.093-0.575,2.028v3.809h-0.628v-6.9h0.533l0.12,0.946h0.039
+			c0.448-0.72,1.246-1.079,2.393-1.079c1.565,0,2.349,0.84,2.349,2.52v4.514H112.006z"></path>
+		<path d="M123.299,176.577c0,0.575-0.182,1.06-0.543,1.454c-0.362,0.393-0.848,0.645-1.457,0.755v0.038
+			c0.745,0.094,1.312,0.33,1.701,0.711s0.584,0.893,0.584,1.536c0,0.868-0.295,1.539-0.886,2.016
+			c-0.59,0.476-1.439,0.714-2.548,0.714c-0.944,0-1.768-0.176-2.47-0.527v-0.628c0.355,0.187,0.754,0.332,1.196,0.438
+			c0.442,0.105,0.858,0.158,1.248,0.158c0.935,0,1.637-0.189,2.107-0.568c0.469-0.379,0.704-0.912,0.704-1.603
+			c0-0.614-0.24-1.085-0.721-1.415s-1.186-0.496-2.116-0.496h-1.004v-0.609h1.016c0.771,0,1.381-0.183,1.832-0.549
+			c0.45-0.365,0.676-0.861,0.676-1.488c0-0.516-0.183-0.93-0.549-1.241c-0.366-0.311-0.846-0.466-1.438-0.466
+			c-0.462,0-0.883,0.064-1.264,0.193s-0.809,0.35-1.282,0.663l-0.312-0.425c0.36-0.301,0.794-0.539,1.302-0.715
+			s1.022-0.264,1.542-0.264c0.855,0,1.516,0.203,1.98,0.606C123.066,175.27,123.299,175.84,123.299,176.577z"></path>
+	</g>
+	<g>
+		<g>
+			
+				<line fill="none" stroke="#1D1D1B" stroke-width="2" stroke-miterlimit="10" x1="178.686" y1="179.851" x2="503.937" y2="179.851"></line>
+			<g>
+				<rect x="177.585" y="172.701" fill="#1D1D1B" width="2.2" height="14.301"></rect>
+			</g>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<path d="M49.318,228.605h-0.654v-8.67h-3.015v-0.609h6.684v0.609h-3.015V228.605z"></path>
+		<path d="M56.269,221.572c0.292,0,0.605,0.03,0.939,0.09l-0.121,0.603c-0.288-0.071-0.586-0.108-0.895-0.108
+			c-0.588,0-1.071,0.25-1.447,0.75c-0.376,0.499-0.565,1.129-0.565,1.891v3.809h-0.628v-6.899h0.533l0.063,1.244h0.044
+			c0.284-0.508,0.586-0.864,0.908-1.069S55.812,221.572,56.269,221.572z"></path>
+		<path d="M62.8,228.605l-0.159-1.092h-0.051c-0.347,0.445-0.704,0.76-1.07,0.943c-0.366,0.184-0.798,0.275-1.298,0.275
+			c-0.677,0-1.204-0.173-1.581-0.52c-0.376-0.348-0.565-0.828-0.565-1.441c0-0.673,0.28-1.195,0.841-1.568
+			c0.561-0.372,1.373-0.568,2.435-0.59l1.314-0.038v-0.457c0-0.655-0.133-1.151-0.4-1.485s-0.696-0.502-1.289-0.502
+			c-0.639,0-1.301,0.178-1.987,0.533l-0.235-0.545c0.757-0.355,1.506-0.533,2.247-0.533c0.757,0,1.324,0.196,1.698,0.59
+			c0.375,0.394,0.562,1.008,0.562,1.841v4.589H62.8z M60.261,228.162c0.736,0,1.317-0.211,1.742-0.633
+			c0.426-0.42,0.638-1.006,0.638-1.754v-0.68l-1.206,0.051c-0.969,0.047-1.66,0.197-2.073,0.453
+			c-0.412,0.257-0.619,0.656-0.619,1.197c0,0.432,0.132,0.768,0.397,1.006C59.405,228.042,59.779,228.162,60.261,228.162z"></path>
+		<path d="M70.31,228.605v-4.475c0-0.693-0.146-1.199-0.438-1.514c-0.292-0.315-0.745-0.473-1.358-0.473
+			c-0.825,0-1.429,0.208-1.812,0.625c-0.383,0.416-0.575,1.093-0.575,2.027v3.809h-0.628v-6.899h0.533l0.121,0.946h0.038
+			c0.449-0.72,1.246-1.08,2.393-1.08c1.566,0,2.349,0.84,2.349,2.521v4.513H70.31z"></path>
+		<path d="M77.444,226.809c0,0.618-0.235,1.093-0.705,1.425s-1.136,0.498-2,0.498c-0.922,0-1.655-0.141-2.196-0.425v-0.679
+			c0.694,0.347,1.426,0.52,2.196,0.52c0.681,0,1.199-0.113,1.552-0.34c0.354-0.226,0.53-0.527,0.53-0.904
+			c0-0.347-0.141-0.639-0.422-0.875c-0.282-0.237-0.744-0.471-1.387-0.699c-0.69-0.249-1.174-0.464-1.454-0.645
+			c-0.279-0.18-0.49-0.383-0.632-0.609c-0.142-0.226-0.212-0.502-0.212-0.828c0-0.516,0.217-0.924,0.651-1.225
+			c0.434-0.301,1.04-0.451,1.818-0.451c0.745,0,1.452,0.141,2.12,0.42l-0.235,0.57c-0.677-0.279-1.306-0.418-1.885-0.418
+			c-0.563,0-1.009,0.093-1.339,0.279c-0.33,0.186-0.495,0.443-0.495,0.773c0,0.36,0.128,0.648,0.384,0.863
+			c0.256,0.217,0.756,0.457,1.501,0.725c0.622,0.224,1.075,0.426,1.358,0.605s0.496,0.385,0.638,0.613
+			C77.374,226.232,77.444,226.5,77.444,226.809z"></path>
+		<path d="M83.411,228.605l-0.159-1.092h-0.051c-0.347,0.445-0.704,0.76-1.07,0.943c-0.366,0.184-0.798,0.275-1.298,0.275
+			c-0.677,0-1.204-0.173-1.581-0.52c-0.376-0.348-0.565-0.828-0.565-1.441c0-0.673,0.28-1.195,0.841-1.568
+			c0.561-0.372,1.373-0.568,2.435-0.59l1.314-0.038v-0.457c0-0.655-0.133-1.151-0.4-1.485s-0.696-0.502-1.289-0.502
+			c-0.639,0-1.301,0.178-1.987,0.533l-0.235-0.545c0.757-0.355,1.506-0.533,2.247-0.533c0.757,0,1.324,0.196,1.698,0.59
+			c0.375,0.394,0.562,1.008,0.562,1.841v4.589H83.411z M80.872,228.162c0.736,0,1.317-0.211,1.742-0.633
+			c0.426-0.42,0.638-1.006,0.638-1.754v-0.68l-1.206,0.051c-0.969,0.047-1.66,0.197-2.073,0.453
+			c-0.412,0.257-0.619,0.656-0.619,1.197c0,0.432,0.132,0.768,0.397,1.006C80.016,228.042,80.39,228.162,80.872,228.162z"></path>
+		<path d="M88.864,228.732c-0.986,0-1.758-0.311-2.316-0.933s-0.838-1.489-0.838-2.603c0-1.143,0.289-2.032,0.869-2.67
+			c0.58-0.637,1.373-0.955,2.381-0.955c0.596,0,1.168,0.104,1.713,0.312l-0.171,0.559c-0.597-0.198-1.115-0.298-1.556-0.298
+			c-0.846,0-1.487,0.261-1.923,0.783c-0.436,0.523-0.653,1.275-0.653,2.257c0,0.931,0.218,1.659,0.653,2.187
+			s1.045,0.791,1.828,0.791c0.626,0,1.208-0.113,1.745-0.337v0.584C90.157,228.625,89.579,228.732,88.864,228.732z"></path>
+		<path d="M94.106,228.173c0.398,0,0.745-0.033,1.041-0.102v0.508c-0.305,0.102-0.655,0.152-1.053,0.152
+			c-0.609,0-1.06-0.162-1.35-0.488s-0.435-0.838-0.435-1.536v-4.456h-1.022v-0.368l1.022-0.286l0.317-1.561h0.324v1.669h2.024v0.546
+			h-2.024v4.367c0,0.529,0.093,0.92,0.279,1.174C93.417,228.046,93.708,228.173,94.106,228.173z"></path>
+		<path d="M96.55,219.789c0-0.406,0.133-0.609,0.4-0.609c0.131,0,0.233,0.053,0.308,0.158c0.074,0.106,0.11,0.256,0.11,0.451
+			c0,0.19-0.036,0.341-0.11,0.451c-0.074,0.109-0.177,0.164-0.308,0.164C96.683,220.404,96.55,220.199,96.55,219.789z
+			 M97.267,228.605h-0.628v-6.899h0.628V228.605z"></path>
+		<path d="M105.284,225.146c0,1.125-0.272,2.005-0.818,2.637c-0.546,0.633-1.299,0.949-2.26,0.949c-0.605,0-1.139-0.146-1.6-0.438
+			s-0.814-0.711-1.061-1.257c-0.245-0.546-0.367-1.177-0.367-1.892c0-1.125,0.272-2.002,0.818-2.631s1.295-0.943,2.247-0.943
+			c0.948,0,1.691,0.318,2.231,0.955C105.014,223.165,105.284,224.037,105.284,225.146z M99.838,225.146
+			c0,0.947,0.208,1.688,0.625,2.219s1.006,0.797,1.768,0.797s1.351-0.266,1.768-0.797s0.625-1.271,0.625-2.219
+			c0-0.952-0.21-1.69-0.631-2.215c-0.421-0.525-1.013-0.787-1.774-0.787s-1.349,0.261-1.762,0.783
+			C100.044,223.451,99.838,224.189,99.838,225.146z"></path>
+		<path d="M112.006,228.605v-4.475c0-0.693-0.146-1.199-0.438-1.514c-0.293-0.315-0.745-0.473-1.359-0.473
+			c-0.824,0-1.429,0.208-1.812,0.625c-0.383,0.416-0.575,1.093-0.575,2.027v3.809h-0.628v-6.899h0.533l0.12,0.946h0.039
+			c0.448-0.72,1.246-1.08,2.393-1.08c1.565,0,2.349,0.84,2.349,2.521v4.513H112.006z"></path>
+		<path d="M124.327,226.238h-1.6v2.367h-0.596v-2.367h-4.773v-0.426l4.602-6.537h0.768v6.417h1.6V226.238z M122.131,225.692v-2.653
+			c0-1.277,0.029-2.351,0.088-3.219h-0.051c-0.084,0.157-0.345,0.555-0.78,1.193l-3.275,4.679H122.131z"></path>
+	</g>
+	<g>
+		<g>
+			<g>
+				
+					<line fill="none" stroke="#1D1D1B" stroke-width="2" stroke-miterlimit="10" x1="358.203" y1="224.785" x2="480.486" y2="224.785"></line>
+				<g>
+					<rect x="357.103" y="217.634" fill="#1D1D1B" width="2.2" height="14.301"></rect>
+				</g>
+				<g>
+					<rect x="479.385" y="217.634" fill="#1D1D1B" width="2.2" height="14.301"></rect>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<path d="M49.318,273.537h-0.654v-8.67h-3.015v-0.609h6.684v0.609h-3.015V273.537z"></path>
+		<path d="M56.269,266.503c0.292,0,0.605,0.03,0.939,0.09l-0.121,0.603c-0.288-0.071-0.586-0.108-0.895-0.108
+			c-0.588,0-1.071,0.25-1.447,0.75c-0.376,0.499-0.565,1.129-0.565,1.891v3.809h-0.628v-6.899h0.533l0.063,1.244h0.044
+			c0.284-0.508,0.586-0.864,0.908-1.069S55.812,266.503,56.269,266.503z"></path>
+		<path d="M62.8,273.537l-0.159-1.092h-0.051c-0.347,0.445-0.704,0.76-1.07,0.943c-0.366,0.184-0.798,0.275-1.298,0.275
+			c-0.677,0-1.204-0.173-1.581-0.52c-0.376-0.348-0.565-0.828-0.565-1.441c0-0.673,0.28-1.195,0.841-1.568
+			c0.561-0.372,1.373-0.568,2.435-0.59l1.314-0.038v-0.457c0-0.655-0.133-1.151-0.4-1.485s-0.696-0.502-1.289-0.502
+			c-0.639,0-1.301,0.178-1.987,0.533l-0.235-0.545c0.757-0.355,1.506-0.533,2.247-0.533c0.757,0,1.324,0.196,1.698,0.59
+			c0.375,0.394,0.562,1.008,0.562,1.841v4.589H62.8z M60.261,273.093c0.736,0,1.317-0.211,1.742-0.633
+			c0.426-0.42,0.638-1.006,0.638-1.754v-0.68l-1.206,0.051c-0.969,0.047-1.66,0.197-2.073,0.453
+			c-0.412,0.257-0.619,0.656-0.619,1.197c0,0.432,0.132,0.768,0.397,1.006C59.405,272.973,59.779,273.093,60.261,273.093z"></path>
+		<path d="M70.31,273.537v-4.475c0-0.693-0.146-1.199-0.438-1.514c-0.292-0.315-0.745-0.473-1.358-0.473
+			c-0.825,0-1.429,0.208-1.812,0.625c-0.383,0.416-0.575,1.093-0.575,2.027v3.809h-0.628v-6.899h0.533l0.121,0.946h0.038
+			c0.449-0.72,1.246-1.08,2.393-1.08c1.566,0,2.349,0.84,2.349,2.521v4.513H70.31z"></path>
+		<path d="M77.444,271.741c0,0.618-0.235,1.093-0.705,1.425s-1.136,0.498-2,0.498c-0.922,0-1.655-0.141-2.196-0.425v-0.679
+			c0.694,0.347,1.426,0.52,2.196,0.52c0.681,0,1.199-0.113,1.552-0.34c0.354-0.226,0.53-0.527,0.53-0.904
+			c0-0.347-0.141-0.639-0.422-0.875c-0.282-0.237-0.744-0.471-1.387-0.699c-0.69-0.249-1.174-0.464-1.454-0.645
+			c-0.279-0.18-0.49-0.383-0.632-0.609c-0.142-0.226-0.212-0.502-0.212-0.828c0-0.516,0.217-0.924,0.651-1.225
+			c0.434-0.301,1.04-0.451,1.818-0.451c0.745,0,1.452,0.141,2.12,0.42l-0.235,0.57c-0.677-0.279-1.306-0.418-1.885-0.418
+			c-0.563,0-1.009,0.093-1.339,0.279c-0.33,0.186-0.495,0.443-0.495,0.773c0,0.36,0.128,0.648,0.384,0.863
+			c0.256,0.217,0.756,0.457,1.501,0.725c0.622,0.224,1.075,0.426,1.358,0.605s0.496,0.385,0.638,0.613
+			C77.374,271.164,77.444,271.431,77.444,271.741z"></path>
+		<path d="M83.411,273.537l-0.159-1.092h-0.051c-0.347,0.445-0.704,0.76-1.07,0.943c-0.366,0.184-0.798,0.275-1.298,0.275
+			c-0.677,0-1.204-0.173-1.581-0.52c-0.376-0.348-0.565-0.828-0.565-1.441c0-0.673,0.28-1.195,0.841-1.568
+			c0.561-0.372,1.373-0.568,2.435-0.59l1.314-0.038v-0.457c0-0.655-0.133-1.151-0.4-1.485s-0.696-0.502-1.289-0.502
+			c-0.639,0-1.301,0.178-1.987,0.533l-0.235-0.545c0.757-0.355,1.506-0.533,2.247-0.533c0.757,0,1.324,0.196,1.698,0.59
+			c0.375,0.394,0.562,1.008,0.562,1.841v4.589H83.411z M80.872,273.093c0.736,0,1.317-0.211,1.742-0.633
+			c0.426-0.42,0.638-1.006,0.638-1.754v-0.68l-1.206,0.051c-0.969,0.047-1.66,0.197-2.073,0.453
+			c-0.412,0.257-0.619,0.656-0.619,1.197c0,0.432,0.132,0.768,0.397,1.006C80.016,272.973,80.39,273.093,80.872,273.093z"></path>
+		<path d="M88.864,273.664c-0.986,0-1.758-0.311-2.316-0.933s-0.838-1.489-0.838-2.603c0-1.143,0.289-2.032,0.869-2.67
+			c0.58-0.637,1.373-0.955,2.381-0.955c0.596,0,1.168,0.104,1.713,0.312l-0.171,0.559c-0.597-0.198-1.115-0.298-1.556-0.298
+			c-0.846,0-1.487,0.261-1.923,0.783c-0.436,0.523-0.653,1.275-0.653,2.257c0,0.931,0.218,1.659,0.653,2.187
+			s1.045,0.791,1.828,0.791c0.626,0,1.208-0.113,1.745-0.337v0.584C90.157,273.556,89.579,273.664,88.864,273.664z"></path>
+		<path d="M94.106,273.105c0.398,0,0.745-0.033,1.041-0.102v0.508c-0.305,0.102-0.655,0.152-1.053,0.152
+			c-0.609,0-1.06-0.162-1.35-0.488s-0.435-0.838-0.435-1.536v-4.456h-1.022v-0.368l1.022-0.286l0.317-1.561h0.324v1.669h2.024v0.546
+			h-2.024v4.367c0,0.529,0.093,0.92,0.279,1.174C93.417,272.978,93.708,273.105,94.106,273.105z"></path>
+		<path d="M96.55,264.72c0-0.406,0.133-0.609,0.4-0.609c0.131,0,0.233,0.053,0.308,0.158c0.074,0.106,0.11,0.256,0.11,0.451
+			c0,0.19-0.036,0.341-0.11,0.451c-0.074,0.109-0.177,0.164-0.308,0.164C96.683,265.335,96.55,265.13,96.55,264.72z M97.267,273.537
+			h-0.628v-6.899h0.628V273.537z"></path>
+		<path d="M105.284,270.078c0,1.125-0.272,2.005-0.818,2.637c-0.546,0.633-1.299,0.949-2.26,0.949c-0.605,0-1.139-0.146-1.6-0.438
+			s-0.814-0.711-1.061-1.257c-0.245-0.546-0.367-1.177-0.367-1.892c0-1.125,0.272-2.002,0.818-2.631s1.295-0.943,2.247-0.943
+			c0.948,0,1.691,0.318,2.231,0.955C105.014,268.096,105.284,268.968,105.284,270.078z M99.838,270.078
+			c0,0.947,0.208,1.688,0.625,2.219s1.006,0.797,1.768,0.797s1.351-0.266,1.768-0.797s0.625-1.271,0.625-2.219
+			c0-0.952-0.21-1.69-0.631-2.215c-0.421-0.525-1.013-0.787-1.774-0.787s-1.349,0.261-1.762,0.783
+			C100.044,268.382,99.838,269.121,99.838,270.078z"></path>
+		<path d="M112.006,273.537v-4.475c0-0.693-0.146-1.199-0.438-1.514c-0.293-0.315-0.745-0.473-1.359-0.473
+			c-0.824,0-1.429,0.208-1.812,0.625c-0.383,0.416-0.575,1.093-0.575,2.027v3.809h-0.628v-6.899h0.533l0.12,0.946h0.039
+			c0.448-0.72,1.246-1.08,2.393-1.08c1.565,0,2.349,0.84,2.349,2.521v4.513H112.006z"></path>
+		<path d="M120.493,267.958c0.99,0,1.771,0.239,2.34,0.718c0.569,0.478,0.854,1.136,0.854,1.974c0,0.952-0.296,1.692-0.889,2.222
+			s-1.409,0.793-2.45,0.793c-0.461,0-0.899-0.045-1.313-0.137c-0.415-0.09-0.762-0.221-1.041-0.39v-0.653
+			c0.457,0.232,0.863,0.395,1.219,0.484c0.355,0.092,0.733,0.137,1.136,0.137c0.812,0,1.464-0.215,1.955-0.645
+			c0.491-0.429,0.736-1.01,0.736-1.742c0-0.689-0.239-1.23-0.718-1.625c-0.478-0.393-1.127-0.59-1.948-0.59
+			c-0.55,0-1.126,0.082-1.727,0.248l-0.381-0.248l0.368-4.246h4.469v0.609h-3.872l-0.286,3.275
+			C119.604,268.019,120.121,267.958,120.493,267.958z"></path>
+	</g>
+	<g>
+		<g>
+			
+				<line fill="none" stroke="#1D1D1B" stroke-width="2" stroke-miterlimit="10" x1="392.686" y1="269.716" x2="503.937" y2="269.716"></line>
+			<g>
+				<rect x="391.586" y="262.566" fill="#1D1D1B" width="2.2" height="14.301"></rect>
+			</g>
+		</g>
+	</g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+ 
+</p>
+
+<p>
+ Das Log-File wird rückwärts bis zum jüngsten Checkpoint gelesen. Wird 
+zu einer Transaktion keine Endmarke gefunden, wird diese mittels des 
+Before-Images rückgängig gemacht. Auch die Transaktionen die im 
+Checkpoint angeführt sind und keine Endmarke besitzen werden rückgängig 
+gemacht.
+</p>
+
+</div>
+
+<h5 id="verzoegertes_update">Verzögertes Update</h5>
+<div class="level5">
+
+<p>
+Beim Verzögerte Update (Deferred Update) werden die Änderungen der Daten
+ erst geschrieben, wenn die Transaktion erfolgreich beendet ist. Bis zu 
+diesem Zeitpunkt wird auf Kopien der Daten gearbeitet. Beim Rollback 
+werden einfach diese Kopien gelöscht.
+</p>
+
+</div>
+
+<h4 id="forward_recovery">Forward Recovery</h4>
+<div class="level4">
+
+<p>
+ANMERKUN: Redo-Logs und die Spiegelplatten müssen beim Forward Recovery 
+natürlich auf physisch anderen Disk-Drives als die Basis-Daten gehalten 
+werden.
+Die Redo-Logs und Undo-Logs können gemeinsam gespeichert werden, da das 
+After-Image gleich dem Before-Image der nächsten Änderung ist. Diese 
+gemeinsamen Log-Dateien werden Audit Trail genannt.
+</p>
+
+<p>
+Das Forward Recovery bietet zwei Strategien:
+</p>
+
+</div>
+
+<h5 id="logging1">Logging</h5>
+<div class="level5">
+
+<p>
+Die Log-Datei im Forward Recovery bezeichnet man Redo-Log. Hier werden 
+die After-Images (Kopie der Daten nach der Änderung) in ein Redo-Log 
+eingetragen. Dieses wird vom Anfang beginnend vorwärts gelesen.
+</p>
+
+<p>
+Eine Redo-Log-Datei muss dieselben Informationen wie eine Undo-Log-Datei
+ enthalten, jedoch anstatt eines Before-Images ein After-Image.
+</p>
+
+<p>
+Redo-Informationen müssen bis zur erfolgreichen Erstellung des nächsten Backups aufgehoben werden.
+</p>
+
+</div>
+
+<h5 id="gespiegelte_platten">Gespiegelte Platten</h5>
+<div class="level5">
+
+<p>
+Spiegelung bietet eine Alternative zum Archive Recovery. Dies kann z.B. 
+mit RAID umgesetzt werden. Die Daten werden redundant gehalten und 
+laufend parallel geändert. Diese Technologien bieten einen schnellen 
+Wiederanlauf und zusätzlich noch Hochverfügbarkeit. Dazu sind weniger 
+Backup-Kopien notwendig. Die Hardwarekosten steigen jedoch und 
+ausgelagerte Backups und Logs müssen für Katastrophenfälle trotzdem 
+verwendet werden.
+</p>
+
+</div>
+
+<h1 class="sectionedit38" id="data_control_language">Data Control Language</h1>
+<div class="level1">
+
+<p>
+Die Data Control Language (DCL) ist der Teil einer Datenbanksprache, der
+ verwendet wird um Berechtigungen zu vergeben oder zu entziehen. Es ist 
+die Datenüberwachungssprache einer Datenbank.
+</p>
+
+</div>
+
+<h3 class="sectionedit39" id="dcl_fuer_sql">DCL für Sql</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li">
+Neben DDL und DML liegt sie in Form von Englischen Befehlsklauseln vor. Beispiele:
+</div><ol>
+<li class="level2"><div class="li">
+GRANT SELECT
+</div></li>
+<li class="level2"><div class="li">
+UPDATE ON INVOICE TO CLERK 
+</div></li>
+<li class="level2"><div class="li">
+REVOKE EXECUTE ON NIGHTLY_JOB FROM DEVELOPERS
+</div></li>
+</ol>
+</li>
+</ul>
+
+
+<p>
+ -Beispiele:
+</p>
+<ul>
+<li class="level1"><div class="li">
+GRANT Operation+ ON Relation TO (PUBLIC|Benutzer) [WITH GRANT OPTION]
+</div></li>
+<li class="level1"><div class="li">
+REVOKE Operation+ ON Relation FROM (PUBLIC|Benutzer)
+</div></li>
+</ul>
+
+<ul>
+<li class="level1"><div class="li">Erklärung: Relation kann auch eine 
+Sicht sein. WITH GRANT OPTION erlaubt es den neuen Rechteinhabern, das 
+Recht weiterzugeben. PUBLIC bezeichnet alle Benutzer. Der 
+Datenbankadministrator hat alle Rechte. Der Besitzer eines Objektes hat 
+ebenfalls alle Rechte an diesem Objekt.</div>
+</li>
+</ul>
+
+</div>
+
+                    <!-- wikipage stop -->
+                                    </div>
+
+                <div class="docInfo"><bdi>dbi_rp2016/transaktionen_und_concurrency/start.txt</bdi> · Zuletzt geändert: 2019/06/03 15:00 von <bdi>pacmib13</bdi></div>
+
+                            </div></div><!-- /content -->
+
+            <hr class="a11y">
+
+            <!-- PAGE ACTIONS -->
+            <div id="dokuwiki__pagetools">
+                <h3 class="a11y">Seiten-Werkzeuge</h3>
+                <div class="tools">
+                    <ul>
+                        <li class="source"><a href="https://wiki.htl-kaindorf.at/doku.php?id=dbi_rp2016:transaktionen_und_concurrency:start&amp;do=edit" title="Zeige Quelltext [v]" rel="nofollow" accesskey="v"><span>Zeige Quelltext</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m.12 13.5l3.74 3.74 1.42-1.41-2.33-2.33 2.33-2.33-1.42-1.41-3.74 3.74m11.16 0l-3.74-3.74-1.42 1.41 2.33 2.33-2.33 2.33 1.42 1.41 3.74-3.74z"></path></svg></a></li><li class="revs"><a href="https://wiki.htl-kaindorf.at/doku.php?id=dbi_rp2016:transaktionen_und_concurrency:start&amp;do=revisions" title="Ältere Versionen [o]" rel="nofollow" accesskey="o"><span>Ältere Versionen</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11 7v5.11l4.71 2.79.79-1.28-4-2.37V7m0-5C8.97 2 5.91 3.92 4.27 6.77L2 4.5V11h6.5L5.75 8.25C6.96 5.73 9.5 4 12.5 4a7.5 7.5 0 0 1 7.5 7.5 7.5 7.5 0 0 1-7.5 7.5c-3.27 0-6.03-2.09-7.06-5h-2.1c1.1 4.03 4.77 7 9.16 7 5.24 0 9.5-4.25 9.5-9.5A9.5 9.5 0 0 0 12.5 2z"></path></svg></a></li><li class="backlink"><a href="https://wiki.htl-kaindorf.at/doku.php?id=dbi_rp2016:transaktionen_und_concurrency:start&amp;do=backlink" title="Links hierher" rel="nofollow"><span>Links hierher</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.982 2.982 0 0 0 0-4.24 2.982 2.982 0 0 0-4.24 0l-3.53 3.53a2.982 2.982 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.982 2.982 0 0 0 0 4.24 2.982 2.982 0 0 0 4.24 0l3.53-3.53a2.982 2.982 0 0 0 0-4.24.973.973 0 0 1 0-1.42z"></path></svg></a></li><li class="siteexport_addpage"><a href="https://wiki.htl-kaindorf.at/doku.php?id=dbi_rp2016:transaktionen_und_concurrency:start&amp;do=siteexport_addpage" title="Seite als HTML/PDF exportieren" rel="nofollow"><span>Seite als HTML/PDF exportieren</span><svg width="61px" height="51px" viewBox="0 0 61 51" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink"><defs></defs><path d="M26.1891503,39.0065635 L26.0876578,38.9773206 L60.6523866,1.23972885 L60.4321374,2.11844376 L60.476442,2.07071678 L60.4265202,2.14085429 L49.5024876,45.7237994 L32.8255882,40.9187101 L26,50.508302 L26,39.2103249 L26.1891503,39.0065635 Z M60.9727675,0.862917243 L22.2676619,38.2155059 L-0.00245042233,30.2214566 L60.9727675,0.862917243 Z" id="Paper-Plane"></path></svg></a></li><li class="top"><a href="#dokuwiki__top" title="Nach oben [t]" rel="nofollow" accesskey="t"><span>Nach oben</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path></svg></a></li>                    </ul>
+                </div>
+            </div>
+        </div><!-- /wrapper -->
+
+        
+<!-- <strong></strong><strong></strong><strong> FOOTER </strong><strong></strong><strong></strong> -->
+<div id="dokuwiki__footer"><div class="pad">
+    
+    <div class="buttons">
+                <a href="https://www.dokuwiki.org/donate" title="Donate"><img src="Transaktionen%20und%20Concurrency%20[HTBLA%20Kaindorf%20Wiki]_files/button-donate.gif" alt="Donate" width="80" height="15"></a>
+        <a href="https://php.net/" title="Powered by PHP"><img src="Transaktionen%20und%20Concurrency%20[HTBLA%20Kaindorf%20Wiki]_files/button-php.gif" alt="Powered by PHP" width="80" height="15"></a>
+        <a href="https://wiki.htl-kaindorf.at/validator.w3.org/check/referer" title="Valid HTML5"><img src="Transaktionen%20und%20Concurrency%20[HTBLA%20Kaindorf%20Wiki]_files/button-html5.png" alt="Valid HTML5" width="80" height="15"></a>
+        <a href="https://wiki.htl-kaindorf.at/%3C/em%3Ejigsaw.w3.org/css-validator/check/referer?profile=css3" title="Valid CSS"><img src="Transaktionen%20und%20Concurrency%20[HTBLA%20Kaindorf%20Wiki]_files/button-css.png" alt="Valid CSS" width="80" height="15"></a>
+        <a href="https://dokuwiki.org/" title="Driven by DokuWiki"><img src="Transaktionen%20und%20Concurrency%20[HTBLA%20Kaindorf%20Wiki]_files/button-dw.png" alt="Driven by DokuWiki" width="80" height="15"></a>
+    </div>
+</div></div><!-- /footer -->
+
+    </div></div><!-- /site -->
+
+    <div class="no"><img src="Transaktionen%20und%20Concurrency%20[HTBLA%20Kaindorf%20Wiki]_files/indexer.gif" alt="" width="2" height="1"></div>
+    <div id="screen__mode" class="no"></div>
+
+</body></html>

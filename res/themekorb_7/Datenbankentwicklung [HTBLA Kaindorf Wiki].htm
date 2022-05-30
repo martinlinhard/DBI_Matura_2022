@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html dir="ltr" class="js desktop" lang="de"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Datenbankentwicklung [HTBLA Kaindorf Wiki]</title>
+    <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+    <meta name="generator" content="DokuWiki">
+<meta name="theme-color" content="#008800">
+<meta name="robots" content="index,follow">
+<meta name="keywords" content="dbi_rp2018,datenbankentwicklung,start">
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.htl-kaindorf.at/lib/exe/opensearch.php" title="HTBLA Kaindorf Wiki">
+<link rel="start" href="https://wiki.htl-kaindorf.at/">
+<link rel="contents" href="https://wiki.htl-kaindorf.at/doku.php?id=dbi_rp2018:datenbankentwicklung:start&amp;do=index" title="Übersicht">
+<link rel="manifest" href="https://wiki.htl-kaindorf.at/lib/exe/manifest.php">
+<link rel="alternate" type="application/rss+xml" title="Letzte Änderungen" href="https://wiki.htl-kaindorf.at/feed.php">
+<link rel="alternate" type="application/rss+xml" title="Aktueller Namensraum" href="https://wiki.htl-kaindorf.at/feed.php?mode=list&amp;ns=dbi_rp2018:datenbankentwicklung">
+<link rel="alternate" type="text/html" title="HTML Klartext" href="https://wiki.htl-kaindorf.at/doku.php?do=export_xhtml&amp;id=dbi_rp2018:datenbankentwicklung:start">
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="https://wiki.htl-kaindorf.at/doku.php?do=export_raw&amp;id=dbi_rp2018:datenbankentwicklung:start">
+<link rel="canonical" href="https://wiki.htl-kaindorf.at/doku.php?id=dbi_rp2018:datenbankentwicklung:start">
+<link rel="stylesheet" type="text/css" href="Datenbankentwicklung%20[HTBLA%20Kaindorf%20Wiki]_files/css.css">
+<link rel="stylesheet" type="text/css" href="Datenbankentwicklung%20[HTBLA%20Kaindorf%20Wiki]_files/prettify.css">
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='dbi_rp2018:datenbankentwicklung';var SIG=' --- //[[linmad17@htl-kaindorf.at|Martin LINHARD]] 2022/05/30 14:08//';var JSINFO = {"plugins":{"edittable":{"default columnwidth":""}},"fastwiki":{"secedit":1,"preview":1,"fastpages":1,"save":0,"fastshow":0,"fastshow_same_ns":1,"fastshow_include":"","fastshow_exclude":"","preload":0,"preload_head":"====47hsjwycv782nwncv8b920m8bv72jmdm3929bno3b3====","preload_batchsize":10,"preload_per_page":100,"locktime":840,"usedraft":1,"text_btn_show":"Seite anzeigen","templatename":"dokuwiki"},"isadmin":0,"isauth":1,"move_renameokay":false,"id":"dbi_rp2018:datenbankentwicklung:start","namespace":"dbi_rp2018:datenbankentwicklung","ACT":"show","useHeadingNavigation":1,"useHeadingContent":1};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="Datenbankentwicklung%20[HTBLA%20Kaindorf%20Wiki]_files/jquery.php"></script>
+<script type="text/javascript" charset="utf-8" src="Datenbankentwicklung%20[HTBLA%20Kaindorf%20Wiki]_files/js.php"></script><style id="iris-css">.iris-picker{display:block;position:relative}.iris-picker,.iris-picker *{-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input+.iris-picker{margin-top:4px}.iris-error{background-color:#ffafaf}.iris-border{border-radius:3px;border:1px solid #aaa;width:200px;background-color:#fff}.iris-picker-inner{position:absolute;top:0;right:0;left:0;bottom:0}.iris-border .iris-picker-inner{top:10px;right:10px;left:10px;bottom:10px}.iris-picker .iris-square-inner{position:absolute;left:0;right:0;top:0;bottom:0}.iris-picker .iris-square,.iris-picker .iris-slider,.iris-picker .iris-square-inner,.iris-picker .iris-palette{border-radius:3px;box-shadow:inset 0 0 5px rgba(0,0,0,.4);height:100%;width:12.5%;float:left;margin-right:5%}.iris-picker .iris-square{width:76%;margin-right:10%;position:relative}.iris-picker .iris-square-inner{width:auto;margin:0}.iris-ie-9 .iris-square,.iris-ie-9 .iris-slider,.iris-ie-9 .iris-square-inner,.iris-ie-9 .iris-palette{box-shadow:none;border-radius:0}.iris-ie-9 .iris-square,.iris-ie-9 .iris-slider,.iris-ie-9 .iris-palette{outline:1px solid rgba(0,0,0,.1)}.iris-ie-lt9 .iris-square,.iris-ie-lt9 .iris-slider,.iris-ie-lt9 .iris-square-inner,.iris-ie-lt9 .iris-palette{outline:1px solid #aaa}.iris-ie-lt9 .iris-square .ui-slider-handle{outline:1px solid #aaa;background-color:#fff;-ms-filter:"alpha(Opacity=30)"}.iris-ie-lt9 .iris-square .iris-square-handle{background:0;border:3px solid #fff;-ms-filter:"alpha(Opacity=50)"}.iris-picker .iris-strip{margin-right:0;position:relative}.iris-picker .iris-strip .ui-slider-handle{position:absolute;background:0;margin:0;right:-3px;left:-3px;border:4px solid #aaa;border-width:4px 3px;width:auto;height:6px;border-radius:4px;box-shadow:0 1px 2px rgba(0,0,0,.2);opacity:.9;z-index:5;cursor:ns-resize}.iris-strip .ui-slider-handle:before{content:" ";position:absolute;left:-2px;right:-2px;top:-3px;bottom:-3px;border:2px solid #fff;border-radius:3px}.iris-picker .iris-slider-offset{position:absolute;top:11px;left:0;right:0;bottom:-3px;width:auto;height:auto;background:transparent;border:0;border-radius:0}.iris-picker .iris-square-handle{background:transparent;border:5px solid #aaa;border-radius:50%;border-color:rgba(128,128,128,.5);box-shadow:none;width:12px;height:12px;position:absolute;left:-10px;top:-10px;cursor:move;opacity:1;z-index:10}.iris-picker .ui-state-focus .iris-square-handle{opacity:.8}.iris-picker .iris-square-handle:hover{border-color:#999}.iris-picker .iris-square-value:focus .iris-square-handle{box-shadow:0 0 2px rgba(0,0,0,.75);opacity:.8}.iris-picker .iris-square-handle:hover::after{border-color:#fff}.iris-picker .iris-square-handle::after{position:absolute;bottom:-4px;right:-4px;left:-4px;top:-4px;border:3px solid #f9f9f9;border-color:rgba(255,255,255,.8);border-radius:50%;content:" "}.iris-picker .iris-square-value{width:8px;height:8px;position:absolute}.iris-ie-lt9 .iris-square-value,.iris-mozilla .iris-square-value{width:1px;height:1px}.iris-palette-container{position:absolute;bottom:0;left:0;margin:0;padding:0}.iris-border .iris-palette-container{left:10px;bottom:10px}.iris-picker .iris-palette{margin:0;cursor:pointer}.iris-square-handle,.ui-slider-handle{border:0;outline:0}</style>
+<script type="text/x-mathjax-config;executed=true">/*<![CDATA[*/MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+        displayMath: [ ["$$","$$"], ["\\[","\\]"] ],
+        processEscapes: true
+    }
+});
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="Datenbankentwicklung%20[HTBLA%20Kaindorf%20Wiki]_files/MathJax.js"></script>
+<script type="text/javascript" charset="utf-8" src="Datenbankentwicklung%20[HTBLA%20Kaindorf%20Wiki]_files/prettify.js"></script><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1px; bottom: 2px; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style>
+<script type="text/javascript" charset="utf-8" src="Datenbankentwicklung%20[HTBLA%20Kaindorf%20Wiki]_files/lang-css.js"></script>
+<script type="text/javascript" charset="utf-8" src="Datenbankentwicklung%20[HTBLA%20Kaindorf%20Wiki]_files/lang-sql.js"></script>
+<script type="text/javascript" charset="utf-8" src="Datenbankentwicklung%20[HTBLA%20Kaindorf%20Wiki]_files/lang-oracle11.htm"></script>
+<script type="text/javascript" charset="utf-8" src="Datenbankentwicklung%20[HTBLA%20Kaindorf%20Wiki]_files/lang-plsql.js"></script>
+<script type="text/javascript" charset="utf-8" src="Datenbankentwicklung%20[HTBLA%20Kaindorf%20Wiki]_files/lang-none.js"></script>
+<!--<![endif]-->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="shortcut icon" href="https://wiki.htl-kaindorf.at/lib/tpl/dokuwiki/images/favicon.ico">
+<link rel="apple-touch-icon" href="https://wiki.htl-kaindorf.at/lib/tpl/dokuwiki/images/apple-touch-icon.png">
+    <style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover, .MJXp-munder {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > *, .MJXp-munder > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+
+<body>
+    <div id="dokuwiki__site"><div id="dokuwiki__top" class="site dokuwiki mode_show tpl_dokuwiki loggedIn    ">
+
+        
+<!-- <strong></strong><strong></strong><strong> HEADER </strong><strong></strong><strong></strong> -->
+<div id="dokuwiki__header"><div class="pad group">
+
+    
+    <div class="headings group">
+        <ul class="a11y skip">
+            <li><a href="#dokuwiki__content">zum Inhalt springen</a></li>
+        </ul>
+
+        <h1><a href="https://wiki.htl-kaindorf.at/doku.php?id=start" accesskey="h" title="[H]"><img src="Datenbankentwicklung%20[HTBLA%20Kaindorf%20Wiki]_files/logo.png" alt="" width="64" height="64"> <span>HTBLA Kaindorf Wiki</span></a></h1>
+            </div>
+
+    <div class="tools group">
+        <!-- USER TOOLS -->
+                    <div id="dokuwiki__usertools">
+                <h3 class="a11y">Benutzer-Werkzeuge</h3>
+                <ul>
+                    <li class="user">Angemeldet als: <bdi>Martin LINHARD</bdi> (<bdi>linmad17</bdi>)</li><li class="action logout"><a href="https://wiki.htl-kaindorf.at/doku.php?id=dbi_rp2018:datenbankentwicklung:start&amp;do=logout&amp;sectok=c813d5870a0c15faeb08ae9b046626a8" title="Abmelden" rel="nofollow"><span>Abmelden</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M17 17.25V14h-7v-4h7V6.75L22.25 12 17 17.25M13 2a2 2 0 0 1 2 2v4h-2V4H4v16h9v-4h2v4a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9z"></path></svg></a></li>                </ul>
+            </div>
+        
+        <!-- SITE TOOLS -->
+        <div id="dokuwiki__sitetools">
+            <h3 class="a11y">Webseiten-Werkzeuge</h3>
+            <form action="/doku.php?id=start" method="get" role="search" class="search doku_form" id="dw__search" accept-charset="utf-8"><input type="hidden" name="do" value="search"><input type="hidden" name="id" value="dbi_rp2018:datenbankentwicklung:start"><div class="no"><input name="q" type="text" class="edit" title="[F]" accesskey="f" placeholder="Suche" autocomplete="on" id="qsearch__in"><button value="1" type="submit" title="Suche">Suche</button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>            <div class="mobileTools">
+                <form action="/doku.php" method="get" accept-charset="utf-8"><div class="no"><input type="hidden" name="id" value="dbi_rp2018:datenbankentwicklung:start"><input type="hidden" name="sectok" value="c813d5870a0c15faeb08ae9b046626a8"><select name="do" class="edit quickselect" title="Werkzeuge"><option value="" selected="selected">Werkzeuge</option><optgroup label="Seiten-Werkzeuge"><option value="edit">Zeige Quelltext</option><option value="revisions">Ältere Versionen</option><option value="siteexport_addpage">Seite als HTML/PDF exportieren</option><option value="backlink">Links hierher</option></optgroup><optgroup label="Webseiten-Werkzeuge"><option value="recent">Letzte Änderungen</option><option value="media">Medien-Manager</option><option value="index">Übersicht</option></optgroup><optgroup label="Benutzer-Werkzeuge"><option value="logout">Abmelden</option></optgroup></select><button type="submit" style="display: none;">&gt;</button></div></form>            </div>
+            <ul>
+                <li class="action recent"><a href="https://wiki.htl-kaindorf.at/doku.php?id=dbi_rp2018:datenbankentwicklung:start&amp;do=recent" title="Letzte Änderungen [r]" rel="nofollow" accesskey="r">Letzte Änderungen</a></li><li class="action media"><a href="https://wiki.htl-kaindorf.at/doku.php?id=dbi_rp2018:datenbankentwicklung:start&amp;do=media&amp;ns=dbi_rp2018%3Adatenbankentwicklung" title="Medien-Manager" rel="nofollow">Medien-Manager</a></li><li class="action index"><a href="https://wiki.htl-kaindorf.at/doku.php?id=dbi_rp2018:datenbankentwicklung:start&amp;do=index" title="Übersicht [x]" rel="nofollow" accesskey="x">Übersicht</a></li>            </ul>
+        </div>
+
+    </div>
+
+    <!-- BREADCRUMBS -->
+            <div class="breadcrumbs">
+                                        <div class="trace"><span class="bchead">Zuletzt angesehen:</span> <span class="bcsep">•</span> <bdi><a href="https://wiki.htl-kaindorf.at/doku.php?id=start" class="breadcrumbs" title="start">HTBLA-Kaindorf Wiki</a></bdi> <span class="bcsep">•</span> <bdi><a href="https://wiki.htl-kaindorf.at/doku.php?id=dbi_rp2022:start" class="breadcrumbs" title="dbi_rp2022:start">DBI RP 2022</a></bdi> <span class="bcsep">•</span> <bdi><a href="https://wiki.htl-kaindorf.at/doku.php?id=dbi_rp2016:transaktionen_und_concurrency:start" class="breadcrumbs" title="dbi_rp2016:transaktionen_und_concurrency:start">Transaktionen und Concurrency</a></bdi> <span class="bcsep">•</span> <bdi><a href="https://wiki.htl-kaindorf.at/doku.php?id=dbi_rp2018:datenbankarchitektur_und_datenbankverwaltung:start" class="breadcrumbs" title="dbi_rp2018:datenbankarchitektur_und_datenbankverwaltung:start">Datenbankarchitektur und Datenbankverwaltung</a></bdi> <span class="bcsep">•</span> <bdi><a href="https://wiki.htl-kaindorf.at/doku.php?id=dbi_rp2018:datenbankarchitektur_und_datenbankverwaltung:oracle-architektur" class="breadcrumbs" title="dbi_rp2018:datenbankarchitektur_und_datenbankverwaltung:oracle-architektur">Datenbankarchitektur Oracle</a></bdi> <span class="bcsep">•</span> <bdi><a href="https://wiki.htl-kaindorf.at/doku.php?id=dbi_rp2018:datenbankarchitektur_und_datenbankverwaltung:oracle-datenbankverwaltung" class="breadcrumbs" title="dbi_rp2018:datenbankarchitektur_und_datenbankverwaltung:oracle-datenbankverwaltung">Datenbankverwaltung Oracle</a></bdi> <span class="bcsep">•</span> <span class="curid"><bdi><a href="https://wiki.htl-kaindorf.at/doku.php?id=dbi_rp2018:datenbankentwicklung:start" class="breadcrumbs" title="dbi_rp2018:datenbankentwicklung:start">Datenbankentwicklung</a></bdi></span></div>
+                    </div>
+    
+
+
+    <hr class="a11y">
+</div></div><!-- /header -->
+
+        <div class="wrapper group">
+
+            
+            <!-- <strong></strong><strong></strong><strong> CONTENT </strong><strong></strong><strong></strong> -->
+            <div id="dokuwiki__content"><div class="pad group">
+                
+                <div class="pageId"><span>dbi_rp2018:datenbankentwicklung:start</span></div>
+
+                <div class="page group content_initial">
+                                                            <!-- wikipage start -->
+                    <div class="plugin_loadskin"><form id="tpl__switcher" title="Templäte wechseln" action="/doku.php?id=dbi_rp2018:datenbankentwicklung:start" method="post" accept-charset="utf-8"><div class="no">
+<input type="hidden" name="sectok" value="c813d5870a0c15faeb08ae9b046626a8"><input type="hidden" name="act" value="select"><label><span>Template</span> <select name="tpl" class="quickselect">
+<option value="dokubook">dokubook</option><option value="dokuwiki" selected="selected">dokuwiki</option>
+</select></label>
+<button type="submit" name="switch" style="display: none;">Wechseln</button>
+</div></form>
+</div><div class="plugin_fastwiki_marker" style="display:none"></div>
+<h1 class="sectionedit1" id="datenbankentwicklung">Datenbankentwicklung</h1>
+<div class="level1">
+<div class="hiddenGlobal hiddenActive hiddenHidden"><div class="hiddenElements"></div><div class="hiddenHead  hiddenSinceBeginning"><div class="hiddenOnHidden">
+<p>
+Ausgangswerte/-tabellen:
+</p>
+</div><div class="hiddenOnVisible">
+<p>
+Ausgangswerte/-tabellen:
+</p>
+</div></div> <!-- .hiddenHead --><div class="hiddenBody"><div class="table sectionedit2"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0 centeralign" colspan="2">  Musiklehrer  </th>
+	</tr>
+	<tr class="row1">
+		<th class="col0">LehrerID</th><th class="col1 leftalign">Name  </th>
+	</tr>
+	</thead>
+	<tbody><tr class="row2">
+		<td class="col0 leftalign">1  </td><td class="col1 leftalign">Mayer  </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 leftalign">2  </td><td class="col1 leftalign">Huber  </td>
+	</tr>
+</tbody></table></div>
+<div class="table sectionedit3"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0 centeralign" colspan="2">  Fach  </th>
+	</tr>
+	<tr class="row1">
+		<th class="col0">FachID</th><th class="col1">Bezeichnung</th>
+	</tr>
+	</thead>
+	<tbody><tr class="row2">
+		<td class="col0 leftalign">1  </td><td class="col1 leftalign">Flöte  </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 leftalign">2  </td><td class="col1 leftalign">Gitarre  </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 leftalign">3  </td><td class="col1 leftalign">Klavier  </td>
+	</tr>
+</tbody></table></div>
+<div class="table sectionedit4"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0 centeralign" colspan="2">  Angebot  </th>
+	</tr>
+	<tr class="row1">
+		<th class="col0">LehrerID</th><th class="col1 leftalign">FachID  </th>
+	</tr>
+	</thead>
+	<tbody><tr class="row2">
+		<td class="col0 leftalign">1  </td><td class="col1 leftalign">2  </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 leftalign">1  </td><td class="col1 leftalign">3  </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 leftalign">2  </td><td class="col1 leftalign">1  </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0 leftalign">2  </td><td class="col1 leftalign">3  </td>
+	</tr>
+</tbody></table></div>
+</div></div>
+</div>
+
+<h3 class="sectionedit5" id="pl_sql">PL/SQL</h3>
+<div class="level3">
+
+<p>
+Bevor man PL/SQL effektiv anwenden kann, sollte man ein Verständnis von DML und DDL haben: <a href="https://wiki.htl-kaindorf.at/doku.php?id=dbi_rp2018:relationales_datenbankmodell:start" class="wikilink1" title="dbi_rp2018:relationales_datenbankmodell:start">Relationales Datenbankmodell</a>
+</p>
+
+<p>
+PL/SQL ist eine oracle-spezifische prozedurale Spracherweitung von SQL 
+(4-GL) und die Standardsprache für den Datenzugriff bei relationalen 
+Datenbanken in Oracle.
+</p>
+
+<p>
+PL/SQL ist eine 3GL-Sprache. Merkmale von 3 GL-Sprachen sind:
+</p>
+
+<p>
+* die Logik kann explizit ausgeführt werden (z.B.: durch Erstellen von 
+Skripts) * Single-Row-Functions können ergänzt werden (z.B.: durch 
+Stored Procedures/Stored Functions [–&gt; explizit] oder durch Trigger 
+[implizit])
+</p>
+
+<p>
+Durch in der Datenbank speicherbare Prozeduren und Funktionen wird die 
+Wiederverwendbarkeit von Code, die Strukturierung von Code und die 
+Aufrechterhaltung der Konsistenz und Integrität ermöglicht.
+</p>
+
+</div>
+
+<h4 id="allgemeiner_aufbau_der_pl_sql_syntax">Allgemeiner Aufbau der PL/SQL Syntax</h4>
+<div class="level4">
+
+<p>
+PL/SQL Programme bestehen aus Blöcken:
+</p>
+<pre class="prettyprint  lang-plsql prettyprinted" style=""><span class="pln"> </span><span class="com">---</span><span class="pln">
+</span><span class="kwd">DECLARE</span><span class="pln">
+      </span><span class="com">-- Deklarationsblock (optional)</span><span class="pln">
+</span><span class="kwd">BEGIN</span><span class="pln">
+     </span><span class="com">-- Ausführungsteil</span><span class="pln">
+</span><span class="kwd">EXCEPTION</span><span class="pln">
+     </span><span class="com">-- Ausnahmeverarbeitung (optional)</span><span class="pln">
+</span><span class="kwd">END</span><span class="pun">;</span><span class="pln">
+
+</span><span class="com">/* So kommentiert man
+mehrzeilig */</span><span class="pln">
+</span><span class="com">--So kommentiert man einzeilig</span></pre>
+<p>
+Anonyme Blöcke werden nicht in der Datenbank gespeichert. Diese werden zum Testen oder für Skripts verwendet.
+</p>
+
+<p>
+Benannte Blöcke werden in der Datenbank gespeichert (z.B.: Stored Procdures, Stored Functions).
+</p>
+
+</div>
+
+<h4 id="variablen">Variablen</h4>
+<div class="level4">
+
+<p>
+Variablen werden im Deklarationsabschnitt definiert und optional 
+initialisiert. Die Reihenfolge (zuerst Name, dann Datentyp) kommt von 
+Pascal.
+</p>
+
+<p>
+Mit dem SELECT INTO initialisiert man eine Variable mit dem selektierten Wert und speichert somit die selektierten Daten ab.
+</p>
+
+<p>
+Konstanten und Variablen mit dem Constraint NOT NULL müssen 
+initialisiert werden. Dies geschieht mit dem Zuweisungsoperator := oder 
+mit DEFAULT. Variablen die nicht initialisiert wurden, haben den Wert 
+NULL.
+</p>
+<pre class="prettyprint  lang-plsql prettyprinted" style=""><span class="kwd">DECLARE</span><span class="pln">
+      v_zahl1 </span><span class="kwd">NUMBER</span><span class="pun">(</span><span class="lit">2</span><span class="pun">);</span><span class="pln"> </span><span class="com">--integer</span><span class="pln">
+      v_zahl2 </span><span class="kwd">NUMBER</span><span class="pun">(</span><span class="lit">2</span><span class="pun">)</span><span class="pln"> </span><span class="pun">:=</span><span class="pln"> </span><span class="lit">17</span><span class="pun">;</span><span class="pln">
+      v_text </span><span class="kwd">VARCHAR</span><span class="pun">(</span><span class="lit">20</span><span class="pun">)</span><span class="pln"> </span><span class="pun">:=</span><span class="pln"> </span><span class="str">'Das ist ein Text'</span><span class="pun">;</span><span class="pln"> </span><span class="com">--string</span><span class="pln">
+      v_bool BOOLEAN</span><span class="pun">:=</span><span class="pln"> TRUE</span><span class="pun">;</span><span class="pln"> </span><span class="com">--boolean, PL/SQL-spezifisch</span><span class="pln">
+      v_datum </span><span class="kwd">DATE</span><span class="pln"> </span><span class="pun">:=</span><span class="pln"> TO_DATE</span><span class="pun">(</span><span class="pln"> </span><span class="str">'01.01.2005'</span><span class="pln"> </span><span class="pun">,</span><span class="pln"> </span><span class="str">'DD.MM.YYYY'</span><span class="pun">);</span><span class="pln"> </span><span class="com">--datum</span><span class="pln">
+      v_spalte Tabellenname</span><span class="pun">.</span><span class="pln">Spaltenname</span><span class="pun">%</span><span class="kwd">TYPE</span><span class="pun">;</span><span class="pln"> </span><span class="com">--so definiert man einen Datentyp über eine Spalte</span><span class="pln">
+      v_reihe Tabellenname</span><span class="pun">%</span><span class="kwd">ROWTYPE</span><span class="pun">;</span><span class="pln"> </span><span class="com">--und so über eine ganze Tabelle</span><span class="pln">
+      v_konstante CONSTANT </span><span class="kwd">NUMBER</span><span class="pun">(</span><span class="lit">3</span><span class="pun">)</span><span class="pln"> </span><span class="pun">:=</span><span class="pln"> </span><span class="lit">10</span><span class="pun">;</span><span class="pln"> </span><span class="com">--schreibt man vor dem Datentyp "CONSTANT", so ändert sich der Wert dieser Variable im Laufe des Programmies nie</span><span class="pln">
+</span><span class="kwd">BEGIN</span><span class="pln">
+      </span><span class="kwd">SELECT</span><span class="pln"> LehrerID
+      </span><span class="kwd">INTO</span><span class="pln"> v_zahl1
+      </span><span class="kwd">FROM</span><span class="pln"> Musiklehrer
+      </span><span class="kwd">WHERE</span><span class="pln"> name</span><span class="pun">=</span><span class="str">'Mayer'</span><span class="pun">;</span><span class="pln"> </span><span class="com">--select into</span><span class="pln">
+</span><span class="kwd">END</span><span class="pun">;</span></pre>
+<p>
+Die Datentypen BLOB, CLOB und BFile ermöglichen es große Mengen an Daten
+ (z.B. Bilder, Musik, Videos) im Binär- oder Characterformat 
+abzuspeichern.
+</p>
+
+<p>
+* CLOB * speichert Daten im Charakterformat * bis zu 128TB * BLOB * wird
+ direkt von der Datenbank verwaltet * speichert Daten im Binärformat * 
+bis zu 128TB * BFILE * referenziert auf eine Datei * Nachteil: es müssen
+ 2 Systeme verwaltet werden
+</p>
+
+<p>
+PL/SQL erlaubt es, Blöcke zu verschachteln. Variablen, die in äußeren 
+Blöcken deklariert werden, sind in allen inneren Blöcken gültig. 
+Variablen, die in inneren Blöcken deklariert werden, sind nicht in 
+äußeren Blöcken gültig. Je nachdem, wo Variablen deklariert werden, kann
+ man zwischen zwei Arten unterscheiden.
+</p>
+
+<p>
+Unterschied:
+</p>
+
+<p>
+* Visibility (Sichtbarkeit) * über Blocknamen kann der Speicher 
+dereferenziert werden * Scope (Gültigkeitsbereich) * die Gültigkeit der 
+Variablen erstreckt sich über alle Blöcke
+</p>
+<pre class="prettyprint   prettyprinted" style=""><span class="pln">  </span><span class="typ">Lokale</span><span class="pln"> </span><span class="typ">Variablen</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> </span><span class="typ">Diese</span><span class="pln"> werden </span><span class="kwd">in</span><span class="pln"> einem inneren </span><span class="typ">Block</span><span class="pln"> deklariert</span><span class="pun">.</span><span class="pln"> </span><span class="typ">Von</span><span class="pln"> au</span><span class="pun">ß</span><span class="pln">en kann nicht darauf zugegriffen werden</span><span class="pun">.</span><span class="pln">
+
+  </span><span class="typ">Globale</span><span class="pln"> </span><span class="typ">Variablen</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> </span><span class="typ">Diese</span><span class="pln"> werden </span><span class="kwd">in</span><span class="pln"> einem </span><span class="pun">ä</span><span class="pln">u</span><span class="pun">ß</span><span class="pln">eren </span><span class="typ">Block</span><span class="pln"> deklariert</span><span class="pun">,</span><span class="pln"> und es kann von au</span><span class="pun">ß</span><span class="pln">en und innen darauf zugegriffen werden</span><span class="pun">.</span></pre>
+<p>
+In folgendem Beispiel werden zwei Variablen deklariert, und die Summe 
+derer wird in einem inneren Block einer dritten Variable zugewiesen. Auf
+ die Variablen var_num1 und var_num2 kann von überall des Blocks 
+zugegriffen werden. Auf die Variable var_result dagegen, welche im 
+inneren Block deklariert wurde, kann von außerhalb nicht zugegriffen 
+werden.
+</p>
+<pre class="prettyprint  lang-plsql prettyprinted" style=""><span class="kwd">DECLARE</span><span class="pln">
+  var_num1 </span><span class="kwd">NUMBER</span><span class="pun">;</span><span class="pln">
+  var_num2 </span><span class="kwd">NUMBER</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">BEGIN</span><span class="pln">
+  var_num1 </span><span class="pun">:=</span><span class="pln"> </span><span class="lit">100</span><span class="pun">;</span><span class="pln">
+  var_num2 </span><span class="pun">:=</span><span class="pln"> </span><span class="lit">200</span><span class="pun">;</span><span class="pln">
+  </span><span class="kwd">DECLARE</span><span class="pln">
+    var_result </span><span class="kwd">NUMBER</span><span class="pun">;</span><span class="pln">
+  </span><span class="kwd">BEGIN</span><span class="pln">
+    var_result </span><span class="pun">:=</span><span class="pln"> var_num1 </span><span class="pun">+</span><span class="pln"> var_num2</span><span class="pun">;</span><span class="pln">
+  </span><span class="kwd">END</span><span class="pun">;</span><span class="pln"> </span><span class="com">--Gültigkeit von var_result endet hier</span><span class="pln">
+  </span><span class="com">/* Auf var_result kann hier nicht zugegriffen werden */</span><span class="pln">
+</span><span class="kwd">END</span><span class="pun">;</span><span class="pln"> </span><span class="com">--Gültigkeit von var_num1 und var_num2 endet hier</span></pre>
+</div>
+
+<h4 id="pl_sql-spezifische_datentypen">PL/SQL-spezifische Datentypen</h4>
+<div class="level4">
+
+<p>
+* Boolean * BINARY_INTEGER * PLS_Integer (32 Bit = ~2,1 Mrd.) * BINARY_FLOAT * BINARY_DOUBLE
+</p>
+
+<p>
+BINARY_FLOAT und BINARY_DOUBLE Datentypen unterstützen IEEE.
+</p>
+
+<p>
+Bei Rückgaben muss darauf geachtet werden, dass die SQL-Engine mit den Datentypen arbeiten kann.
+</p>
+
+</div>
+
+<h4 id="operationen">Operationen</h4>
+<div class="level4">
+<div class="table sectionedit6"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0 leftalign">Zeichen  </th><th class="col1 leftalign">Beschreibung  </th>
+	</tr>
+	</thead>
+	<tbody><tr class="row1">
+		<td class="col0 leftalign">=  </td><td class="col1 leftalign">gleich  </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 leftalign">&lt;&gt;, !=  </td><td class="col1 leftalign">ungleich  </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 leftalign">&lt;  </td><td class="col1 leftalign">kleiner  </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 leftalign">&gt;  </td><td class="col1 leftalign">größer  </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0 leftalign">⇐  </td><td class="col1 leftalign">kleiner oder gleich  </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0 leftalign">&gt;=  </td><td class="col1 leftalign">größer oder gleich  </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0 leftalign">IS NULL  </td><td class="col1 leftalign">hat den Pseudo-Wert NULL  </td>
+	</tr>
+	<tr class="row8">
+		<td class="col0">IS NOT NULL</td><td class="col1 leftalign">hat nicht den NULL Wert  </td>
+	</tr>
+	<tr class="row9">
+		<td class="col0 leftalign">LIKE  </td><td class="col1">Zeichenkettenvergleich mit Platzhaltern'%' und '_'</td>
+	</tr>
+	<tr class="row10">
+		<td class="col0 leftalign">NOT LIKE  </td><td class="col1 leftalign">Umkehrung von LIKE  </td>
+	</tr>
+	<tr class="row11">
+		<td class="col0 leftalign">BETWEEN  </td><td class="col1 leftalign">Kurzschreibweise für ⇐ und &gt;=  </td>
+	</tr>
+	<tr class="row12">
+		<td class="col0 leftalign">IN  </td><td class="col1 leftalign">Mengenvergleich  </td>
+	</tr>
+	<tr class="row13">
+		<td class="col0 leftalign">AND  </td><td class="col1 leftalign">logisches und  </td>
+	</tr>
+	<tr class="row14">
+		<td class="col0 leftalign">OR  </td><td class="col1 leftalign">logisches oder  </td>
+	</tr>
+	<tr class="row15">
+		<td class="col0 leftalign">NOT  </td><td class="col1 leftalign">logisches nicht  </td>
+	</tr>
+	<tr class="row16">
+		<td class="col0 leftalign">*  </td><td class="col1 leftalign">Mulitplikation  </td>
+	</tr>
+	<tr class="row17">
+		<td class="col0 leftalign">/  </td><td class="col1 leftalign">Division  </td>
+	</tr>
+	<tr class="row18">
+		<td class="col0 leftalign">+  </td><td class="col1 leftalign">Addition  </td>
+	</tr>
+	<tr class="row19">
+		<td class="col0 leftalign">-  </td><td class="col1 leftalign">Subtraktion  </td>
+	</tr>
+	<tr class="row20">
+		<td class="col0">x<sup>∧</sup>  y</td><td class="col1 leftalign">Potenzieren  </td>
+	</tr>
+</tbody></table></div>
+
+</div>
+
+<h4 id="packages">Packages</h4>
+<div class="level4">
+
+<p>
+Eine Package ist eine Zusammenfassung von PL/SQL-Objekten. Es ist 
+unterteilt in Header und Body. Beide Teile sind getrennte 
+Datenbank-Objekte. Der Header enthält den öffentlichen Teil 
+(Spezifikation), der von außen sichtbar ist. Der Body ist der private 
+Teil (Programm). In ihm werden die im Header deklarierten Prozeduren und
+ Funktionen implementiert.
+</p>
+
+<p>
+Packages dienen zur strukturierten Programmierung.
+</p>
+
+<p>
+Packages sind objektrelational (Relational = Daten werden in Tabellen gespeichert)
+</p>
+
+<p>
+<em class="u">Vorteile von Packages:</em>
+</p>
+
+<p>
+ * Modularität * Information Hiding (durch getrennte Header- und Bodybereiche) * Persistente Variablen und Cursor
+</p>
+
+<p>
+<em class="u">Nachteil:</em>
+</p>
+
+<p>
+Ein erneutes Übersetzen eines Packages kann zu Problemen führen. Enthält
+ das Package globale Variablen oder Cursor, so verlieren diese Variablen
+ ihren Wert. Das führt entweder zu einem Laufzeitfehler für alle 
+Sessions, die dieses Package verwenden oder zu einer erneuten 
+Initialisierung. Gegebenenfalls müssen die Anwender die aktuelle Session
+ beenden und neu starten.
+</p>
+
+</div>
+
+<h5 id="package_header">Package Header:</h5>
+<div class="level5">
+<pre class="prettyprint  lang-oracle11 prettyprinted" style=""><span class="kwd">CREATE</span><span class="pln"> </span><span class="pun">[</span><span class="pln"> </span><span class="kwd">OR</span><span class="pln"> </span><span class="kwd">REPLACE</span><span class="pln"> </span><span class="pun">]</span><span class="pln"> </span><span class="kwd">PACKAGE</span><span class="pln"> package_name </span><span class="kwd">AS</span></pre>
+<p>
+öffentliche Deklarationen von:
+</p>
+
+<p>
+* Typen * Variablen * Konstanten * Cursors * Exceptions * Funktionen * Prozeduren
+</p>
+<pre class="prettyprint  lang-oracle11 prettyprinted" style=""><span class="kwd">END</span><span class="pln"> package_name</span><span class="pun">;</span></pre>
+<p>
+Die öffentlich deklarierten Objekte können mit der Punkt-Notation direkt
+ angesprochen werden (Objekte des Packages werden dereferenziert). Die 
+Variablen und Cursor, die im Header deklariert sind, sind persistent für
+ jede Session, d.h. sie sind während der gesamten Dauer einer Session 
+gültig.
+</p>
+
+</div>
+
+<h5 id="package_body">Package Body:</h5>
+<div class="level5">
+<pre class="prettyprint  lang-oracle11 prettyprinted" style=""><span class="kwd">CREATE</span><span class="pln"> </span><span class="pun">[</span><span class="pln"> </span><span class="kwd">OR</span><span class="pln"> </span><span class="kwd">REPLACE</span><span class="pln"> </span><span class="pun">]</span><span class="pln"> </span><span class="kwd">PACKAGE</span><span class="pln"> </span><span class="kwd">BODY</span><span class="pln"> package_name </span><span class="kwd">AS</span></pre>
+<p>
+private Deklarationen von:
+</p>
+
+<p>
+* Typen * Variablen * Konstanten * Cursors * Exceptions
+</p>
+
+<p>
+Implementierung der öffentlichen und privaten Prozeduren und Funktionen
+</p>
+<pre class="prettyprint  lang-oracle11 prettyprinted" style=""><span class="pun">[</span><span class="kwd">BEGIN</span><span class="pun">]</span><span class="pln">
+
+  Initialisierungsblock
+
+</span><span class="kwd">END</span><span class="pln"> package_name</span><span class="pun">;</span></pre>
+<p>
+Die privat deklarierten Objekte sind ebenfalls persistent für jede 
+Session. Sie sind jedoch von außen nur über Prozeduren und Funktionen 
+indirekt verwendbar. Der Initialisierungsblock wird einmalig beim ersten
+ Zugriff ausgeführt. Die Köpfe der öffentlich deklarierten Prozeduren 
+und Funktionen müssen im Body und Header identisch sein.
+</p>
+
+</div>
+
+<h4 id="prozedure">Prozedure</h4>
+<div class="level4">
+
+<p>
+Eine gespeicherte Prozedur ist ein festgelegtes Set von Aktionen, das 
+mit der Programmiersprache PL/SQL geschrieben wird. Wenn eine Prozedur 
+aufgerufen wird, führt sie die enthaltenen Aktionen aus. Da die Prozedur
+ in der Datenbank abgespeichert wird, heißt sie „gespeicherte Prozedur“.
+ Eine gespeicherte Prozedur kann SQL-Befehle ausführen und Daten in 
+Tabellen verändern. Sie kann von anderen gespeicherten 
+PL/SQL-Prozeduren, Funktionen und Triggern oder direkt von einem 
+anonymen Block aufgerufen werden. Im Gegensatz zu Funktionen haben 
+Prozeduren keinen expliziten Rückgabewert und somit erfolgt die Rückgabe
+ über OUT-Parameter. Eine Prozedur besteht aus zwei Teilen:
+</p>
+
+<p>
+* der Spezifikation * dem Body (Körper/Rumpf)
+</p>
+
+<p>
+Syntax:
+</p>
+<pre class="prettyprint  lang-plsql prettyprinted" style=""><span class="kwd">CREATE</span><span class="pln"> </span><span class="pun">[</span><span class="kwd">OR</span><span class="pln"> </span><span class="kwd">REPLACE</span><span class="pun">]</span><span class="pln"> </span><span class="kwd">PROCEDURE</span><span class="pln"> procedure_name
+    </span><span class="pun">[</span><span class="pln"> </span><span class="pun">(</span><span class="pln">parameter </span><span class="pun">[,</span><span class="pln">parameter</span><span class="pun">])</span><span class="pln"> </span><span class="pun">]</span><span class="pln">
+</span><span class="kwd">IS</span><span class="pln">
+    </span><span class="pun">[</span><span class="pln">declaration_section</span><span class="pun">]</span><span class="pln">
+</span><span class="kwd">BEGIN</span><span class="pln">
+    executable_section
+</span><span class="pun">[</span><span class="pln">
+</span><span class="kwd">EXCEPTION</span><span class="pln">
+    exception_section</span><span class="pun">]</span><span class="pln">
+</span><span class="kwd">END</span><span class="pln"> </span><span class="pun">[</span><span class="pln">procedure_name</span><span class="pun">];</span></pre>
+</div>
+
+<h4 id="funktionen">Funktionen</h4>
+<div class="level4">
+
+<p>
+Eine PL/SQL-Funktion besitzt eine Funktionsspezifikation und einen 
+Funktionsbody. Der entscheidende Unterschied zwischen einer Prozedur und
+ einer Funktion ist, dass eine Funktion einen expliziten Rückgabewert 
+hat und somit einen Wert zurückzuliefert, der in einem größeren 
+SQL-Befehl genutzt werden kann.
+</p>
+<pre class="prettyprint  lang-plsql prettyprinted" style=""><span class="kwd">CREATE</span><span class="pln"> </span><span class="pun">[</span><span class="kwd">OR</span><span class="pln"> </span><span class="kwd">REPLACE</span><span class="pun">]</span><span class="pln"> </span><span class="kwd">FUNCTION</span><span class="pln"> function_name
+</span><span class="pun">[(</span><span class="pln">parameter1 </span><span class="pun">[</span><span class="pln">MODE</span><span class="pun">]</span><span class="pln"> datatype1</span><span class="pun">,</span><span class="pln"> </span><span class="pun">...)]</span><span class="pln">
+</span><span class="kwd">RETURN</span><span class="pln"> datatype </span><span class="kwd">IS</span><span class="pun">|</span><span class="kwd">AS</span><span class="pln">
+</span><span class="pun">[</span><span class="pln">local_variable_declarations</span><span class="pun">;</span><span class="pln"> </span><span class="pun">…]</span><span class="pln">
+</span><span class="kwd">BEGIN</span><span class="pln">
+  </span><span class="com">-- actions;</span><span class="pln">
+  </span><span class="kwd">RETURN</span><span class="pln"> expression</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">END</span><span class="pun">;</span></pre>
+<p>
+Funktionen können über verschiedene Wege aufgerufen werden:
+</p>
+
+<p>
+* Als Teil eines PL/SQL Ausdrucks - der Rückgabewert der Funktion wird 
+einer Variable zugewiesen * Als Parameter eines anderen Sub-Programms * 
+Als Ausdruck in einem SQL Statement - z.B. eine single-row Funktion im 
+SQL Statement
+</p>
+
+</div>
+
+<h4 id="parameter">Parameter</h4>
+<div class="level4">
+
+<p>
+Wenn man eine Procedur oder eine Funktion erstellt könnte es möglich 
+sein das es nötig ist Parameter zu übergeben. Möchte man beim Erstellen 
+einer Prozedur oder einer Funktion Parameter übergeben, so gibt es dafür
+ 3 Arten.
+</p>
+
+<p>
+1) IN - Der Wert der übergebenen Variable kann von der Prozedur oder Funktion nicht geändert werden (ReadOnly).
+</p>
+
+<p>
+2) OUT - Der Wert der übergebenen Variable kann von der Procedur oder 
+Funktion nicht gelesen aber überschrieben und zurückgegeben werden 
+(WriteOnly). Der Wert darf vorher nicht initialisiert worden sein.
+</p>
+
+<p>
+3) INOUT - Verbindet IN und OUT. Die übergebene Variable kann gelesen, überschrieben und zurückgegeben werden.
+</p>
+
+</div>
+
+<h4 id="trigger">Trigger</h4>
+<div class="level4">
+
+<p>
+Trigger sind einfache „stored procedures“ welche automatisch von der 
+Datenbank ausgeführt werden. Auslöser für Trigger können folgende 
+Statement-Arten sein:
+</p>
+
+<p>
+* INSERT * UPDATE * DELETE
+</p>
+
+<p>
+Das „Before“, „After“ oder „Instead of“ (Oracle: nur bei Views 
+anwendbar) in der Trigger-Definition gibt an, ob der Trigger vor, nach 
+oder anstatt der Datenbankänderung ausgeführt werden soll.
+</p>
+
+<p>
+Weiters kann angegeben werden wie oft der Trigger ausgeführt werden soll:
+</p>
+
+<p>
+* ROW-Trigger: for each row - wird pro geänderter Zeile ausgeführt. Der 
+Trigger hat Zugriff auf die Attribute des Tupels vor und nach Ausführung
+ des Triggers. * Anwendungsbeispiel: Protokollierung, Überprüfung von 
+Aktionen * Statement-Trigger: for each statement - wird pro ausgeführtem
+ Statement einmalig ausgeführt, egal wie viele Zeilen betroffen sind. 
+Der Inhalt der Tupel ist nicht bekannt. * Anwendungsbeispiel: 
+Zugriffsschutz,..
+</p>
+<pre class="prettyprint  lang-plsql prettyprinted" style=""><span class="kwd">CREATE</span><span class="pln"> </span><span class="pun">[</span><span class="kwd">OR</span><span class="pln"> </span><span class="kwd">REPLACE</span><span class="pun">]</span><span class="pln"> </span><span class="kwd">TRIGGER</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln">trigger_name</span><span class="pun">&gt;</span><span class="pln">
+
+    </span><span class="pun">{</span><span class="kwd">BEFORE</span><span class="pun">|</span><span class="pln">AFTER</span><span class="pun">}</span><span class="pln"> </span><span class="pun">{</span><span class="kwd">INSERT</span><span class="pun">|</span><span class="kwd">DELETE</span><span class="pun">|</span><span class="kwd">UPDATE</span><span class="pun">}</span><span class="pln"> </span><span class="kwd">ON</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln">table_name</span><span class="pun">&gt;</span><span class="pln">
+
+    </span><span class="com">/*[REFERENCING [NEW AS &lt;new_row_name&gt;] [OLD AS &lt;old_row_name&gt;]]*/</span><span class="pln">
+
+    </span><span class="pun">[</span><span class="kwd">FOR</span><span class="pln"> </span><span class="kwd">EACH</span><span class="pln"> </span><span class="kwd">ROW</span><span class="pln"> </span><span class="pun">[</span><span class="kwd">WHEN</span><span class="pln"> </span><span class="pun">(&lt;</span><span class="pln">trigger_condition</span><span class="pun">&gt;)]]</span><span class="pln">
+</span><span class="kwd">DECLARE</span><span class="pln">
+    </span><span class="pun">&lt;</span><span class="pln">trigger_declaration_section</span><span class="pun">&gt;</span><span class="pln">
+</span><span class="kwd">BEGIN</span><span class="pln">
+    </span><span class="pun">&lt;</span><span class="pln">trigger_body</span><span class="pun">&gt;</span><span class="pln">
+</span><span class="kwd">END</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln">trigger_name</span><span class="pun">&gt;;</span></pre>
+<p>
+Wird durch einen Trigger in weiterer Folge die Ursprungstabelle geändert, so nennt man dies „Mutieren der Tabelle“.
+</p>
+
+<p>
+Sämtliche Constraints werden vor dem After geprüft.
+</p>
+
+<p>
+Anwendungsbeispiele für Trigger sind:
+</p>
+
+<p>
+* die Aufrechterhaltung der Konsistenz * bei max. 10 erlaubten Einträgen
+ * bei Datenmodellen, welche nicht der 3. Normalform entsprechen * bei 
+der Überprüfung von Eingaben * die Datenaufbereitung * die Simulierung 
+von Auto-Werten * komplexe Plausibilitätsprüfungen/Integritätsprüfungen
+</p>
+
+</div>
+
+<h4 id="exceptions">Exceptions</h4>
+<div class="level4">
+
+<p>
+Tritt zur Laufzeit ein Fehler auf, so wird eine Exception ausgelöst. 
+Jeder Exception ist eine Fehlernummer zugeordnet. Durch den Exception 
+Handler kann im Programm auf das Auslösen einer Exception reagiert 
+werden. Für die wichtigsten Fehlerfälle existieren vordefinierte 
+Exceptions. Darüber hinaus können weitere Exceptions frei definiert 
+werden (siehe unten). Das Auslösen einer Exception führt immer zum 
+Verlassen des aktuellen Blocks. Soll der Fehlerzustand an den 
+übergeordneten Block weitergegeben werden, so muß dieses mit dem Befehl 
+RAISE erfolgen.
+</p>
+
+<p>
+Tritt ein Laufzeitfehler ohne zugehörigen Exception-Handler auf, so wird
+ der aktuelle Block mit dem Fehlerzustand verlassen und die 
+Fehlerbehandlung erfolgt im übergeordneten Block.
+</p>
+<pre class="prettyprint  lang-plsql prettyprinted" style=""><span class="kwd">DECLARE</span><span class="pln">
+
+  v_name           Musiklehrer</span><span class="pun">.</span><span class="pln">name</span><span class="pun">%</span><span class="kwd">TYPE</span><span class="pun">;</span><span class="pln">
+
+  NAME_FEHLER   </span><span class="kwd">EXCEPTION</span><span class="pun">;</span><span class="pln">
+
+  PRAGMA EXCEPTION_INIT </span><span class="pun">(</span><span class="pln">NAME_FEHLER</span><span class="pun">,</span><span class="pln"> </span><span class="lit">-20100</span><span class="pun">);</span><span class="pln">
+
+</span><span class="kwd">BEGIN</span><span class="pln">
+
+  </span><span class="kwd">SELECT</span><span class="pln"> name </span><span class="kwd">INTO</span><span class="pln"> v_name
+  </span><span class="kwd">FROM</span><span class="pln"> Musiklehrer
+  </span><span class="kwd">WHERE</span><span class="pln"> LehrerID </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+
+  </span><span class="kwd">IF</span><span class="pln"> v_name </span><span class="pun">&lt;&gt;</span><span class="pln"> </span><span class="str">'Mayer'</span><span class="pln"> </span><span class="kwd">THEN</span><span class="pln">
+
+    raise_application_error </span><span class="pun">(</span><span class="lit">-20100</span><span class="pun">,</span><span class="pln"> </span><span class="str">'Name falsch'</span><span class="pun">);</span><span class="pln">
+
+  </span><span class="kwd">END</span><span class="pln"> </span><span class="kwd">IF</span><span class="pun">;</span><span class="pln">
+
+</span><span class="kwd">EXCEPTION</span><span class="pln">
+  </span><span class="kwd">WHEN</span><span class="pln"> NAME_FEHLER </span><span class="kwd">THEN</span><span class="pln"> </span><span class="pun">//</span><span class="pln">Beginn der Custom-EXCEPTION
+    </span><span class="pun">...</span><span class="pln">
+  </span><span class="kwd">WHEN</span><span class="pln"> OTHERS </span><span class="kwd">THEN</span><span class="pln">
+    </span><span class="pun">...</span><span class="pln">
+
+</span><span class="kwd">END</span><span class="pun">;</span></pre>
+</div>
+
+<h5 id="vordefinierte_exceptions">Vordefinierte Exceptions</h5>
+<div class="level5">
+<div class="table sectionedit7"><table class="inline">
+	<thead>
+	<tr class="row0">
+		<th class="col0 leftalign">Name  </th><th class="col1">Fehlernr.</th><th class="col2 leftalign">Beschreibung  </th>
+	</tr>
+	</thead>
+	<tbody><tr class="row1">
+		<td class="col0 leftalign">NO_DATA_FOUND  </td><td class="col1">ORA-01403</td><td class="col2 leftalign">SELECT liefert kein Ergebnis  </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 leftalign">TOO_MANY_ROWS  </td><td class="col1">ORA-01422</td><td class="col2 leftalign">SELECT liefert zu viele Datensätze zurück  </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 leftalign">OTHERS  </td><td class="col1 leftalign">   </td><td class="col2">fängt alle zuvor nicht abgefangenen Exceptions ab</td>
+	</tr>
+</tbody></table></div>
+
+<p>
+Der einfachste Weg um herauszufinden welche Exception geworfen wird ist,
+ das Programm auszuführen und absichtlich die Exception auszulösen. In 
+der Ausgabe kann dann die jeweilige Exception abgelesen werden.
+</p>
+
+<p>
+Wird bei einem SELECT INTO kein Datensatz gefunden wird eine Exception 
+(NO_DATA_FOUND) geworfen. Dies geschieht bei einem Zugriff mittels 
+Cursor nicht.
+</p>
+
+</div>
+
+<h4 id="if-then-else">IF-THEN-ELSE</h4>
+<div class="level4">
+
+<p>
+<em>if</em> prüft, ob eine Bedingung erfüllt ist. Ist sie erfüllt, wird der Code zwischen <em>then</em> und <em>elseif, else, end</em> ausgeführt. Ist die Bedingung nicht erfüllt, wird dieser Code übersprungen. Optional kann mit <em>elsif</em>
+ eine weitere Bedingung mit zugehörigem Code angegeben werden, der 
+ausgeführt wird, falls diese Bedingung erfüllt ist. Zu guter Letzt kann 
+man ein allgemeines <em>else</em> angeben, dessen Code ausgeführt wird, wenn keine der vorangegangenen Bedingungen erfüllt wurde.
+</p>
+<pre class="prettyprint  lang-plsql prettyprinted" style=""><span class="kwd">DECLARE</span><span class="pln">
+    v_name Musiklehrer</span><span class="pun">.</span><span class="pln">Name</span><span class="pun">%</span><span class="kwd">TYPE</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">BEGIN</span><span class="pln">
+    </span><span class="kwd">SELECT</span><span class="pln"> name
+    </span><span class="kwd">INTO</span><span class="pln"> v_name
+    </span><span class="kwd">FROM</span><span class="pln"> Musiklehrer
+    </span><span class="kwd">WHERE</span><span class="pln"> LehrerID </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+
+    </span><span class="kwd">IF</span><span class="pln"> v_name </span><span class="pun">=</span><span class="pln"> </span><span class="str">'Mayer'</span><span class="pln"> </span><span class="kwd">THEN</span><span class="pln">
+        DBMS_OUTPUT</span><span class="pun">.</span><span class="pln">put_line</span><span class="pun">(</span><span class="str">'Der Name ist: Mayer'</span><span class="pun">);</span><span class="pln"> </span><span class="com">--Gibt etwas aus</span><span class="pln">
+    </span><span class="kwd">ELSIF</span><span class="pln"> v_name </span><span class="pun">=</span><span class="pln"> </span><span class="str">'Huber'</span><span class="pln"> </span><span class="kwd">THEN</span><span class="pln">
+        DBMS_OUTPUT</span><span class="pun">.</span><span class="pln">put_line</span><span class="pun">(</span><span class="str">'Der Name ist: Huber'</span><span class="pun">);</span><span class="pln">
+    </span><span class="kwd">ELSE</span><span class="pln">
+        DBMS_OUTPUT</span><span class="pun">.</span><span class="pln">put_line</span><span class="pun">(</span><span class="str">'Der Name ist unbekannt.'</span><span class="pun">);</span><span class="pln">
+    </span><span class="kwd">END</span><span class="pln"> </span><span class="kwd">IF</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">END</span><span class="pun">;</span></pre>
+<p>
+Eine andere Form Bedingungen zu definieren wäre <em>case</em>. Hierbei steht statt dem <em>if</em> das <em>when</em>.
+</p>
+<pre class="prettyprint  lang-plsql prettyprinted" style=""><span class="kwd">DECLARE</span><span class="pln">
+    v_name Musiklehrer</span><span class="pun">.</span><span class="pln">Name</span><span class="pun">%</span><span class="kwd">TYPE</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">BEGIN</span><span class="pln">
+    </span><span class="kwd">SELECT</span><span class="pln"> name
+    </span><span class="kwd">INTO</span><span class="pln"> v_name
+    </span><span class="kwd">FROM</span><span class="pln"> Musiklehrer
+    </span><span class="kwd">WHERE</span><span class="pln"> LehrerID </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+
+    </span><span class="kwd">CASE</span><span class="pln"> </span><span class="kwd">WHEN</span><span class="pln"> v_name </span><span class="pun">=</span><span class="pln"> </span><span class="str">'Mayer'</span><span class="pln"> </span><span class="kwd">THEN</span><span class="pln"> DBMS_OUTPUT</span><span class="pun">.</span><span class="pln">put_line</span><span class="pun">(</span><span class="str">'Der Name ist: Mayer'</span><span class="pun">);</span><span class="pln">
+         </span><span class="kwd">WHEN</span><span class="pln"> v_name </span><span class="pun">=</span><span class="pln"> </span><span class="str">'Huber'</span><span class="pln"> </span><span class="kwd">THEN</span><span class="pln"> DBMS_OUTPUT</span><span class="pun">.</span><span class="pln">put_line</span><span class="pun">(</span><span class="str">'Der Name ist: Huber'</span><span class="pun">);</span><span class="pln">
+         </span><span class="kwd">ELSE</span><span class="pln"> DBMS_OUTPUT</span><span class="pun">.</span><span class="pln">put_line</span><span class="pun">(</span><span class="str">'Der Name ist unbekannt.'</span><span class="pun">);</span><span class="pln">
+    </span><span class="kwd">END</span><span class="pln"> </span><span class="kwd">CASE</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">END</span><span class="pun">;</span></pre>
+<p>
+oder
+</p>
+<pre class="prettyprint  lang-plsql prettyprinted" style=""><span class="kwd">DECLARE</span><span class="pln">
+    v_name Musiklehrer</span><span class="pun">.</span><span class="pln">Name</span><span class="pun">%</span><span class="kwd">TYPE</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">BEGIN</span><span class="pln">
+    </span><span class="kwd">SELECT</span><span class="pln"> name
+    </span><span class="kwd">INTO</span><span class="pln"> v_name
+    </span><span class="kwd">FROM</span><span class="pln"> Musiklehrer
+    </span><span class="kwd">WHERE</span><span class="pln"> LehrerID </span><span class="pun">=</span><span class="pln"> </span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+
+    </span><span class="kwd">CASE</span><span class="pln"> v_name
+         </span><span class="kwd">WHEN</span><span class="pln"> </span><span class="str">'Mayer'</span><span class="pln"> </span><span class="kwd">THEN</span><span class="pln"> DBMS_OUTPUT</span><span class="pun">.</span><span class="pln">put_line</span><span class="pun">(</span><span class="str">'Der Name ist: Mayer'</span><span class="pun">)</span><span class="pln">
+         </span><span class="kwd">WHEN</span><span class="pln"> </span><span class="str">'Huber'</span><span class="pln"> </span><span class="kwd">THEN</span><span class="pln"> DBMS_OUTPUT</span><span class="pun">.</span><span class="pln">put_line</span><span class="pun">(</span><span class="str">'Der Name ist: Huber'</span><span class="pun">)</span><span class="pln">
+         </span><span class="kwd">ELSE</span><span class="pln"> DBMS_OUTPUT</span><span class="pun">.</span><span class="pln">put_line</span><span class="pun">(</span><span class="str">'Der Name ist unbekannt.'</span><span class="pun">)</span><span class="pln">
+    </span><span class="kwd">END</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">END</span><span class="pun">;</span></pre>
+</div>
+
+<h4 id="schleifen">Schleifen</h4>
+<div class="level4">
+
+</div>
+
+<h5 id="basisschleife_do-while">Basisschleife (do-while)</h5>
+<div class="level5">
+
+<p>
+Die do-while-Schleife wiederholt die Anweisungen zwischen <em>loop</em> und <em>exit</em>
+ so lange, bis die Bedingung erfüllt wurde. Anders als bei anderen 
+Schleifen, werden bei dieser Schleife die Anweisungen mindestens einmal 
+ausgeführt.
+</p>
+<pre class="prettyprint  lang-plsql prettyprinted" style=""><span class="pln">LOOP--ANWEISUNGEN
+  </span><span class="kwd">EXIT</span><span class="pln"> </span><span class="kwd">WHEN</span><span class="pln"> BEDINGUNG</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">END</span><span class="pln"> </span><span class="kwd">LOOP</span><span class="pun">;</span></pre>
+</div>
+
+<h5 id="while-schleife">While-Schleife</h5>
+<div class="level5">
+
+<p>
+Bei dieser Schleife wird immer zuerst geprüft, ob die Bedingung erfüllt 
+ist. Ist die Bedingung erfüllt, wird die Anweisung so lange ausgeführt, 
+bis die Bedingung nicht mehr erfüllt ist. Ist die Bedingung von Anfang 
+an nicht erfüllt, so wird die Anweisung niemals ausgeführt.
+</p>
+<pre class="prettyprint  lang-plsql prettyprinted" style=""><span class="kwd">WHILE</span><span class="pln"> Bedingung </span><span class="kwd">LOOP</span><span class="pln">
+    </span><span class="com">--ANWEISUNG</span><span class="pln">
+</span><span class="kwd">END</span><span class="pln"> </span><span class="kwd">LOOP</span><span class="pun">;</span></pre>
+</div>
+
+<h5 id="for-schleife">For-Schleife</h5>
+<div class="level5">
+
+<p>
+Die for-Schleife zählt eine Indexvariable von einem festgelegten 
+Startwert bis zu einem festgelegten Endwert. Der kleinere Wert steht 
+links, der größere rechts. Gibt man das Schlüsselwort <em>reverse</em> nach dem <em>in</em> an, so wird vom größeren bis zum kleineren Wert heruntergezählt.
+</p>
+
+<p>
+v_counter ist hier die Indexvariable. Wird sie größer als 10, werden die Anweisungen nicht mehr ausgeführt.
+</p>
+<pre class="prettyprint  lang-plsql prettyprinted" style=""><span class="kwd">FOR</span><span class="pln"> v_counter </span><span class="kwd">IN</span><span class="pln"> </span><span class="lit">1..10</span><span class="pln"> </span><span class="kwd">LOOP</span><span class="pln">
+    </span><span class="com">--ANWEISUNG</span><span class="pln">
+</span><span class="kwd">END</span><span class="pln"> </span><span class="kwd">LOOP</span><span class="pun">;</span></pre>
+</div>
+
+<h4 id="cursor">Cursor</h4>
+<div class="level4">
+
+<p>
+Ein Cursor ist ein Pointer, der Informationen eines SELECT-Statements 
+abspeichert. Er kann entweder implizit (automatisch) oder explizit (vom 
+Programmierer definiert) sein.
+</p>
+
+<p>
+Implizite Cursor werden für SQL-Statements benutzt (INSERT, UPDATE, 
+DELETE, usw…). Der Ablauf eines Cursors ist immer derselbe. Er wird 
+zuerst deklariert (DECLARE), geöffnet (OPEN), die benötigten Daten 
+werden herausgeholt (FETCH) und zum Schluss wird er geschlossen (CLOSE).
+ Der Cursor wird erst dann geschlossen, wenn er vollständig durchlaufen 
+wurde. Das bedeutet, dass beim Herausholen der Daten nichts gefunden 
+wird (EMPTY). Bei einem expliziten Cursor muss man Open, Fetch und Close
+ selber schreiben.
+</p>
+
+<p>
+Deklaration
+</p>
+<pre class="prettyprint  lang-plsql prettyprinted" style=""><span class="kwd">CURSOR</span><span class="pln"> cursor_name </span><span class="kwd">IS</span><span class="pln"> select_statement</span><span class="pun">;</span><span class="pln">
+
+</span><span class="kwd">CURSOR</span><span class="pln"> cursor_param </span><span class="pun">(</span><span class="pln">param_name param_datentyp</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">IS</span><span class="pln"> select_statement</span><span class="pun">;</span></pre>
+<p>
+Daten auslesen
+</p>
+<pre class="prettyprint  lang-plsql prettyprinted" style=""><span class="kwd">DECLARE</span><span class="pln">
+   c_id   Musiklehrer</span><span class="pun">.</span><span class="pln">LehrerID</span><span class="pun">%</span><span class="kwd">TYPE</span><span class="pun">;</span><span class="pln">
+   c_name Musiklehrer</span><span class="pun">.</span><span class="pln">name</span><span class="pun">%</span><span class="kwd">TYPE</span><span class="pun">;</span><span class="pln">
+   </span><span class="kwd">CURSOR</span><span class="pln"> c_musiklehrer </span><span class="kwd">IS</span><span class="pln"> </span><span class="com">--Initialisiert den CURSOR</span><span class="pln">
+      </span><span class="kwd">SELECT</span><span class="pln"> LehrerID</span><span class="pun">,</span><span class="pln"> name </span><span class="kwd">FROM</span><span class="pln"> Musiklehrer</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">BEGIN</span><span class="pln">
+  </span><span class="kwd">OPEN</span><span class="pln"> c_musiklehrer</span><span class="pun">;</span><span class="pln">
+  </span><span class="kwd">LOOP</span><span class="pln">
+    </span><span class="kwd">FETCH</span><span class="pln"> c_musiklehrer </span><span class="kwd">INTO</span><span class="pln"> c_id</span><span class="pun">,</span><span class="pln"> c_name</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">EXIT</span><span class="pln"> </span><span class="kwd">WHEN</span><span class="pln"> c_musiklehrer</span><span class="pun">%</span><span class="kwd">NOTFOUND</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">...</span><span class="pln">
+  </span><span class="kwd">END</span><span class="pln"> </span><span class="kwd">LOOP</span><span class="pun">;</span><span class="pln">
+  </span><span class="kwd">CLOSE</span><span class="pln"> c_musiklehrer</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">END</span><span class="pun">;</span></pre>
+<p>
+Selbes Beispiel mit implizitem Cursor:
+</p>
+<pre class="prettyprint  lang-plsql prettyprinted" style=""><span class="kwd">BEGIN</span><span class="pln">
+  </span><span class="kwd">FOR</span><span class="pln"> rec </span><span class="kwd">IN</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">SELECT</span><span class="pln"> LehrerID</span><span class="pun">,</span><span class="pln"> name </span><span class="kwd">FROM</span><span class="pln"> Musiklehrer</span><span class="pun">)</span><span class="pln">
+  </span><span class="kwd">LOOP</span><span class="pln">
+    </span><span class="pun">...</span><span class="pln">
+  </span><span class="kwd">END</span><span class="pln"> </span><span class="kwd">LOOP</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">END</span><span class="pun">;</span></pre>
+<p>
+Informationen über den Cursor abrufen.
+</p>
+<pre class="prettyprint  lang-plsql prettyprinted" style=""><span class="kwd">CURSOR</span><span class="pun">%</span><span class="kwd">NOTFOUND</span><span class="pln"> </span><span class="com">--true, wenn die zuletzt durchgeführte FETCH-Anweisung keine Zeile zurückgibt</span><span class="pln">
+</span><span class="kwd">CURSOR</span><span class="pun">%</span><span class="kwd">FOUND</span><span class="pln">    </span><span class="com">--true, wenn die zuletzt durchgeführte FETCH-Anweisung zumindest eine Zeile zurückgibt</span><span class="pln">
+</span><span class="kwd">CURSOR</span><span class="pun">%</span><span class="pln">ISOPEN   </span><span class="com">--true, wenn der CURSOR geöffnet ist</span><span class="pln">
+</span><span class="kwd">CURSOR</span><span class="pun">%</span><span class="kwd">ROWCOUNT</span><span class="pln"> </span><span class="com">--Gibt die Gesamtzahl der bis zu diesem Zeitpunkt ausgegebenen Zeilen zurück</span></pre>
+<p>
+<br>
+
+</p>
+
+</div>
+
+                    <!-- wikipage stop -->
+                                    </div>
+
+                <div class="docInfo"><bdi>dbi_rp2018/datenbankentwicklung/start.txt</bdi> · Zuletzt geändert: 2018/06/19 09:28 von <bdi>hofjac13</bdi></div>
+
+                            </div></div><!-- /content -->
+
+            <hr class="a11y">
+
+            <!-- PAGE ACTIONS -->
+            <div id="dokuwiki__pagetools">
+                <h3 class="a11y">Seiten-Werkzeuge</h3>
+                <div class="tools">
+                    <ul>
+                        <li class="source"><a href="https://wiki.htl-kaindorf.at/doku.php?id=dbi_rp2018:datenbankentwicklung:start&amp;do=edit" title="Zeige Quelltext [v]" rel="nofollow" accesskey="v"><span>Zeige Quelltext</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m.12 13.5l3.74 3.74 1.42-1.41-2.33-2.33 2.33-2.33-1.42-1.41-3.74 3.74m11.16 0l-3.74-3.74-1.42 1.41 2.33 2.33-2.33 2.33 1.42 1.41 3.74-3.74z"></path></svg></a></li><li class="revs"><a href="https://wiki.htl-kaindorf.at/doku.php?id=dbi_rp2018:datenbankentwicklung:start&amp;do=revisions" title="Ältere Versionen [o]" rel="nofollow" accesskey="o"><span>Ältere Versionen</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11 7v5.11l4.71 2.79.79-1.28-4-2.37V7m0-5C8.97 2 5.91 3.92 4.27 6.77L2 4.5V11h6.5L5.75 8.25C6.96 5.73 9.5 4 12.5 4a7.5 7.5 0 0 1 7.5 7.5 7.5 7.5 0 0 1-7.5 7.5c-3.27 0-6.03-2.09-7.06-5h-2.1c1.1 4.03 4.77 7 9.16 7 5.24 0 9.5-4.25 9.5-9.5A9.5 9.5 0 0 0 12.5 2z"></path></svg></a></li><li class="backlink"><a href="https://wiki.htl-kaindorf.at/doku.php?id=dbi_rp2018:datenbankentwicklung:start&amp;do=backlink" title="Links hierher" rel="nofollow"><span>Links hierher</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.982 2.982 0 0 0 0-4.24 2.982 2.982 0 0 0-4.24 0l-3.53 3.53a2.982 2.982 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.982 2.982 0 0 0 0 4.24 2.982 2.982 0 0 0 4.24 0l3.53-3.53a2.982 2.982 0 0 0 0-4.24.973.973 0 0 1 0-1.42z"></path></svg></a></li><li class="siteexport_addpage"><a href="https://wiki.htl-kaindorf.at/doku.php?id=dbi_rp2018:datenbankentwicklung:start&amp;do=siteexport_addpage" title="Seite als HTML/PDF exportieren" rel="nofollow"><span>Seite als HTML/PDF exportieren</span><svg width="61px" height="51px" viewBox="0 0 61 51" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink"><defs></defs><path d="M26.1891503,39.0065635 L26.0876578,38.9773206 L60.6523866,1.23972885 L60.4321374,2.11844376 L60.476442,2.07071678 L60.4265202,2.14085429 L49.5024876,45.7237994 L32.8255882,40.9187101 L26,50.508302 L26,39.2103249 L26.1891503,39.0065635 Z M60.9727675,0.862917243 L22.2676619,38.2155059 L-0.00245042233,30.2214566 L60.9727675,0.862917243 Z" id="Paper-Plane"></path></svg></a></li><li class="top"><a href="#dokuwiki__top" title="Nach oben [t]" rel="nofollow" accesskey="t"><span>Nach oben</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path></svg></a></li>                    </ul>
+                </div>
+            </div>
+        </div><!-- /wrapper -->
+
+        
+<!-- <strong></strong><strong></strong><strong> FOOTER </strong><strong></strong><strong></strong> -->
+<div id="dokuwiki__footer"><div class="pad">
+    
+    <div class="buttons">
+                <a href="https://www.dokuwiki.org/donate" title="Donate"><img src="Datenbankentwicklung%20[HTBLA%20Kaindorf%20Wiki]_files/button-donate.gif" alt="Donate" width="80" height="15"></a>
+        <a href="https://php.net/" title="Powered by PHP"><img src="Datenbankentwicklung%20[HTBLA%20Kaindorf%20Wiki]_files/button-php.gif" alt="Powered by PHP" width="80" height="15"></a>
+        <a href="https://wiki.htl-kaindorf.at/%3C/em%3Evalidator.w3.org/check/referer" title="Valid HTML5"><img src="Datenbankentwicklung%20[HTBLA%20Kaindorf%20Wiki]_files/button-html5.png" alt="Valid HTML5" width="80" height="15"></a>
+        <a href="https://wiki.htl-kaindorf.at/jigsaw.w3.org/css-validator/check/referer?profile=css3" title="Valid CSS"><img src="Datenbankentwicklung%20[HTBLA%20Kaindorf%20Wiki]_files/button-css.png" alt="Valid CSS" width="80" height="15"></a>
+        <a href="https://dokuwiki.org/" title="Driven by DokuWiki"><img src="Datenbankentwicklung%20[HTBLA%20Kaindorf%20Wiki]_files/button-dw.png" alt="Driven by DokuWiki" width="80" height="15"></a>
+    </div>
+</div></div><!-- /footer -->
+
+    </div></div><!-- /site -->
+
+    <div class="no"><img src="Datenbankentwicklung%20[HTBLA%20Kaindorf%20Wiki]_files/indexer.gif" alt="" width="2" height="1"></div>
+    <div id="screen__mode" class="no"></div>
+
+</body></html>
